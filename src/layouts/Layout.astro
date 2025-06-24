@@ -36,8 +36,25 @@ const { language, textDirection } = I18N;
     <SiteVerification />
     <Analytics />
 
-    <!-- Comment the line below to disable View Transitions -->
-    <ClientRouter fallback="swap" />
+    {/* Swiper CSS will be imported locally in HeroCarousel.astro */}
+    {/* <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> */}
+    {/* Alternatively, if you prefer to keep them as direct imports from node_modules after npm install:
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    import 'swiper/css/pagination';
+    Astro might require these to be in a <style is:global> tag or processed differently if not via CDN.
+    For simplicity and to ensure they are loaded, CDN is a good test.
+    If you have them locally via npm install, ensure your build process handles these CSS imports correctly.
+    The original HeroCarousel.astro had:
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    import 'swiper/css/pagination';
+    If these are not working when placed here directly, it might be an Astro processing detail.
+    Let's try the CDN link first for broad compatibility in this debugging step.
+    */}
+
+    {/* Comment the line below to disable View Transitions */}
+    {/* <ClientRouter fallback="swap" /> */}
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">

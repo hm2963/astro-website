@@ -3,181 +3,133 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: 'Security Services',
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          text: 'Penetration Testing Services',
+          href: getPermalink('/security/pentest'),
         },
         {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
+          text: 'Vulnerability Management Services',
+          href: getPermalink('/security/vm'),
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
+          text: 'Cloud Security Managed Services',
+          href: getPermalink('/security/cloud-security'),
         },
         {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
+          text: 'Web Application Firewall',
+          href: getPermalink('/security/waf'),
+        },
+        {
+          text: 'DevSecOps',
+          href: getPermalink('/security/devsecops'),
+        },
+        {
+          text: 'Endpoint Security',
+          href: getPermalink('/security/endpoint-security'),
+        },
+        {
+          text: 'Risk and Compliance Services',
+          href: getPermalink('/security/risk'),
         },
       ],
     },
     {
-      text: 'Pages',
+      text: 'Cloud Services',
       links: [
         {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
+          text: 'Cloud Migration',
+          href: getPermalink('/cloud/migration'),
         },
         {
-          text: 'Services',
-          href: getPermalink('/services'),
+          text: 'Cloud Architecture and Optimization',
+          href: getPermalink('/cloud/architecture'),
         },
         {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
+          text: 'DevOps',
+          href: getPermalink('/cloud/devops'),
         },
         {
-          text: 'About us',
-          href: getPermalink('/about'),
+          text: 'Data, Analytics, AI & ML',
+          href: getPermalink('/cloud/analytics'),
         },
         {
-          text: 'Contact',
-          href: getPermalink('/contact'),
+          text: 'Application Development & Modernization',
+          href: getPermalink('/cloud/application-development-modernization'),
         },
         {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
-      ],
-    },
-    {
-      text: 'Landing',
-      links: [
-        {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
-        },
-        {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
+          text: 'Operations, Reliability & Performance',
+          href: getPermalink('/cloud/ops'),
         },
       ],
     },
     {
       text: 'Blog',
+      href: getBlogPermalink(),
+    },
+    {
+      text: 'Company',
       links: [
         {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          text: 'About Us',
+          href: getPermalink('/company'), // Assuming '/company' is the about us page
         },
       ],
     },
     {
-      text: 'Widgets',
-      href: '#',
+      text: 'Quote your Pentest',
+      href: getPermalink('/quote-your-pentest'),
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: 'Contact Us', href: getPermalink('/get-in-touch') }], // Assuming '/get-in-touch' is the contact page
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Security',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'Penetration Testing', href: getPermalink('/security/pentest') },
+        { text: 'Vulnerability Management', href: getPermalink('/security/vm') },
+        { text: 'Cloud Security', href: getPermalink('/security/cloud-security') },
+        { text: 'Web Application Firewall', href: getPermalink('/security/waf') },
+        { text: 'DevSecOps', href: getPermalink('/security/devsecops') },
+        { text: 'Endpoint Security', href: getPermalink('/security/endpoint-security') },
+        { text: 'Risk and Compliance', href: getPermalink('/security/risk') },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Cloud',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'Cloud Migration', href: getPermalink('/cloud/migration') },
+        { text: 'Architecture & Optimization', href: getPermalink('/cloud/architecture') },
+        { text: 'DevOps', href: getPermalink('/cloud/devops') },
+        { text: 'Data, Analytics, AI & ML', href: getPermalink('/cloud/analytics') },
+        { text: 'Application Development & Modernization', href: getPermalink('/cloud/application-development-modernization') },
+        { text: 'Operations, Reliability & Performance', href: getPermalink('/cloud/ops') },
       ],
     },
     {
-      title: 'Support',
-      links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
+      title: 'Resources',
+      links: [{ text: 'Blog', href: getBlogPermalink() }],
     },
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'About Us', href: getPermalink('/company') }, // Assuming '/company' is the about us page
+        { text: 'Contact', href: getPermalink('/get-in-touch') }, // Assuming '/get-in-touch' is the contact page
       ],
     },
   ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  ],
+  secondaryLinks: [{ text: 'Privacy Policy', href: getPermalink('/privacy-policy') }], // Corrected path
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://twitter.com/prplbx' }, // Updated with actual link
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/prplbx/' }, // Updated with actual link
+    // { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') }, // RSS might not be needed based on old site
+    // { ariaLabel: 'Github', icon: 'tabler:brand-github', href: '#' }, // Assuming no public GitHub for this site
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+    © ${new Date().getFullYear()} PurpleBox, Inc. All rights reserved.
   `,
 };

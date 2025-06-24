@@ -1,0 +1,133 @@
+---
+import { Image } from 'astro:assets'; // Using astro:assets for optimized images
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// Define the props for each slide
+import type { ImageMetadata } from 'astro';
+
+export interface Slide {
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  buttonText: string;
+  buttonHref: string;
+  imageSrc: ImageMetadata; // Expect imported image metadata
+  imageAlt: string;
+}
+
+export interface Props {
+  slides: Slide[];
+}
+
+const { slides } = Astro.props;
+
+// It's better to use a more specific ID if multiple carousels are on a page
+const carouselId = `hero-carousel-${Math.random().toString(36).substring(7)}`;
+---
+
+<div class="swiper relative overflow-hidden w-full min-h-[70vh]" id={carouselId}> {/* Added min-h-[70vh] */}
+  <div class="swiper-wrapper">
+    {slides.map((slide) => (
+      <div class="swiper-slide">
+        {/* Adjusted section classes for background and padding to better match screenshots */}
+        <section class="relative py-20 md:py-32 lg:py-40 bg-[#160e2b] text-white overflow-hidden min-h-[70vh] flex items-center">
+          <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+              <h2 class="text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-300 mb-3">{slide.subtitle}</h2>
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                {slide.title} <span class="text-white">{slide.titleHighlight}</span> {/* Highlight color can be adjusted if needed */}
+              </h1>
+              <a
+                href={slide.buttonHref}
+                class="inline-block bg-white text-[#160e2b] hover:bg-gray-200 px-6 py-3 text-sm sm:text-base font-semibold rounded-md shadow-md transition-colors"
+              >
+                {slide.buttonText}
+              </a>
+            </div>
+            <div class="relative flex justify-center md:justify-end mt-10 md:mt-0">
+              <Image
+                src={slide.imageSrc}
+                alt={slide.imageAlt}
+                width={450}
+                height={450}
+                class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    ))}
+  </div>
+  {/* Add Pagination */}
+  <div class="swiper-pagination"></div>
+
+  {/* Add Navigation */}
+  <div class="swiper-button-prev text-white after:text-2xl"></div>
+  <div class="swiper-button-next text-white after:text-2xl"></div>
+</div>
+
+<script define:vars={{ carouselId }} is:inline> {/* Added is:inline */}
+  // Import Swiper and modules
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log(`Initializing Swiper for carousel ID: #${carouselId}`); // Debug log
+
+    // Initialize Swiper
+    const swiper = new Swiper(`#${carouselId}`, {
+      modules: [Navigation, Pagination, Autoplay],
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: `#${carouselId} .swiper-pagination`,
+        clickable: true,
+      },
+      navigation: {
+        nextEl: `#${carouselId} .swiper-button-next`,
+        prevEl: `#${carouselId} .swiper-button-prev`,
+      },
+    });
+    console.log('Swiper instance:', swiper); // Debug log
+  });
+</script>
+
+<style is:global>
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+  /* Basic Swiper styling adjustments - can be moved to a global CSS file */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white !important; /* Ensure arrows are visible on dark backgrounds */
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    transition: background-color 0.3s ease;
+  }
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 1.25rem !important; /* Adjust arrow size */
+  }
+  .swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1 !important;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: white !important;
+  }
+</style>

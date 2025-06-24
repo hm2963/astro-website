@@ -1,399 +1,299 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
+import heroSlideImage from '~/assets/images/prplbx_images/page_home/animation-11-1-1.svg';
+import HeroCarousel from '~/components/widgets/HeroCarousel.astro';
+// import Note from '~/components/widgets/Note.astro'; // Not used yet
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
+// import Features2 from '~/components/widgets/Features2.astro'; // Not used yet
+// import Steps from '~/components/widgets/Steps.astro'; // Not used yet
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+// import Stats from '~/components/widgets/Stats.astro'; // Not used yet
+// import CallToAction from '~/components/widgets/CallToAction.astro'; // Not used yet
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Cybersecurity and Cloud Solutions Unique to Your Needs - PurpleBox',
+  description: 'Cybersecurity and cloud solutions. Elevate your business with our approach to digital security and cloud optimization.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    actions={[
+  {/* Hero Carousel Widget ******************* */}
+  <HeroCarousel
+    slides={[
       {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        title: 'Manage Risk for',
+        titleHighlight: 'Your Business',
+        subtitle: 'SECURITY - CLOUD - DEVOPS',
+        buttonText: 'SECURITY SERVICES',
+        buttonHref: '/security/',
+        imageSrc: heroSlideImage,
+        imageAlt: 'Manage Risk for Your Business',
       },
-      { text: 'Learn more', href: '#features' },
+      {
+        title: 'Cloud Security That Drives',
+        titleHighlight: 'Business Growth',
+        subtitle: 'SECURITY - CLOUD - DEVOPS',
+        buttonText: 'CLOUD SERVICES',
+        buttonHref: '/cloud/',
+        imageSrc: heroSlideImage,
+        imageAlt: 'Cloud Security That Drives Business Growth',
+      },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-  >
-    <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
-    </Fragment>
+  />
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
-    </Fragment>
-  </Hero>
-
-  <!-- Note Widget ******************* -->
-
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
-
-  <!-- Features Widget *************** -->
-
+  {/* Features Widget: Why PurpleBox Security? */}
   <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+    id="why-purplebox"
+    tagline="Why PurpleBox Security?"
+    title="Cybersecurity and Cloud Solutions Tailored to Your Needs"
+    subtitle="PurpleBox helps you empower your team with integrated cybersecurity solutions, seamlessly working together to detect, protect against, respond to, and recover from cyberattacks."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+        title: 'Penetration Testing',
+        description: 'Recognize the Risks and Consequences of System Vulnerabilities',
+        icon: 'tabler:shield-check', 
       },
       {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+        title: 'Vulnerability Management',
+        description: 'Detect and defend against threats in real time, anywhere and everywhere',
+        icon: 'tabler:shield-search', 
       },
       {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+        title: 'Cloud Security',
+        description: 'Elevate security in the cloud and raise your security posture',
+        icon: 'tabler:cloud-lock', 
       },
       {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+        title: 'Web App Firewall',
+        description: 'Protect web apps from attacks without changes to your infrastructure',
+        icon: 'tabler:shield-lock', 
       },
       {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+        title: 'Endpoint Security',
+        description: 'Block ransomware attacks effectively before they happen',
+        icon: 'tabler:device-laptop', 
       },
       {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+        title: 'Risk and Compliance',
+        description: 'Ensure your InfoSec program is aligned with regulations and compliance mandates',
+        icon: 'tabler:file-check', 
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  {/* Advanced Cloud Solutions Section */}
+  <section class="py-10 md:py-16 bg-slate-50 dark:bg-slate-800">
+    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <h2 class="max-w-lg mb-6 font-sans text-2xl font-semibold leading-none tracking-tight text-gray-700 sm:text-3xl md:mx-auto dark:text-slate-300 uppercase">
+          Advanced Cloud Solutions for your Business
+        </h2>
+      </div>
 
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
+      <Content
+        isReversed={false} 
+        image={{
+          src: '~/assets/images/prplbx_images/page_home/Group-427319260Cloud-Services.svg',
+          alt: 'Advanced Cloud Solutions',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">
+            Advancing Digital Evolution: Tailored Cloud Solutions for Future-Ready Businesses
+          </h3>
+          <FAQs
+            items={[
+              {
+                title: 'Cloud Migration',
+                description: 'Elevate Your Business to the Cloud. Seamless Migration and Integration Solutions Tailored for Your Success. <a href="/cloud/migration/" class="text-primary-600 dark:text-primary-400 hover:underline">Learn more...</a>',
+              },
+              {
+                title: 'Cloud Architecture and Optimization',
+                description: 'Optimize Your Digital Horizon: Advanced Cloud Architecture and Optimization Solutions Customized for Peak Performance and Reduced Costs. <a href="/cloud/architecture/" class="text-primary-600 dark:text-primary-400 hover:underline">Learn more...</a>',
+              },
+              {
+                title: 'DevOps',
+                description: 'Your gateway to faster, more efficient software development and operations. <a href="/cloud/devops/" class="text-primary-600 dark:text-primary-400 hover:underline">Learn more...</a>',
+              },
+              {
+                title: 'Data, Analytics, AI & ML',
+                description: 'Empowering Transformation Through Data: Innovate, Optimize, and Excel with PurpleBox’s Expert Analytics and AI Solutions. <a href="/cloud/analytics/" class="text-primary-600 dark:text-primary-400 hover:underline">Learn more...</a>',
+              },
+              {
+                title: 'Application Development & Modernization',
+                description: 'Unlock the full potential of your applications through transformative application development and modernization solutions. <a href="/cloud/application-development-modernization/" class="text-primary-600 dark:text-primary-400 hover:underline">Learn more...</a>',
+              },
+              {
+                title: 'Operations, Reliability & Performance',
+                description: 'Elevating your Cloud with Operations, Reliability & Performance: Where Expertise Meets Innovation. <a href="/cloud/ops/" class="text-primary-600 dark:text-primary-400 hover:underline">Learn more...</a>',
+              },
+            ]}
+            classes={{ 
+              container: 'w-full',
+              list: '', 
+              item: '',   
+              question: '', 
+              answer: 'prose prose-sm sm:prose dark:prose-invert max-w-none',
+            }}
+          />
+        </Fragment>
+        {/* No slot="bg" for this Content widget as the parent section handles background */}
+      </Content>
+    </div>
+  </section>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  {/* Manage Risk Section */}
+  <section class="py-16 md:py-20 bg-gray-800 dark:bg-gray-900 text-white">
+    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-auto">
+          Manage Risk for Your Business and Grow in the Cloud
+        </h2>
+      </div>
+      <Features
+        columns={3}
+        items={[
+          {
+            title: 'We Plan',
+            description: 'We form a strategy to overcome your business pain points and optimize your strengths',
+            icon: 'tabler:map-pin', 
+          },
+          {
+            title: 'We Build',
+            description: 'We work with our team of experts to build, test and integrate the right solution based on your business needs',
+            icon: 'tabler:tools', 
+          },
+          {
+            title: 'We Run It',
+            description: 'We give transition support through strategic guidance and provide post delivery support',
+            icon: 'tabler:player-play', 
+          },
+        ]}
+        classes={{ 
+          container: 'max-w-6xl mx-auto md:px-4',
+          title: 'text-center text-3xl md:text-4xl font-bold mb-4 text-white', 
+          subtitle: 'text-center text-xl text-gray-300 mb-12', 
+          grid: 'grid md:grid-cols-3 gap-8',
+          column: 'text-center', 
+          icon: 'w-16 h-16 mx-auto mb-4 text-primary-500', 
+          itemTitle: 'text-xl font-bold mb-2 text-white', 
+          description: 'text-gray-300', 
+        }}
+      />
+    </div>
+  </section>
 
-  <!-- Content Widget **************** -->
+  {/* How We've Made a Difference Section */}
+  <section class="py-16 md:py-20 bg-white dark:bg-slate-900">
+    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto dark:text-white">
+          How We've Made a Difference
+        </h2>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="p-5 duration-300 transform bg-slate-50 dark:bg-slate-800 border rounded shadow-sm hover:-translate-y-2">
+          <h3 class="mb-2 text-lg font-semibold leading-5 text-gray-900 dark:text-white">Leading HealthTech Firm</h3>
+          <p class="text-sm text-gray-700 dark:text-slate-400">
+            “…compared to the competitors, the level of service was far and above.”
+          </p>
+        </div>
+        <div class="p-5 duration-300 transform bg-slate-50 dark:bg-slate-800 border rounded shadow-sm hover:-translate-y-2">
+          <h3 class="mb-2 text-lg font-semibold leading-5 text-gray-900 dark:text-white">Top Recycling Company</h3>
+          <p class="text-sm text-gray-700 dark:text-slate-400">
+            “…they do have a good relationship with all the developers and all the different teams and again going back to they are helping they are partners, they're part of the solution and their involvement shows”
+          </p>
+        </div>
+        <div class="p-5 duration-300 transform bg-slate-50 dark:bg-slate-800 border rounded shadow-sm hover:-translate-y-2">
+          <h3 class="mb-2 text-lg font-semibold leading-5 text-gray-900 dark:text-white">Leading HealthTech Company</h3>
+          <p class="text-sm text-gray-700 dark:text-slate-400">
+            “…it was really the meetings the level of comfort the willingness for your team to understand our environment and the idiosyncrasies of our applications that just the level of detail was very very comforting and helped make that the process flow.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+  {/* Trusted Partners Section */}
+  <section class="py-16 md:py-20 bg-slate-50 dark:bg-slate-800">
+    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <h2 class="max-w-lg mb-6 font-sans text-2xl font-semibold leading-none tracking-tight text-gray-700 sm:text-3xl md:mx-auto dark:text-slate-300 uppercase">
+          Trusted Partners
+        </h2>
+      </div>
+      <div class="flex flex-col items-center">
+        <img 
+          src="/assets/images/prplbx_images/page_home/logos.png" 
+          alt="Trusted Partner Logos" 
+          class="mb-8 max-w-full h-auto md:max-w-3xl" 
+          loading="lazy"
+        />
+        <img 
+          src="/assets/images/prplbx_images/page_home/well-architected-advanced-1.png" 
+          alt="AWS Well-Architected Partner Advanced Tier Services" 
+          class="max-w-xs h-auto" 
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
+  {/* Blog Latest Posts Section */}
   <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
+    title="Curious to learn more? Visit our blog!"
+    information=""
+    linkText="Our blog"
+    linkUrl="/blog"
+    count={3}
   />
 
-  <!-- FAQs Widget ******************* -->
+  {/* Overcome Security Challenges Section */}
+  <section class="py-16 md:py-24 text-white bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] overflow-hidden">
+    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="grid lg:grid-cols-3 items-center gap-8">
+        {/* Left Image */}
+        <div class="hidden lg:block">
+          <img 
+            src="/assets/images/prplbx_images/page_home/footer-left.webp" 
+            alt="Decorative graphic" 
+            class="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+        
+        {/* Center Content */}
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Overcome Your Security Challenges
+          </h2>
+          <p class="text-lg md:text-xl mb-8 text-slate-300">
+            We offer 360° Security protection for your business with our trusted experts in cybersecurity.
+          </p>
+          <a
+            href="/get-in-touch/" 
+            class="btn btn-primary bg-white text-purple-700 hover:bg-gray-200 px-8 py-3 text-lg font-semibold rounded-md"
+          >
+            TALK TO AN EXPERT
+          </a>
+        </div>
 
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  />
+        {/* Right Image */}
+        <div class="hidden lg:block">
+          <img 
+            src="/assets/images/prplbx_images/page_home/footer-right.webp" 
+            alt="Decorative graphic" 
+            class="w-full h-auto" 
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
+  {/* Additional sections will be added here based on old_page_home.html and screenshots */}
 </Layout>
