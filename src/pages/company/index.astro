@@ -1,0 +1,175 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_company/image-5.png';
+import certifiedImage from '~/assets/images/prplbx_images/page_company/logo-about-us.png';
+import careersImage from '~/assets/images/prplbx_images/page_company/company-photo.webp';
+import seekTruthIcon from '~/assets/images/prplbx_images/page_company/seek.svg';
+import dreamBigIcon from '~/assets/images/prplbx_images/page_company/dream.svg';
+import takeOwnershipIcon from '~/assets/images/prplbx_images/page_company/take-1.svg';
+import thinkOfSolutionsIcon from '~/assets/images/prplbx_images/page_company/think.svg';
+import focusOnCustomersIcon from '~/assets/images/prplbx_images/page_company/focus.svg';
+import giveBackIcon from '~/assets/images/prplbx_images/page_company/give.svg';
+
+const metadata = {
+  title: 'Company - PurpleBox',
+  description: 'Looking for a reliable partner to navigate the world of cybersecurity? Learn about our expert team and the values we bring to our work!',
+};
+
+const values = [
+  {
+    title: 'Seek Truth',
+    icon: seekTruthIcon.src,
+    description: 'Be skeptical. Research and investigate. Think rigorously. Go beyond simple answers and status-quo.',
+  },
+  {
+    title: 'Dream Big',
+    icon: dreamBigIcon.src,
+    description: 'Challenge yourself to set goals and take action. Be ambitious and motivated. Be brave and go for the extra mile.',
+  },
+  {
+    title: 'Take Ownership',
+    icon: takeOwnershipIcon.src,
+    description: 'Adapt ownership mentality. Make long- term decisions for the long- term for the team and company. Be proud to present your work.',
+  },
+  {
+    title: 'Think of Solutions',
+    icon: thinkOfSolutionsIcon.src,
+    description: 'Be a fixer. Come with solutions, alternatives, suggestions to improve the situation.',
+  },
+  {
+    title: 'Focus on Customers',
+    icon: focusOnCustomersIcon.src,
+    description: 'Walk in your customers’ shoes. Understand customer’s pain points, blockers, needs and goals.',
+  },
+  {
+    title: 'Give Back',
+    icon: giveBackIcon.src,
+    description: 'Be a part of your community. Volunteer and be enthusiastic about helping others.',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[50vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">About Us</h1>
+          <p class="text-lg md:text-xl">WE ARE HERE TO GROW AND PROTECT YOUR BUSINESS</p>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="About Us Hero" class="w-full h-auto max-w-md mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Company & Our Team Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">Our Company</h2>
+          <p>At PurpleBox, we offer customized <a href="/security/" class="text-purple-600 hover:underline">security solutions</a> and <a href="/cloud/" class="text-purple-600 hover:underline">cloud services</a> tailored to meet the specific needs of each customer. Our team of experts delivers optimized results, providing peace of mind to focus on growing your business.</p>
+          <p class="mt-4">We provide a broad range of expertise, including Security and Compliance, Cloud Migration, DevOps & Automation, Application Development, and Digital Transformation to help move your business forward.</p>
+          <p class="mt-4">Founded in 2015, we are based in Atlanta, Georgia, and committed to helping businesses of all sizes achieve their goals.</p>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-4">Our Team</h2>
+          <p><strong>Who is PurpleBox?</strong> Security expertise and innovative cloud solutions are fundamental to everything we do. Our workforce is not just a team but a dynamic force, comprising a majority of cybersecurity engineers, architects, and now, cloud solutions experts. Each member holds leading industry certifications and specializes in a comprehensive range of services from threat monitoring, incident response, and security consultation to cloud migration, architecture, and optimization.</p>
+          <p class="mt-4">Our outstanding experts collaborate to meet customer needs and think differently to develop new concepts. We encourage team members to openly share and implement new ideas to promote continuous improvement for both our company and team members.</p>
+          <p class="mt-4">At our core we are solution oriented, take ownership, passionate about technology, and fun to work with. We carry these values with us as we continue to provide excellent services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- We are certified Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl font-bold mb-8">We are certified.</h2>
+      <img src={certifiedImage.src} alt="Certifications" class="w-full h-auto" />
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div>
+          <p class="text-lg">We work with</p>
+          <p class="text-5xl font-bold">50+</p>
+          <p class="text-lg">global companies</p>
+        </div>
+        <div>
+          <p class="text-lg">We have</p>
+          <p class="text-5xl font-bold">30+</p>
+          <p class="text-lg">senior software engineers</p>
+        </div>
+        <div>
+          <p class="text-lg">We deliver</p>
+          <p class="text-5xl font-bold">500+</p>
+          <p class="text-lg">complex reports per month</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <Features
+    columns={3}
+    title="Top Six Values That Make us PurpleBox"
+    items={values}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-16 h-16 mx-auto mb-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+  <!-- Our Mission Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Our Mission</h2>
+      <p class="text-lg text-center">Security is serious work and protecting our customers is the first priority. Our company provides the security expertise you need, so you can put your focus back on growing your business.</p>
+      <p class="mt-4 text-lg text-center">As a tech company, we’re proud to do security our way. The PurpleBox Company takes complicated, cutting-edge technology and builds solutions that work. When we approach a problem, this is what we bring:</p>
+      <ul class="list-disc list-inside mt-4 mx-auto max-w-2xl">
+        <li>No Fear, Uncertainty, or Doubt (FUD) – we don’t believe in smoke screens.</li>
+        <li>We start with the basics and build from there, ensuring that our solutions are grounded in fundamentals.</li>
+        <li>Our approach is pragmatic, focusing on solutions that solve the problem at hand.</li>
+        <li>We provide tailored solutions that fit your specific situation, rather than generic “It Depends” answers.</li>
+        <li>We love a challenge, and embrace research and exploration of the unknown.</li>
+        <li>Our collaborative environment is designed for you to do great work, learn, and have fun.</li>
+        <li>We value contribution and recognize that diversity is essential to achieving our goals, which is why we enforce a “no jerks” policy.</li>
+      </ul>
+      <p class="mt-4 text-lg text-center">Choose PurpleBox as your security partner and experience our unique approach to security solutions.</p>
+    </div>
+  </section>
+
+  <!-- Careers Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-center mb-8 text-purple-600">CAREERS</h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Let's Team Up and Pass With Flying Colors!</h3>
+                <p>PurpleBox is hiring! We are looking for talented and self-driven individuals to support our cybersecurity and cloud computing services. PurpleBox is a fun and productive place to work at. We’re an ambitious and growing team, constantly seeking fresh challenges and opportunities to enhance our skills and cultivate lasting partnerships.</p>
+            </div>
+            <div>
+                <img src={careersImage.src} alt="Careers" class="w-full h-auto rounded-lg shadow-lg" />
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

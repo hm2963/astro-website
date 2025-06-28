@@ -1,0 +1,199 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQ from '~/components/widgets/FAQ.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_cloud_migration/Group-427319260Cloud-Services-1.svg';
+import awsAzureCloudImage from '~/assets/images/prplbx_images/page_cloud_migration/aws-azure-cloud.png';
+import cloudFoundationsImage from '~/assets/images/prplbx_images/page_cloud_migration/Cloud_Foundations_AWS_PurpleBox.png';
+import costReductionIcon from '~/assets/images/prplbx_images/page_cloud_migration/PurpleBox-CostReduction-Photoroom.png-Photoroom.png';
+import enhancedPerformanceIcon from '~/assets/images/prplbx_images/page_cloud_migration/PurpleBox-RocketBox.png';
+import businessAgilityIcon from '~/assets/images/prplbx_images/page_cloud_migration/PurpleBox-GrowBox.png';
+import strategicAdvantageIcon from '~/assets/images/prplbx_images/page_cloud_migration/PurpleBox-ComplexBox.png';
+
+const metadata = {
+  title: 'Cloud Migration - PurpleBox',
+  description: "Discover how PurpleBox's Cloud Migration can transform your business with cost efficiency, enhanced performance, and agility.",
+};
+
+const benefits = [
+  {
+    title: 'Cost Reduction',
+    icon: costReductionIcon.src,
+    description: 'Optimize your IT expenses with cloud scalability and efficiency.',
+  },
+  {
+    title: 'Enhanced Performance',
+    icon: enhancedPerformanceIcon.src,
+    description: "Improve application performance with the cloud's advanced infrastructure.",
+  },
+  {
+    title: 'Business Agility',
+    icon: businessAgilityIcon.src,
+    description: 'Quickly adapt to market changes and business needs with flexible cloud solutions.',
+  },
+  {
+    title: 'Strategic Advantage',
+    icon: strategicAdvantageIcon.src,
+    description: 'Leverage cloud technologies to innovate and stay ahead of the competition.',
+  },
+];
+
+const faqs = [
+    {
+        question: 'What is the primary focus of Purple Box\'s security risk services?',
+        answer: 'Purple Box specializes in comprehensive cybersecurity risk assessment and management, helping organizations identify, analyze, and mitigate potential security vulnerabilities in their digital infrastructure. Our approach combines automated scanning tools with expert analysis to provide actionable insights for improving overall security posture.',
+    },
+    {
+        question: 'How does Purple Box help organizations prioritize security risks?',
+        answer: 'Purple Box uses a risk-based approach that categorizes vulnerabilities by severity, potential impact, and likelihood of exploitation. We provide detailed risk scoring that helps organizations focus their limited security resources on the most critical threats first, ensuring maximum protection with efficient resource allocation.',
+    },
+    {
+        question: 'How frequently should organizations conduct security risk assessments?',
+        answer: 'Security risk assessments should be conducted regularly, with the frequency depending on the organization’s size, industry, and risk profile. Purple Box typically recommends quarterly comprehensive assessments for high-risk environments, with continuous monitoring and monthly reviews for critical systems.',
+    },
+    {
+        question: 'What deliverables can organizations expect from Purple Box\'s security risk services?',
+        answer: 'Organizations receive detailed reports that include executive summaries, technical findings, risk ratings, remediation recommendations, and compliance status updates. Purple Box also provides prioritized action plans, timeline recommendations for fixes, and ongoing support to help organizations implement security improvements effectively.',
+    },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Cloud Migration</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Elevate Your Business to the Cloud: Seamless Migration and Integration Solutions Tailored for Your Success</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Cloud Migration Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        <strong>PurpleBox’s Cloud Migration & Integration</strong> services are designed to ensure a smooth transition of your business to the <a href="/cloud/" class="text-primary hover:underline">cloud</a>, guaranteeing <strong>enhanced performance, cost savings, and minimal disruption</strong>. Our expertise lies in crafting solutions tailored specifically to your unique needs. Combined with our commitment to cost <strong>efficiency, <a href="/security/" class="text-primary hover:underline">security</a>, and rapid deployment</strong>, we stand as the ideal partner for your cloud migration needs. With PurpleBox, you gain access to a comprehensive suite of services that not only future-proofs your infrastructure but also optimizes every aspect of your operations for <strong>peak performance</strong>. Embark on your cloud journey with confidence, supported by our certified experts who guide you towards a more secure, scalable, and cost-efficient digital future.
+      </p>
+      <img src={awsAzureCloudImage.src} alt="AWS Azure Cloud" class="w-full h-auto mt-8" />
+    </div>
+  </section>
+
+  <!-- What is Cloud Migration? Section -->
+  <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">What is Cloud Migration?</h2>
+        <p class="text-lg text-center">
+            In today’s fast-paced digital world, migrating to the cloud is not just an option; it’s a necessity for businesses seeking scalability, agility, and cost-effectiveness. Cloud Migration & Integration by PurpleBox empowers your business to harness the full potential of cloud computing, ensuring a smooth transition with minimal downtime and maximized efficiency.
+        </p>
+        <p class="text-lg text-center mt-4">
+            Cloud migration is the process of moving digital business operations into the cloud, enabling companies to harness the power of cloud computing for improved scalability, efficiency, and innovation. It involves transferring data, applications, and IT processes from on-premises infrastructure or a different cloud environment to a cloud-based platform.
+        </p>
+    </div>
+  </section>
+
+  <!-- PurpleBox Cloud Migration Services Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">PurpleBox Cloud Migration Services</h2>
+      
+      <h3 class="text-2xl font-bold mb-4">Cloud Foundations</h3>
+      <p class="text-lg text-gray-600 dark:text-slate-400">Establish a secure, scalable cloud foundation with a strategic approach tailored to meet your business challenges and facilitate successful digital transformation.</p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">Embark on a guided path with Cloud Foundations, designed to assist customers in deploying, configuring, and securing their new workloads, ensuring seamless ongoing operations in the cloud. This comprehensive service helps customers navigate decision-making processes by offering curated Cloud Services, Solutions, Partner Solutions, and Guidance.</p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">By leveraging these solutions, Cloud Foundations supports your cloud journey, expediting the deployment of a robust, production-ready environment.</p>
+      <img src={cloudFoundationsImage.src} alt="Cloud Foundations" class="w-full h-auto my-8" />
+
+      <hr class="my-8" />
+
+      <h3 class="text-2xl font-bold mb-4">Lift & Shift Cloud Migration</h3>
+      <p class="text-lg text-gray-600 dark:text-slate-400">Quickly migrate to the cloud with minimal disruption through our cost-effective Lift & Shift Cloud Migration service, enabling immediate benefits from cloud technology.</p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">Many organizations grapple with on-premises applications entailing high capital expenses, intricate management, scalability issues, and the need to replace hardware every 3-5 years. Maintaining such infrastructure adds operational burdens and strains IT budgets, particularly for resource-limited organizations. Faced with these challenges, enterprise IT seeks a shift from the traditional, expensive cycle of procuring, managing, and updating on-premises hardware, software, services, and networking.</p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">To address these concerns, most migrations unfold in phases, aiming to mitigate risks and accelerate time to production. The prevalent approach involves a “lift-and-shift” (or “rehost”) strategy, relocating an application and its data with minimal alterations for the fastest production deployment. Once on <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">AWS</a> (or other cloud provider), the pathway is paved for subsequent modernization and re-architecture of application elements. This involves leveraging cloud services and optimizations, unlocking substantial benefits for organizations.</p>
+
+      <hr class="my-8" />
+
+      <h3 class="text-2xl font-bold mb-4">Integration Services</h3>
+      <p class="text-lg text-gray-600 dark:text-slate-400">Connect cloud-based applications and on-premise systems smoothly with our Integration Services, enhancing efficiency and unlocking new capabilities across your IT ecosystem.</p>
+      <div class="grid md:grid-cols-2 gap-8 mt-4">
+        <div>
+          <h4 class="text-xl font-bold mb-2">Application Integration</h4>
+          <p>We offer a suite of services facilitating communication among decoupled components in microservices, distributed systems, and serverless applications. The beauty lies in its adaptability—no need for a complete architectural overhaul.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Develop with Agility</h4>
+          <p>Application integration services eliminate the need for custom code to ensure interoperability between your apps. This not only streamlines the development process but also reduces redundant code in your microservices and functions.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Focus on Innovation</h4>
+          <p>Shift operational responsibilities to AWS through application integration services, allowing you to concentrate on development and innovation. With automatic scaling, the hassle of provisioning, patching, and managing servers becomes a thing of the past.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Scale and Fail Independently</h4>
+          <p>Decouple your applications using integration services, ensuring interoperability while isolating potential failures or spikes in workload to specific services without affecting others.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-2">Message with Confidence</h4>
+          <p>Application integration messaging services can handle varying throughput levels and utilize cross-availability zone message storage. Message confidently, knowing your communication infrastructure is robust and reliable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How do we do it? Section -->
+  <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Cloud Migration, how do we do it?</h2>
+        <ul class="list-disc list-inside text-lg">
+            <li><strong>Assessment</strong>: We evaluate your organization’s readiness for cloud operations, pinpointing key areas for improvement. Our focus is on identifying your desired business outcomes and crafting a compelling business case for a smooth migration.</li>
+            <li><strong>Planning</strong>: We craft a detailed migration plan and fine-tune your business case. Addressing gaps identified in the assessment, we concentrate on establishing your baseline environment (the “landing zone”), enhancing operational readiness, and fostering cloud skills within your organization.</li>
+            <li><strong>Design Phase</strong>: In this step, we focus on designing each application. For efficiency, we often recommend swiftly transitioning to the cloud and then reimagining the architecture in AWS. We assist in revamping your legacy systems using cloud-native principles, unlocking the full benefits of the cloud. Plus, we develop a seamless cutover plan for the upcoming phase.</li>
+            <li><strong>Execution</strong>: Migrate and integrate your applications and data to the cloud using best-in-class tools and methodologies.</li>
+            <li><strong>Optimization</strong>: Continuously optimize and adjust your cloud environment for performance, cost, and security.</li>
+            <li><strong>Support</strong>: Provide ongoing support and guidance to ensure your cloud infrastructure evolves with your business.</li>
+        </ul>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <Features
+    columns={2}
+    title="Benefits of Cloud Migration with PurpleBox"
+    items={benefits}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-20 h-20 mx-auto mb-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+  <!-- Why PurpleBox Section -->
+  <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Cloud Services?</h2>
+        <p class="text-lg text-center">
+            At PurpleBox Cloud Services, we excel in offering holistic cloud solutions that cater to the diverse needs of modern businesses. By integrating cutting-edge cloud technologies with our extensive expertise, we enable businesses to navigate the complexities of cloud adoption seamlessly. Our solutions are designed to be as dynamic as the businesses we serve, ensuring scalability, flexibility, and unparalleled performance.
+        </p>
+        <p class="text-lg text-center mt-4">
+            Our approach is customer-centric, prioritizing your business objectives to deliver tailored cloud strategies that align with your goals. Whether it’s cloud migration, management, or optimization, our team of certified cloud professionals employs best practices and innovative methodologies to ensure your journey to the cloud is smooth, secure, and efficient.
+        </p>
+    </div>
+  </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

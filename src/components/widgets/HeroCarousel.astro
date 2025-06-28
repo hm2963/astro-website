@@ -19,20 +19,18 @@ export interface Slide {
 
 export interface Props {
   slides: Slide[];
+  carouselId: string; // Added carouselId prop
 }
 
-const { slides } = Astro.props;
-
-// It's better to use a more specific ID if multiple carousels are on a page
-const carouselId = `hero-carousel-${Math.random().toString(36).substring(7)}`;
+const { slides, carouselId } = Astro.props; // Get carouselId from props
 ---
 
-<div class="swiper relative overflow-hidden w-full min-h-[70vh]" id={carouselId}> {/* Added min-h-[70vh] */}
+<div class="swiper relative overflow-hidden w-full h-[70vh]" id={carouselId}> {/* Changed min-h-[70vh] to h-[70vh] */}
   <div class="swiper-wrapper">
     {slides.map((slide) => (
       <div class="swiper-slide">
         {/* Adjusted section classes for background and padding to better match screenshots */}
-        <section class="relative py-20 md:py-32 lg:py-40 bg-[#160e2b] text-white overflow-hidden min-h-[70vh] flex items-center">
+        <section class="relative py-20 md:py-32 lg:py-40 bg-[#160e2b] text-white overflow-hidden h-full flex items-center">
           <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
             <div class="text-center md:text-left">
               <h2 class="text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-300 mb-3">{slide.subtitle}</h2>
@@ -64,40 +62,9 @@ const carouselId = `hero-carousel-${Math.random().toString(36).substring(7)}`;
   <div class="swiper-pagination"></div>
 
   {/* Add Navigation */}
-  <div class="swiper-button-prev text-white after:text-2xl"></div>
-  <div class="swiper-button-next text-white after:text-2xl"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
-
-<script define:vars={{ carouselId }} is:inline> {/* Added is:inline */}
-  // Import Swiper and modules
-  import Swiper from 'swiper';
-  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log(`Initializing Swiper for carousel ID: #${carouselId}`); // Debug log
-
-    // Initialize Swiper
-    const swiper = new Swiper(`#${carouselId}`, {
-      modules: [Navigation, Pagination, Autoplay],
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 30,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: `#${carouselId} .swiper-pagination`,
-        clickable: true,
-      },
-      navigation: {
-        nextEl: `#${carouselId} .swiper-button-next`,
-        prevEl: `#${carouselId} .swiper-button-prev`,
-      },
-    });
-    console.log('Swiper instance:', swiper); // Debug log
-  });
-</script>
 
 <style is:global>
   .swiper-slide {

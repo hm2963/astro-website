@@ -1,0 +1,239 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQ from '~/components/widgets/FAQ.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_security_waf/webapp-hero.png';
+import infographicImage from '~/assets/images/prplbx_images/page_security_waf/infographic.png';
+import protectYourWebPropertiesIcon from '~/assets/images/prplbx_images/page_security_waf/protect-your.svg';
+import secureApplicationsIcon from '~/assets/images/prplbx_images/page_security_waf/secure-application.svg';
+import preventDataLeaksIcon from '~/assets/images/prplbx_images/page_security_waf/prevent-data.svg';
+import easeOfDeploymentIcon from '~/assets/images/prplbx_images/page_security_waf/ease.svg';
+import agileProtectionIcon from '~/assets/images/prplbx_images/page_security_waf/agile.svg';
+import protectionAgainstZeroDayIcon from '~/assets/images/prplbx_images/page_security_waf/protection.svg';
+import saveTimeIcon from '~/assets/images/prplbx_images/page_security_waf/save-time.svg';
+import intelligentRiskManagementIcon from '~/assets/images/prplbx_images/page_security_waf/intelligent.svg';
+import improvedVisibilityIcon from '~/assets/images/prplbx_images/page_security_waf/improved.svg';
+
+const metadata = {
+  title: 'Web Application Firewall - PurpleBox',
+  description: 'Web Application Firewall protects against an ever-growing number of sophisticated web-based incursions and attacks that target web server...',
+};
+
+const features = [
+    {
+        title: 'Protection against automated attacks',
+        description: 'Our Integrated Web Application Firewall solution offers robust protection for your applications and APIs. It is designed to keep them secure and productive by thwarting DDoS attacks, blocking bots, detecting anomalies and malicious attackers, and continuously monitoring for browser supply chain attacks. With our solution, you can rest assured that your web assets are well-protected from a wide range of cyber threats.',
+    },
+    {
+        title: 'Integrated security and performance',
+        description: 'Seamlessly integrating with DDoS protection, Bot Management, CDN, Load Balancer, Smart Routing, and more, our WAF operates on the same global network as our performance product suite. This tight integration between products offers enhanced performance as compared to legacy Web Application Firewall solutions. With our integrated solution, you can enjoy the benefits of a comprehensive suite of web security and performance tools, all working together seamlessly to keep your web assets secure and running smoothly.',
+    },
+    {
+        title: 'API integration',
+        description: 'Our WAF offers rich API integration with popular toolsets, allowing for easy configuration, customizable analytics, and direct plug-ins for existing SIEM infrastructure. Some examples of tools that integrate seamlessly with our WAF include Terraform, GraphQL, Splunk, SumoLogic, Datadog, and many others. With these powerful integrations, you can easily monitor your web assets, detect security threats, and respond quickly to any incidents that may arise.',
+    },
+    {
+        title: 'High Accuracy',
+        description: 'Our engineering team regularly updates Managed Rulesets using Cloudflare’s proprietary threat intelligence, which allows us to improve accuracy, reduce false positives, and provide comprehensive coverage to protect against zero-day vulnerabilities. With our Managed Rulesets, you can rest assured that your web assets are protected by the latest threat intelligence and security best practices. Our team is constantly working to stay ahead of emerging threats and ensure that your web applications are secure and running smoothly.',
+    },
+    {
+        title: 'Automated threat intelligence at scale',
+        description: 'Our global WAF distributed network and built-in automated threat risk scoring algorithms curate a proprietary threat score every day by evaluating over 1 billion IPs and analyzing digital signatures. This enables our system to provide comprehensive protection against the latest threats, ensuring that your web assets are secure and well-protected. With our advanced threat detection capabilities, you can rest assured that your web applications are constantly monitored for potential security risks and protected against emerging threats.',
+    },
+    {
+        title: 'Flexible control',
+        description: 'Our Firewall Rules empower customers to create custom rules tailored to their specific needs, directly from the dashboard. With support for several functions, operators, and transformations, our rules engine enables you to easily configure rules based on various criteria, including IP, geo-location, user-agent, OWASP Top-10, and more. With these powerful features, you can fine-tune your security settings to meet the unique needs of your web applications and protect against emerging threats.',
+    },
+];
+
+const benefits = [
+  {
+    title: 'Ease of deployment & maintenance',
+    icon: easeOfDeploymentIcon.src,
+    description: 'WAF is simple to set up and use to protect apps. There is no need to install additional software, configure DNS, handle SSL/TLS certificates, or set up a reverse proxy. Define and maintain rules in one place, then reuse them across all of the online applications that need to be secured.',
+  },
+  {
+    title: 'Agile protection against web attacks',
+    icon: agileProtectionIcon.src,
+    description: 'Hundreds of rules are supported by WAF, which can check any element of a web request with minimal latency impact on incoming traffic. When problems occur, WAF rule propagation and modifications take less than a minute, allowing immediate security updates.',
+  },
+  {
+    title: 'Protection against zero-day exploits',
+    icon: protectionAgainstZeroDayIcon.src,
+    description: 'WAFs are an important component of the layered security architecture that help prevent a Zero-day exploit, WAFs help patch any vulnerabilities virtually, protecting your infrastructure until the vendor releases a patch or you can patch the code yourself.',
+  },
+  {
+    title: 'Save time with managed rules',
+    icon: saveTimeIcon.src,
+    description: 'Start quickly and defend your web application or APIs against typical risks. WAF protects against the most frequent hacking methods and uses caching technologies to improve both site speed and performance.',
+  },
+    {
+    title: 'Intelligent and automated risk management',
+    icon: intelligentRiskManagementIcon.src,
+    description: 'Managed rulesets provide better safety by continuously studying distinctive data and IP repute on the web. Automated mitigations based on fingerprinting network flows and HTTP attack traffic detect and prevent attacks before they can cause any damage.',
+  },
+    {
+    title: 'Improved visibility of web traffic',
+    icon: improvedVisibilityIcon.src,
+    description: 'WAF provides near-real-time insight into your web traffic, allowing you to monitor everything from individual rules to full inbound traffic. WAF also includes robust logging, which records data for use in security automation, analytics, and audits.',
+  },
+];
+
+const faqs = [
+    {
+        question: 'What is the difference between a WAF and a traditional firewall?',
+        answer: 'A traditional firewall protects the network by filtering traffic between servers, while a WAF is designed to protect web applications by inspecting HTTP traffic. WAFs can detect and block attacks that traditional firewalls cannot, such as SQL injection and cross-site scripting.',
+    },
+    {
+        question: 'How does a WAF protect against zero-day exploits?',
+        answer: 'WAFs can use a combination of signature-based detection, anomaly detection, and machine learning to identify and block new and unknown threats. By analyzing traffic patterns and behavior, WAFs can detect and block malicious activity even if it has never been seen before.',
+    },
+    {
+        question: 'Can a WAF be deployed in a cloud environment?',
+        answer: 'Yes, WAFs can be deployed in the cloud, on-premises, or in a hybrid environment. Cloud-based WAFs are becoming increasingly popular as they offer a number of advantages, such as scalability, ease of deployment, and lower total cost of ownership.',
+    },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Web Application Firewall</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Protect Web Applications from Attacks Without Changes to your Infrastructure</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Web Application Firewall Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        The threat landscape for websites and internet-facing applications is constantly evolving, with cybercriminals becoming more adept than ever at stealing data. Malicious hackers target vulnerable web servers and internet-connected endpoints to achieve their aims. One effective way to safeguard your business from harmful incoming web traffic is by implementing a powerful web application firewall (WAF). The WAF market is rapidly evolving toward an edge security platform approach, which combines a variety of tailored protections for distributed hybrid and multi-cloud environments.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is Web Application Firewall? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">What is Web Application Firewall?</h2>
+            <p class="text-lg text-center">
+                A Web Application Firewall, or WAFs, protects against an ever-growing number of sophisticated web-based incursions and attacks that target web server programs and the sensitive or confidential data they have access to. A WAF filters and monitors HTTP traffic between a web application and the Internet. It typically protects web applications from attacks such as cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection, among others.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Every request to the Web Application Firewall is compared against the rule engine and threat intelligence gathered from millions of websites being protected. Suspicious requests can be stopped, disputed, or logged according to the user’s needs, while genuine requests are sent to the destination, whether on-premises or in the cloud.
+            </p>
+        </div>
+    </section>
+
+    <!-- Infographic Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <img src={infographicImage.src} alt="WAF Infographic" class="w-full h-auto" />
+        </div>
+    </section>
+
+    <!-- Get The Best Protection Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Get The Best Protection For Your Web Applications</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <img src={protectYourWebPropertiesIcon.src} alt="Protect Your Web Properties" class="w-24 h-24 mx-auto mb-4" />
+                    <h3 class="text-xl font-bold mb-2">Protect Your Web Properties</h3>
+                    <p>Protect your website from SQL injection, cross-site scripting (XSS) and zero-day attacks, including OWASP-identified vulnerabilities and threats targeting the application layer.</p>
+                </div>
+                <div class="text-center">
+                    <img src={secureApplicationsIcon.src} alt="Secure Applications in the Cloud" class="w-24 h-24 mx-auto mb-4" />
+                    <h3 class="text-xl font-bold mb-2">Secure Applications in the Cloud</h3>
+                    <p>Layered defense against DDoS, data compromise, and malicious bots that are fast, easy to deploy, and scalable. Benefit from cloud deployment without any extra hardware or software installation.</p>
+                </div>
+                <div class="text-center">
+                    <img src={preventDataLeaksIcon.src} alt="Prevent Data Leaks with API Security" class="w-24 h-24 mx-auto mb-4" />
+                    <h3 class="text-xl font-bold mb-2">Prevent Data Leaks with API Security</h3>
+                    <p>Prevent sensitive data of stolen or hacked devices from being exposed by blocking traffic. Stop data leaks by disabling malicious IPs from abusing your APIs and preventing invalid requests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Features Section -->
+  <Features
+    columns={2}
+    title="Features"
+    items={features}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-left',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+  <!-- 4 Reasons Why You Should Use a Web Application Firewall Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">4 Reasons Why You Should Use a Web Application Firewall</h2>
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-2xl font-bold">1. Scale with your business</h3>
+          <p class="text-lg text-gray-600 dark:text-slate-400 mt-2">WAF solutions take advantage of the power and scalability offered by massive edge networks. Additionally, globally distributed points of presence help to ensure both minimum latency and maximum coverage. WAF quickly isolates endpoints from incoming threats.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">2. Block attacks outside your perimeter</h3>
+          <p class="text-lg text-gray-600 dark:text-slate-400 mt-2">Cloud-based WAF helps to block malicious traffic long before it reaches your network, while also serving as a security perimeter outside of internal or cloud infrastructure. This helps to keep malicious traffic at a safe distance from the application and data servers.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">3. Protect apps wherever they are hosted</h3>
+          <p class="text-lg text-gray-600 dark:text-slate-400 mt-2">Cloud-based WAFs provide a uniform security solution to protect all your apps, regardless of where they reside globally: on-prem data centers, private cloud, and multiple public clouds. WAF protects the network edge from malicious traffic and secures all internet-facing applications and APIs.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">4. Low total cost of ownership</h3>
+          <p class="text-lg text-gray-600 dark:text-slate-400 mt-2">Cloud-based WAFs offer the highest level of web application security possible without requiring a significant upfront investment in resources or recurring costs for maintenance, hardware replacement, or software upgrades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <Features
+    columns={2}
+    title="Benefits of Web Application Firewall"
+    items={benefits}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-16 h-16 mx-auto mb-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Why PurpleBox Security? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Security?</h2>
+            <p class="text-lg text-center">
+                PurpleBox Security specializes in security assessments and penetration testing services. We place a high value on testing important devices and components. Our comprehensive reports are produced by experienced, skilled testers so that the actionable information contained within them is easily understood. Combining our Red Team (Offensive) capabilities with our Blue Team (Defensive) experience, we provide a unique approach to solving enterprise security problems.
+            </p>
+        </div>
+    </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

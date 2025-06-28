@@ -1,0 +1,173 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Accordion from '~/components/widgets/Accordion.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_cloud_ops/GroupReliabityPurpleBox.svg';
+import benefit1Image from '~/assets/images/prplbx_images/page_cloud_ops/DALL·E-2024-03-19-20.45.08.png';
+import benefit2Image from '~/assets/images/prplbx_images/page_cloud_ops/DALL·E-2024-03-19-20.47.00.png';
+import benefit3Image from '~/assets/images/prplbx_images/page_cloud_ops/DALL·E-2024-03-19-20.47.31.png';
+
+const metadata = {
+  title: 'Operations, Reliability & Performance - PurpleBox',
+  description: 'Unlock unparalleled operations, reliability, and performance. Our cloud management elevates your infrastructure\'s efficiency and resilience.',
+};
+
+const services = [
+    {
+        title: 'Site Reliability Engineering (SRE)',
+        content: '<b>Optimize Your Infrastructure Size</b><p>Often, the quick solution to a performance issue is adding more hardware. However, this temporary fix may resurface unexpectedly.</p><p>Enhancing system efficiency can also influence your infrastructure costs, potentially reducing spending on oversized resources.</p><b>Database Performance Optimization</b><p>Frequently, performance issues in applications stem from inadequate database designs or neglected maintenance within congested database management systems (DBMS).</p><p>Our team of seasoned database administrators (DBAs) specializes in identifying bottlenecks within your database and enhancing system performance. Allow us to develop maintenance plans aimed at maximizing database efficiency and proactively addressing potential issues before they arise.</p>',
+    },
+    {
+        title: 'Platform Monitoring',
+        content: '<b>Platform Monitoring</b><p>To enhance your systems, gaining a comprehensive understanding of operational issues and architecture costs is paramount.</p><p>Our monitoring team offers visibility across all levels: infrastructure, base services, application performance, and key business metrics.</p><p>Tailored dashboards and metrics cater to each team’s specific needs, whether it’s developers, operations personnel, or board members, ensuring they have access to the information that matters most to them.</p>',
+    },
+    {
+        title: 'Balance Cost and Performance',
+        content: '<b>Balance Cost and Performance</b><p>Achieving cost efficiency without compromising performance is crucial.</p><p>Our approach ensures that your systems operate optimally while managing costs effectively.</p><p>Ensure cost efficiency with a meticulously optimized cloud environment tailored to your needs, free from waste and aligned with best practices.</p><p>Leverage our FinOps expertise to gain visibility into and control over your cloud usage and spending. Our team employs proven tools and processes to help you manage costs effectively while maximizing the value of your investments.</p>',
+    },
+];
+
+const benefits = [
+  {
+    title: 'Best Practices',
+    img: benefit1Image,
+    description: 'Our teams collaborate with some of the largest cloud environments across various industries. We possess in-depth knowledge, not only of cloud best practices, but also industry-specific requirements.',
+  },
+  {
+    title: 'Dependable Support',
+    img: benefit2Image,
+    description: "Our 24/7 support is reinforced by Enterprise SLAs and AWS, ensuring that when issues arise or critical services fail, you're not left to resolve them alone. With live chat and ticketing, you receive responses within minutes, enabling you to swiftly resume operations without compromising customer satisfaction or security.",
+  },
+  {
+    title: 'The Right Decisions',
+    img: benefit3Image,
+    description: "Wondering if you've made the correct choices for long-term growth? Concerned about maintaining a secure environment or meeting compliance standards? With our experts guiding you at every stage, you can rest assured that you're aligned with best practices, secure, and equipped for the scalability you require.",
+  },
+];
+
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Operations, Reliability & Performance</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Elevating your Cloud with Operations, Reliability & Performance: Where Expertise Meets Innovation</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Operations Hero" class="w-full h-auto max-w-xs mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center">
+        When you team with PurpleBox for expert cloud management, you acquire a partner dedicated to monitoring your environment, pinpointing optimization opportunities, supporting your teams, and enhancing your performance.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center mt-4">
+        We handle the management of your environment, allowing you to concentrate on what truly matters: expanding your business.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center mt-4">
+        Collaborate with certified engineers, architects, and CloudOps support teams who oversee your cloud infrastructure round-the-clock, guaranteeing optimal performance and uptime. Benefit from our industry-leading tools, enabling swift issue identification and incident resolution.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is Operations, Reliability & Performance? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">What is Operations, Reliability & Performance?</h2>
+            <p class="text-lg text-center">
+                DevOps (Development & Operations) was conceived to enhance all facets of software construction processes, bolstering change responsiveness, reducing release cycles, and fortifying resilience.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Site Reliability Engineering (SRE) strives to engineer automated solutions for on-call monitoring, performance and availability, disaster response, and capacity planning.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Both methodologies are underpinned by highly automated environments and foster a collaborative team culture.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Implementing these practices and tools within your teams, products, processes, or organization will elevate your performance to new heights, and we are equipped to guide you on this journey.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Efficiency You Require</h2>
+            <p class="text-lg text-gray-600 dark:text-slate-400 text-center mb-12">
+                Managing your environment efficiently is an ongoing challenge that demands strategy and expertise. Monitoring costs, appropriately tagging infrastructure, active management, and optimizing architecture for maximum performance while minimizing overhead are all critical. With our FinOps and InfraOps support, you’ll benefit from expert guidance tailored precisely to these needs.
+            </p>
+            <h2 class="text-3xl font-bold text-center mb-8">Operations, Reliability & Performance Services</h2>
+            <Accordion items={services} />
+        </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">How Do We Do It?</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Cloud Operations Excellence</h3>
+                    <p>Collaborate with our team of <a href="https://partners.amazonaws.com/partners/001E000001HKFNvIAP/" class="hover:underline">AWS-certified engineers</a>, architects, and CloudOps support specialists who oversee your cloud infrastructure round-the-clock, guaranteeing optimal performance and uptime. Harness the power of industry-leading tools such as New Relic to swiftly identify and resolve issues, ensuring seamless operations.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Cost Optimization Expertise</h3>
+                    <p>Ensure efficient spending with a finely-tuned cloud environment that is right-sized, devoid of waste, and adheres to best practices. Leverage our FinOps expertise to attain visibility and control over your AWS usage and spending. Our team employs proven tools and processes to optimize your costs effectively, maximizing the value of your cloud investments.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Cloud Governance Assurance</h3>
+                    <p>Secure your environment with meticulously crafted access policies and procedures that enable seamless operations for your teams while safeguarding sensitive systems. Benefit from our deep understanding of AWS best practices and services to configure your cloud environment for long-term success.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Reserved Instance and Savings Plans Optimization</h3>
+                    <p>Maximize your savings with our specialized expertise in Reserved Instances (RIs) and Savings Plans (SPs). Delegate the purchase and management of RIs and SPs to us, reducing your risk while enabling more aggressive savings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Benefits Section -->
+  <Features
+    columns={3}
+    title="Benefits of PurpleBox DevOps"
+    items={benefits.map(item => ({ ...item, img: { src: item.img.src, alt: item.title } }))}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      img: 'w-full h-auto rounded-lg shadow-lg',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Why PurpleBox Cloud Services? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Cloud Services?</h2>
+            <p class="text-lg text-center">
+                At PurpleBox Cloud Services, we excel in offering holistic cloud solutions that cater to the diverse needs of modern businesses. By integrating cutting-edge cloud technologies with our extensive expertise, we enable businesses to navigate the complexities of cloud adoption seamlessly. Our solutions are designed to be as dynamic as the businesses we serve, ensuring scalability, flexibility, and unparalleled performance.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Our approach is customer-centric, prioritizing your business objectives to deliver tailored cloud strategies that align with your goals. Whether it’s cloud migration, management, or optimization, our team of certified cloud professionals employs best practices and innovative methodologies to ensure your journey to the cloud is smooth, secure, and efficient.
+            </p>
+        </div>
+    </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

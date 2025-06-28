@@ -59,4 +59,49 @@ export interface Widget {
   text?: string; // Generic text prop that might be used by some widgets
 }
 
+export interface ItemGridItem {
+  title?: string;
+  description?: string;
+  icon?: string;
+  img?: Image;
+  callToAction?: CallToAction;
+  classes?: {
+    container?: string;
+    panel?: string;
+    icon?: string;
+    title?: string;
+    description?: string;
+    action?: string; // Note: ItemGrid.astro uses itemClasses?.actionClass, so this might need to be actionClass
+  };
+}
+
+export interface ItemGrid extends Widget {
+  items?: Array<ItemGridItem>;
+  columns?: 1 | 2 | 3 | 4;
+  defaultIcon?: string;
+  itemTextColor?: string;
+  overrideIconClass?: string;
+}
+
+export interface Features extends Widget {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  items?: Array<ItemGridItem>; // Re-uses ItemGridItem for consistency
+  columns?: 1 | 2 | 3 | 4;
+  defaultIcon?: string; // Added to match ItemGrid
+  itemTextColor?: string;
+  overrideIconClass?: string;
+  // Highlight specific properties if needed, or use classes from Widget
+}
+
+export interface Faqs extends Widget {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  items?: Array<ItemGridItem>; // Re-uses ItemGridItem
+  columns?: 1 | 2; // Typically 1 for accordion, but allow 2 for other layouts
+  // classes for FAQs can be more specific if needed, or rely on ItemGrid's classes
+}
+
 export {}; // Ensure this file is treated as a module

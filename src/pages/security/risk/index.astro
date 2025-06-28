@@ -1,0 +1,254 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQ from '~/components/widgets/FAQ.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_security_risk/risk-hero-new.png';
+import grcImage from '~/assets/images/prplbx_images/page_security_risk/grc-image-1.png';
+import riskAssessmentImage from '~/assets/images/prplbx_images/page_security_risk/image-2.png';
+import managedComplianceImage from '~/assets/images/prplbx_images/page_security_risk/image-3.png';
+import remediationAssistanceImage from '~/assets/images/prplbx_images/page_security_risk/devops_min.webp';
+import attestationAndCertificationImage from '~/assets/images/prplbx_images/page_security_risk/securitysolution-image.png';
+import effectiveRiskManagementIcon from '~/assets/images/prplbx_images/page_security_risk/effective.svg';
+import alignComplianceIcon from '~/assets/images/prplbx_images/page_security_risk/align.svg';
+import achieveOrganizationalIntelligenceIcon from '~/assets/images/prplbx_images/page_security_risk/archive.svg';
+import driveStrategicGrowthIcon from '~/assets/images/prplbx_images/page_security_risk/drive.svg';
+import adoptTransparencyIcon from '~/assets/images/prplbx_images/page_security_risk/adopt.svg';
+import reducedCostsIcon from '~/assets/images/prplbx_images/page_security_risk/reduced.svg';
+
+const metadata = {
+  title: 'Risk and Compliance Services - PurpleBox',
+  description: "Ensuring risk management and compliance meet evolving industry standards is not easy. Purple Box's risk and compliance services can help you..",
+};
+
+const benefits = [
+  {
+    title: 'Effective Risk Management',
+    icon: effectiveRiskManagementIcon.src,
+    description: 'Establishing GRC gives resolution to immediate and long-term risk exposure while allowing for an agile and scalable control environment. This enables more informed decision-making, from the development or modification of the organization\'s strategy to day-to-day decisions across the extended business.',
+  },
+  {
+    title: 'Align Compliance',
+    icon: alignComplianceIcon.src,
+    description: 'Failing compliance costs an organization in terms of poor performance, costly mistakes, fines, penalties, and lawsuits. An internal compliance program integrated with external compliance requirements will improve customer experience, deliver quality, improve efficiency and reduce costs.',
+  },
+  {
+    title: 'Achieve Organizational Intelligence',
+    icon: achieveOrganizationalIntelligenceIcon.src,
+    description: 'Organizational Intelligence is the capability of the organization to use knowledge both strategically and operationally. Adapting in response to changing conditions and improved alignment of objectives will result in more agile decision-making and confidence.',
+  },
+  {
+    title: 'Drive Strategic Growth',
+    icon: driveStrategicGrowthIcon.src,
+    description: 'With the help of global, standardized, optimized, transparent, and compliant operations, management will be able to focus on attaining strategic objectives. Replacing manual preventative controls with automated detective controls helps to optimize efficiency and traceability companywide.',
+  },
+  {
+    title: 'Adopt Transparency',
+    icon: adoptTransparencyIcon.src,
+    description: 'GRC enables owners to see a more complete picture of their organization and processes by giving them full access and control over the content they need to comprehend the business unit\'s profile, as well as the risks and challenges that come with it.',
+  },
+  {
+    title: 'Reduced Costs',
+    icon: reducedCostsIcon.src,
+    description: 'GRC is a key attribute of an effectively run business. The effectiveness of GRC activities contributes to overall ROI gains by significantly lowering costs. Additionally, maintaining duplicated controls, actions, tests, issues, and reporting across multiple disciplines helps save money.',
+  },
+];
+
+const faqs = [
+    {
+        question: 'What is the primary focus of Purple Box\'s security risk services?',
+        answer: 'Purple Box specializes in comprehensive cybersecurity risk assessment and management, helping organizations identify, analyze, and mitigate potential security vulnerabilities in their digital infrastructure. Our approach combines automated scanning tools with expert analysis to provide actionable insights for improving overall security posture.',
+    },
+    {
+        question: 'How does Purple Box help organizations prioritize security risks?',
+        answer: 'Purple Box uses a risk-based approach that categorizes vulnerabilities by severity, potential impact, and likelihood of exploitation. We provide detailed risk scoring that helps organizations focus their limited security resources on the most critical threats first, ensuring maximum protection with efficient resource allocation.',
+    },
+    {
+        question: 'How frequently should organizations conduct security risk assessments?',
+        answer: 'Security risk assessments should be conducted regularly, with the frequency depending on the organization’s size, industry, and risk profile. Purple Box typically recommends quarterly comprehensive assessments for high-risk environments, with continuous monitoring and monthly reviews for critical systems.',
+    },
+    {
+        question: 'What deliverables can organizations expect from Purple Box\'s security risk services?',
+        answer: 'Organizations receive detailed reports that include executive summaries, technical findings, risk ratings, remediation recommendations, and compliance status updates. Purple Box also provides prioritized action plans, timeline recommendations for fixes, and ongoing support to help organizations implement security improvements effectively.',
+    },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Risk and Compliance Services</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Ensure Your Infosec Program is Aligned with Regulations and Compliance Mandates</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Risk and Compliance Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        As your organization responds to an ever-evolving set of security threats, it’s important to also ensure compliance with the numerous standards and regulations in the industry. Our risk and compliance services are:
+      </p>
+      <ul class="list-disc list-inside text-lg text-gray-600 dark:text-slate-400 mt-4">
+        <li>Delivered by an experienced team of risk and compliance experts</li>
+        <li>Automated and streamlined by leveraging technology</li>
+        <li>Developed to balance security and compliance requirements with a “compliance by design” approach across numerous frameworks including SOC1/SOC2, PCI-DSS, HIPAA/HITRUST, ISO27001, and GDPR/CCPA</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- What is Risk and Compliance? Section -->
+  <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <Content
+      image={{ src: grcImage, alt: 'What is Risk and Compliance?', class: 'w-1/3' }}
+    >
+      <Fragment slot="content">
+        <h2 class="text-2xl font-bold mb-4 text-white">What is Risk and Compliance?</h2>
+        <p class="text-white">Risk management and compliance are two closely related aspects of business that aim to ensure an organization can reliably achieve its goals, manage uncertainty, and do business ethically. Risk management is the process of identifying and addressing risks that may prevent an organization from achieving its goals reliably in the face of uncertainty. Compliance refers to following mandated (laws and regulations) and voluntary (company policies, procedures, and so on) boundaries. The Governance Risk and Compliance (GRC) framework assists a company in aligning its information technology with its business objectives while at the same time managing risk and ensuring regulatory compliance. A well-designed GRC that is compatible with your unique business dynamics has a dominating effect on ensuring and maintaining the durability of your company’s cybersecurity posture.</p>
+      </Fragment>
+    </Content>
+  </section>
+
+  <!-- Types of Risk and Compliance Services Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Types of Risk and Compliance Services</h2>
+        <p class="text-lg text-gray-600 dark:text-slate-400 text-center mb-12">We offer a range of security governance, risk and compliance services depending on your requirements.</p>
+
+        <Content
+            isReversed
+            image={{ src: riskAssessmentImage, alt: 'Risk Assessment' }}
+        >
+            <Fragment slot="content">
+            <h2 class="text-2xl font-bold mb-4">1. Risk Assessment</h2>
+            <p>With our risk assessment services (GAP and current state or readiness assessment), we evaluate your security program against the requirements set forth by the relevant standards and frameworks in the industry. A comprehensive risk assessment can uncover control gaps in your tactical security operations activities while creating a strategic roadmap for IT that aligns with compliance requirements. Our risk assessments include comprehensive documentation review as well as technical testing of your security controls to determine their effectiveness.</p>
+            </Fragment>
+        </Content>
+
+        <Content
+            image={{ src: managedComplianceImage, alt: 'Managed Compliance' }}
+        >
+            <Fragment slot="content">
+            <h2 class="text-2xl font-bold mb-4">2. Managed Compliance</h2>
+            <p>We can manage the day-to-day activities of your compliance program as a managed service, performing:</p>
+            <ul class="list-disc list-inside">
+                <li><a href="/security/vm/">Regular vulnerability scanning</a></li>
+                <li><a href="/security/pentest/">Penetration Testing</a></li>
+                <li>Managed Endpoint Detection and Response</li>
+                <li>Cybersecurity Awareness Training</li>
+                <li>Quarterly health checks</li>
+                <li>Third-party/vendor Risk Assessments</li>
+                <li>Controls Testing</li>
+            </ul>
+            </Fragment>
+        </Content>
+
+        <Content
+            isReversed
+            image={{ src: remediationAssistanceImage, alt: 'Remediation Assistance' }}
+        >
+            <Fragment slot="content">
+            <h2 class="text-2xl font-bold mb-4">3. Remediation Assistance</h2>
+            <p>We help you close the gaps identified in the risk assessment through:</p>
+            <ul class="list-disc list-inside">
+                <li>Security strategy, policy, procedure, and standards development</li>
+                <li>GRC Tool implementation</li>
+                <li>Security Architecture and Design</li>
+                <li>Security technology implementation</li>
+                <li>Cloud security automation</li>
+            </ul>
+            </Fragment>
+        </Content>
+
+        <Content
+            image={{ src: attestationAndCertificationImage, alt: 'Attestation and Certification' }}
+        >
+            <Fragment slot="content">
+            <h2 class="text-2xl font-bold mb-4">4. Attestation and Certification</h2>
+            <p>In partnership with trusted and experienced audit and attestation firms, we work side-by-side with our customers until they achieve certification to demonstrate their compliance.</p>
+            <ul class="list-disc list-inside">
+                <li>Audit preparation</li>
+                <li>Evidence/documentation gathering</li>
+                <li>Reporting</li>
+                <li>Attend audit walk-thru meetings</li>
+            </ul>
+            </Fragment>
+        </Content>
+    </div>
+  </section>
+
+  <!-- Compliance by Design Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Compliance by Design</h2>
+      <hr class="w-24 border-t-4 border-primary mx-auto mb-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        As cybersecurity continues to affect your bottom line, the need to continually assess and improve your security program is paramount. To compound an already complex cyber landscape, companies also must maintain compliance with multiple overlapping security and privacy standards and regulations. PurpleBox risk and compliance professionals combine industry and technical experience to tailor our approach to your unique business. This allows us to identify your highest risks and help plan for protection and compliance, both now and in the long term. We work with you to:
+      </p>
+      <ul class="list-disc list-inside text-lg text-gray-600 dark:text-slate-400 mt-4">
+        <li>Assess physical, cyber, and personal vulnerabilities from various attack scenarios.</li>
+        <li>Design, implement and manage your enterprise security program.</li>
+        <li>Develop a program to proactively comply with evolving data privacy regulations.</li>
+        <li>Build a compliance program that aligns with various regulations such as GDPR, PCI-DSS, NIST, HIPAA/ HITRUST, and ISO.</li>
+        <li>Develop an agile governance structure across all facets of security that aligns with your business strategy.</li>
+        <li>Build a culture and awareness around key cybersecurity considerations.</li>
+      </ul>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">
+        Meet compliance with regulatory requirements and industry standards:
+      </p>
+      <ul class="list-disc list-inside text-lg text-gray-600 dark:text-slate-400 mt-4">
+        <li>ISO 27000</li>
+        <li>PCI-DSS</li>
+        <li>HIPAA/HITECH</li>
+        <li>GDPR and CCPA</li>
+        <li>NIST CSF</li>
+        <li>NIST SP 800-53</li>
+        <li>SOC1/SOC2</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Benefits of Risk and Compliance Services Section -->
+  <Features
+    columns={2}
+    title="Benefits of Risk and Compliance Services"
+    items={benefits}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-16 h-16 mx-auto mb-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Why PurpleBox Security? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Security?</h2>
+            <p class="text-lg text-center">
+                PurpleBox Security specializes in security assessments and penetration testing services. We place a high value on testing important devices and components. Our comprehensive reports are produced by experienced, skilled testers so that the actionable information contained within them is easily understood. Combining our Red Team (Offensive) capabilities with our Blue Team (Defensive) experience, we provide a unique approach to solving enterprise security problems.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} title="Purple Box Risk and Compliance Services" />
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

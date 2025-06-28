@@ -9,7 +9,7 @@ const {
   subtitle = '',
   tagline = '',
   items = [],
-  columns = 2,
+  columns = 1, // Default to 1 for accordion, can be overridden by props
 
   id,
   isDark = false,
@@ -25,9 +25,14 @@ const {
     columns={columns}
     defaultIcon="tabler:chevron-right"
     classes={{
-      container: `${columns === 1 ? 'max-w-4xl' : ''} gap-y-8 md:gap-y-12`,
-      panel: 'max-w-none',
-      icon: 'flex-shrink-0 mt-1 w-6 h-6 text-primary',
+      // Use classes from Astro.props if available, otherwise use defaults for accordion
+      container: classes?.container ?? 'w-full',
+      panel: classes?.panel ?? 'border-b border-slate-200 dark:border-slate-700 last:border-b-0',
+      title: classes?.title ?? 'text-lg font-medium text-gray-900 dark:text-white',
+      description: classes?.description ?? classes?.answer ?? 'pt-2 pb-4 text-gray-600 dark:text-slate-400', // Use 'answer' if provided from index.astro
+      icon: classes?.icon ?? 'w-6 h-6 text-primary-600 dark:text-primary-500',
+      // Spread any other specific item classes if needed, though ItemGrid handles itemClasses internally
+      ...(typeof classes?.items === 'object' && classes.items !== null && !Array.isArray(classes.items) ? classes.items : {}),
     }}
   />
 </WidgetWrapper>

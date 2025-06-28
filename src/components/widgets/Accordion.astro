@@ -1,0 +1,50 @@
+---
+const { items, class: className } = Astro.props;
+---
+<div class="space-y-2">
+  {items.map((item) => (
+    <div class="accordion-item border-b border-gray-200 last:border-b-0">
+      <button class="accordion-button flex justify-between items-center w-full py-5 text-left text-lg font-semibold">
+        <span>{item.title}</span>
+        <span class="icon-plus text-primary text-2xl transition-transform duration-300 ease-in-out">+</span>
+        <span class="icon-minus text-primary text-2xl transition-transform duration-300 ease-in-out hidden">-</span>
+      </button>
+      <div class="accordion-content hidden pt-0 pb-5">
+        <p class:list={["text-gray-600 dark:text-slate-400", className]} set:html={item.content}></p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+      const button = item.querySelector('.accordion-button');
+      const content = item.querySelector('.accordion-content');
+      const plusIcon = item.querySelector('.icon-plus');
+      const minusIcon = item.querySelector('.icon-minus');
+
+      if (button && content && plusIcon && minusIcon) {
+        button.addEventListener('click', () => {
+          const isExpanded = content.classList.contains('hidden');
+
+          // Close all other items
+          accordionItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.querySelector('.accordion-content')?.classList.add('hidden');
+              otherItem.querySelector('.icon-plus')?.classList.remove('hidden');
+              otherItem.querySelector('.icon-minus')?.classList.add('hidden');
+            }
+          });
+
+          // Toggle the clicked item
+          content.classList.toggle('hidden');
+          plusIcon.classList.toggle('hidden', isExpanded);
+          minusIcon.classList.toggle('hidden', !isExpanded);
+        });
+      }
+    });
+  });
+</script>

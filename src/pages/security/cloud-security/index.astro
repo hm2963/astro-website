@@ -1,0 +1,225 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQ from '~/components/widgets/FAQ.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_security_cloud-security/cloud-hero.png';
+import infographicImage from '~/assets/images/prplbx_images/page_security_cloud-security/Infographic-1.png';
+import devopsImage from '~/assets/images/prplbx_images/page_security_cloud-security/DevOps.png';
+import cardImage from '~/assets/images/prplbx_images/page_security_cloud-security/card.png';
+import scaleIcon from '~/assets/images/prplbx_images/page_security_cloud-security/scale.svg';
+import designIcon from '~/assets/images/prplbx_images/page_security_cloud-security/design.svg';
+import deeplyIcon from '~/assets/images/prplbx_images/page_security_cloud-security/deeply.svg';
+import productivityIcon from '~/assets/images/prplbx_images/page_security_cloud-security/productivity.svg';
+import takeIcon from '~/assets/images/prplbx_images/page_security_cloud-security/take.svg';
+import highIcon from '~/assets/images/prplbx_images/page_security_cloud-security/high.svg';
+import awsAzureCloudImage from '~/assets/images/prplbx_images/page_security_cloud-security/aws-azure-cloud.png';
+import dockerAmazonImage from '~/assets/images/prplbx_images/page_security_cloud-security/docker-amazon.png';
+
+const metadata = {
+  title: 'Cloud Security Managed Services - PurpleBox',
+  description: 'Cloud security refers to the practices, technologies, and policies that help protect cloud-based systems, data, and infrastructure from...',
+};
+
+const benefits = [
+  {
+    title: 'Scale with improved visibility',
+    icon: scaleIcon.src,
+    description: 'Detect unusual security events throughout your ecosystem using our security automation and activity monitoring services to reduce risk as you expand.',
+  },
+  {
+    title: 'Design with security standards',
+    icon: designIcon.src,
+    description: 'Build upon the most secure infrastructure in the world, knowing that you can encrypt, transfer data, and manage retention. Because of the way our global infrastructure is built, you have complete control over where your data is physically stored, helping you to satisfy data residency rules.',
+  },
+  {
+    title: 'Deeply Integrated Services',
+    icon: deeplyIcon.src,
+    description: 'Choose from a selection of tightly connected solutions that may be used to automate activities in new ways, allowing your security team to collaborate more closely with developers and operations teams to deliver code quicker and more securely.',
+  },
+  {
+    title: 'Productivity with a secure ecosystem',
+    icon: productivityIcon.src,
+    description: "In a matter of minutes, locate, purchase, implement, and manage cloud-ready software solutions that inclue software as a service package. These solutions work together to help protect your data in ways that aren't feasible on-premises.",
+  },
+  {
+    title: 'Take advantage of security',
+    icon: takeIcon.src,
+    description: 'Experience third-party validation for thousands of worldwide compliance criteria that are continuously monitored. Gain access to up-to-date security controls and several useful tools designed to help minimize the cost and time spent on security. Start experiencing the benefits of bolstering your compliance with up-to-date security controls today.',
+  },
+  {
+    title: 'High availability and support',
+    icon: highIcon.src,
+    description: "A best-practices cloud computing security solution ensures that a company's assets are always protected. This includes live monitoring every day of the year, 24/7. There are also several built-in redundancies to ensure that your company's website and applications are always up and running.",
+  },
+];
+
+const faqs = [
+    {
+        question: 'What cloud platforms does PurpleBox support?',
+        answer: 'PurpleBox configures and secures cloud environments including Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP), ensuring protection of sensitive, regulated data across these platforms.',
+    },
+    {
+        question: 'What is included in PurpleBox’s Cloud Security Assessment?',
+        answer: 'The assessment identifies issues and vulnerabilities such as misconfigurations, unwarranted access, and non-standard deployments. Automated monitoring aligns with industry standards and regulatory mandates to prevent security issues like leaky storage buckets and unrestricted security groups. Recommendations are based on proven cloud practices and CIS benchmarks.',
+    },
+    {
+        question: 'What services does PurpleBox offer for container security?',
+        answer: 'PurpleBox assesses containerized environments to detect misconfigurations and scans container images, hosts, and containers during runtime. Comprehensive reports are integrated with DevOps and CI/CD processes to identify and minimize container security risks.',
+    },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Cloud Security Managed Services</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Elevate Security in the Cloud and Raise Your Security Posture</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Cloud Security Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        Keeping your business compliant and secure in the cloud requires more than standard technologies. An enterprise-grade cloud security framework will grow with your company while using cutting-edge machine learning capabilities to detect threats before they become problems for your business. Use our security automation services to help protect your critical data & enable continuous compliance without disrupting business.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">
+        At PurpleBox, our certified cloud security managed services experts evaluate your current systems and develop a comprehensive cloud security plan tailored to your specific needs. We configure cloud environments like <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Amazon Web Services (AWS)</a>, <a href="https://azure.microsoft.com/en-us/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Microsoft Azure</a>, and <a href="https://cloud.google.com/gcp" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Cloud Platform (GCP)</a> while protecting sensitive regulated data in the cloud. With trusted partners and optimal technology, we ensure a smooth cloud transformation process.
+      </p>
+      <img src={awsAzureCloudImage.src} alt="AWS Azure Cloud" class="w-full h-auto mt-8" />
+    </div>
+  </section>
+
+  <!-- What is Cloud Security? Section -->
+  <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">What is Cloud Security?</h2>
+        <p class="text-lg text-center">
+            “Cloud security” refers to the practices, technologies, and policies that help protect cloud-based systems, data, and infrastructure from unauthorized access, data breaches, and other threats. It involves implementing security measures such as access controls, data encryption, and network security to safeguard cloud environments. Cloud security managed services are becoming increasingly important as more businesses move their operations to the cloud, and it requires specialized expertise to ensure that cloud-based systems and data are adequately protected.
+        </p>
+    </div>
+  </section>
+
+  <!-- Content Sections -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Cloud Security Assessment</h2>
+        <p class="text-lg text-gray-600 dark:text-slate-400 text-center mb-12">
+            Our cloud security team assess your posture by identifying issues and vulnerabilities in your assets and resources. This includes misconfigurations, unwarranted access, and non-standard deployments. Our automated monitoring follows industry standards and regulatory mandates to prevent security issues such as leaky storage buckets, unrestricted security groups, and crypto-mining attacks in major cloud providers like AWS, Azure, and Google. Our recommendations for improvement are based on proven cloud practices and CIS benchmarks.
+        </p>
+        <img src={infographicImage.src} alt="Cloud Security Assessment Infographic" class="w-full h-auto mb-12" />
+
+        <div class="space-y-16">
+            <div>
+                <div class="text-lg text-gray-600 dark:text-slate-400 space-y-4">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Securing Delivery Pipelines</h3>
+                    <p>To stay up-to-date with modern IT practices, you need to continuously integrate, deliver, and deploy your software development and testing processes. PurpleBox helps you achieve this by integrating automatic security checks into your pipeline, providing you with early alerts and ongoing monitoring for any security flaws. As your company expands, utilizing PurpleBox’s integrated continuous security techniques becomes increasingly important, allowing you to keep your cybersecurity up-to-date at all times.</p>
+                    
+                    <h3 class="text-2xl font-bold pt-4 text-gray-900 dark:text-white">DevSecOps Maturity Assessment</h3>
+                    <p>DevSecOps is a set of processes and technologies that assist cloud teams in enhancing the pace and efficiency of their security efforts. When DevOps principles are applied to software security, security testing becomes an active, fully-integrated part of the development process. We’ll take your security controls and turn them into architectural solutions based on AWS, utilizing several useful features the cloud has to offer.</p>
+                </div>
+                <img src={devopsImage.src} alt="DevOps" class="w-1/2 h-auto mt-8 rounded-lg shadow-md mx-auto" />
+            </div>
+
+            <div>
+                <div class="text-lg text-gray-600 dark:text-slate-400">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Container Security Strategy</h3>
+                    <p class="mt-4">We assess your containerized environments, detect your misconfigurations, and scan your container images, hosts, and container during runtime. Our comprehensive reports are integrated with your DevOps and CI/CD processes to identify and minimize any container security risks.</p>
+                </div>
+                <img src={dockerAmazonImage.src} alt="Docker Amazon" class="w-full h-auto mt-8 rounded-lg shadow-md" />
+            </div>
+
+            <div>
+                <div class="text-lg text-gray-600 dark:text-slate-400">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">DevSecOps Consulting</h3>
+                    <p class="mt-4">DevSecOps transforms traditional security engagement into an active process integrated into the software development life cycle (SDLC). Our Cloud Managed Services incorporate DevSecOps best practices, including active testing and code verification during agile development. Our certified engineering team can manage your AWS, Azure, and GCP infrastructure while implementing these best practices.</p>
+                    <p class="mt-4">Additionally, we provide security consulting services for data protection, disaster recovery, and assist your DevOps and in-house security teams in developing your entire cloud security requirements.</p>
+                </div>
+                <img src={cardImage.src} alt="DevSecOps Consulting" class="w-1/2 h-auto mt-8 rounded-lg shadow-md mx-auto" />
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Connect with Our Experts Section -->
+  <section class="py-16 md:py-20 text-center">
+    <h2 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Connect with Our Cloud Security Experts</h2>
+    <a href="/get-in-touch/" class="btn bg-[#341474] hover:bg-[#2a105c] text-white py-2 px-10 rounded-md text-lg uppercase">
+        GET IN TOUCH
+    </a>
+  </section>
+
+  <!-- Raise Your Security Posture Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-3xl font-bold mb-8">Raise your security posture</h2>
+        <p class="text-lg text-gray-600 dark:text-slate-400 mb-12">
+            Secure your sensitive data and maintain compliance with ease using security automation. By utilizing the most flexible and secure cloud computing environment available, you can confidently run your business while gaining complete control. Automated security tasks can help reduce human error, freeing up your time to focus on scaling and innovating your business. Start experiencing the benefits of security automation today.
+        </p>
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+            <div>
+                <h4 class="text-xl font-bold mb-2">Protect your data</h4>
+                <p>For a seamless adoption strategy, define user rights and identities, infrastructure protection, and data protection procedures.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-2">Respond Automatically</h4>
+                <p>Automated incident response and recovery to assist security teams in shifting their major focus from response to root cause analysis.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-2">Remediate by Using Automation</h4>
+                <p>Use event-driven automation to swiftly remediate and secure your cloud environment.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-2">Identify business security solutions</h4>
+                <p>Explore your company’s security posture by logging and monitoring services.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- "Benefits of Cloud Security Managed Services" Section -->
+  <Features
+    columns={2}
+    title="Benefits of Cloud Security Managed Services"
+    items={benefits}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-left',
+      icon: 'w-16 h-16 mr-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Why PurpleBox Security? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Security?</h2>
+            <p class="text-lg text-center">
+                PurpleBox Security specializes in security assessments and penetration testing services. We place a high value on testing important devices and components. Our comprehensive reports are produced by experienced, skilled testers so that the actionable information contained within them is easily understood. Combining our Red Team (Offensive) capabilities with our Blue Team (Defensive) experience, we provide a unique approach to solving enterprise security problems.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} title="Cloud Security Managed Services At PurpleBox" />
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

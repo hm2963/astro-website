@@ -1,0 +1,223 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQ from '~/components/widgets/FAQ.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_security_vm/vulnerability-hero.svg';
+import vulnerabilityImage from '~/assets/images/prplbx_images/page_security_vm/vulnerability.png';
+import vulnerabilityDiscoveryImage from '~/assets/images/prplbx_images/page_security_vm/vulnerability-discovery.png';
+import itAssetManagementImage from '~/assets/images/prplbx_images/page_security_vm/it-asset-management.png';
+import vulnerabilityScanningImage from '~/assets/images/prplbx_images/page_security_vm/vulnerability-scanning.png';
+import pciAsvImage from '~/assets/images/prplbx_images/page_security_vm/pciasv.png';
+import securityConfigurationImage from '~/assets/images/prplbx_images/page_security_vm/securityconfiguration.png';
+import adoptTransparencyIcon from '~/assets/images/prplbx_images/page_security_vm/svgexport-6-3.svg';
+import shadowITIcon from '~/assets/images/prplbx_images/page_security_vm/svgexport-7-1.svg';
+import scanForVulnerabilitiesIcon from '~/assets/images/prplbx_images/page_security_vm/svgexport-8-1.svg';
+import customizeReportsIcon from '~/assets/images/prplbx_images/page_security_vm/svgexport-6-2.svg';
+import remediateVulnerabilitiesIcon from '~/assets/images/prplbx_images/page_security_vm/svgexport-10-1.svg';
+import prioritizeAndIdentifyThreatsIcon from '~/assets/images/prplbx_images/page_security_vm/svgexport-11-1.svg';
+
+
+const metadata = {
+  title: 'Importance of Vulnerability Management Services for Business - PurpleBox',
+  description: 'Protect your business from cyber threats with Vulnerability Management (VM). Learn how VM can help you stay ahead of cybercriminals.',
+};
+
+const benefitsOfVM = [
+  {
+    title: 'Adopt Transparency',
+    icon: adoptTransparencyIcon.src,
+    description: "With real-time alerts and notifications, you can be proactive in addressing possible risks as soon as new vulnerabilities emerge. Identify vulnerabilities, prioritize remediation, and assess IT compliance while having total and complete visibility into your data center assets.",
+  },
+  {
+    title: 'Shadow IT',
+    icon: shadowITIcon.src,
+    description: "Identify and organize your host assets by discovering forgotten devices. You can rapidly determine what's actually running within various regions of your network, from your perimeter and corporate network to virtualized machines and cloud services like Amazon EC2.",
+  },
+  {
+    title: 'Scan for vulnerabilities',
+    icon: scanForVulnerabilitiesIcon.src,
+    description: 'Scan multiple systems from a single console, including your perimeter, internal network, and cloud environments (such as Amazon EC2). Since scanning and reporting are separated in our working method, you may scan in-depth and then develop unique reports that show each audience the exact detail level.',
+  },
+  {
+    title: 'Customize reports',
+    icon: customizeReportsIcon.src,
+    description: "Use interactive reports to better understand your network's security through the vulnerability data collected across hosts. Change what's presented or choose other groupings of assets without the trouble of rescanning by using a library of built-in reports. Reports can be prepared on-demand or automatically., whenever you want, without having to rescan.",
+  },
+    {
+    title: 'Remediate vulnerabilities',
+    icon: remediateVulnerabilitiesIcon.src,
+    description: 'Keep track of how each vulnerability within each host is handled over time. This allows you to keep track of the actions you took in response to each vulnerability and assess how effective your remediation efforts were, allowing you to.',
+  },
+    {
+    title: 'Prioritize and identify threats',
+    icon: prioritizeAndIdentifyThreatsIcon.src,
+    description: "You may use trend analysis, Zero-Day, and Patch impact estimates to determine the highest business risks using Qualys. Instead of taking single snapshots, examine your network's vulnerabilities over time and at various degrees of detail.",
+  },
+];
+
+const faqs = [
+    {
+        question: 'How often should I perform vulnerability scans?',
+        answer: 'We recommend conducting monthly or quarterly vulnerability scans, depending on your risk profile and compliance requirements. High-change environments or regulated industries may require more frequent assessments. Regular scanning helps catch new risks early—before attackers do.',
+    },
+    {
+        question: 'What is the difference between a vulnerability assessment and penetration testing?',
+        answer: 'A vulnerability assessment identifies and prioritizes security weaknesses across your systems using automated tools and expert analysis. It’s like scanning for unlocked doors. Penetration testing, on the other hand, simulates a real-world attack to exploit those weaknesses—testing how far an attacker could get. Both are important, but serve different purposes in your security strategy.',
+    },
+    {
+        question: 'Will vulnerability management disrupt our daily operations?',
+        answer: 'Not at all. Our scans are designed to be non-intrusive and low-impact, meaning your systems stay up and running during the process. We coordinate with your team to schedule scans during low-traffic windows if needed and ensure minimal disruption.',
+    },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Vulnerability Management Services</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Detect and Defend Against Threats in Real-Time Anywhere and Everywhere</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Vulnerability Management Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        Businesses use the Internet to connect employees, suppliers, and customers globally. However, connecting to the Web poses security risks. Cybercriminals can exploit vulnerabilities to hack networks, steal confidential information, and abuse IT resources. Within an hour of connecting to the Internet, attackers start exploring for vulnerabilities, and if left unsecured, they can launch devastating attacks within 24 hours. Adopting our Vulnerability Management Services can prevent most attacks. Vulnerability Management enables continuous monitoring of network infrastructure and staying ahead of criminals to safeguard corporate resources.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is Vulnerability Management? Section -->
+  <Content
+    isReversed
+    image={{ src: vulnerabilityImage, alt: 'What is Vulnerability Management?' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold mb-4">What is Vulnerability Management?</h2>
+      <p>Vulnerability Management Services involves monitoring, detecting, assessing, reporting, managing, and resolving security vulnerabilities across endpoints, workloads, and systems. Security teams use vulnerability management tools to detect vulnerabilities, and different processes to patch or fix them. Strong vulnerability management services use threat intelligence and comprehensive knowledge of IT and business operations to prioritize risks and address vulnerabilities promptly, preventing devastating attacks.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Sections -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <Content
+            image={{ src: vulnerabilityDiscoveryImage, alt: 'IT Asset Discovery' }}
+        >
+            <Fragment slot="content">
+            <h2 class="text-2xl font-bold mb-4">IT Asset Discovery</h2>
+            <p>Automatically identify all known and unknown assets in your global hybrid-IT with complete visibility of on-premises devices and applications, endpoints, clouds, containers, mobile, OT, and IoT. From there, you’ll have a comprehensive, categorized inventory enriched with details like vendor lifecycle information.</p>
+            </Fragment>
+        </Content>
+        <Content
+            isReversed
+            image={{ src: itAssetManagementImage, alt: 'IT Asset Management' }}
+        >
+            <Fragment slot="content">
+            <h2 class="text-2xl font-bold mb-4">IT Asset Management</h2>
+            <p>Automated normalization and classification of asset data streamline your IT asset management and integration into various IT processes like change management, patching, and incident response. A continually updated asset database transforms your global IT asset inventory into structured, multidimensional information. This allows for more informed business decision-making.</p>
+            </Fragment>
+        </Content>
+        <Content
+            image={{ src: vulnerabilityScanningImage, alt: 'Vulnerability Scanning' }}
+        >
+            <Fragment slot="content">
+            <h2 class="text-2xl font-bold mb-4">Vulnerability Scanning</h2>
+            <p>Breaches usually exploit known bugs. Removing these vulnerabilities is crucial to protect sensitive information. Our vulnerability scanning services can help automatically identify weaknesses, assign tickets for remediation, manage exceptions, and list patches for each host. Next, they’ll auto-generate reports for different stakeholders, such as executives, IT managers, or auditors.</p>
+            </Fragment>
+        </Content>
+        <Content
+            isReversed
+            image={{ src: pciAsvImage, alt: 'PCI ASV Scanning' }}
+        >
+            <Fragment slot="content">
+            <h2 class="text-2xl font-bold mb-4">PCI ASV Scanning</h2>
+            <p>Achieve PCI DSS compliance and ensure network security with our managed PCI ASV Scanning services. Our cloud-based solution streamlines the process and provides a proof of compliance.</p>
+            </Fragment>
+        </Content>
+        <Content
+            image={{ src: securityConfigurationImage, alt: 'Security Configuration / CIS Benchmarks Audit' }}
+        >
+            <Fragment slot="content">
+            <h2 class="text-2xl font-bold mb-4">Security Configuration / CIS Benchmarks Audit</h2>
+            <p>To ensure a complete vulnerability management program, it’s vital to perform configuration assessments. Our Security Configuration compliance services help you identify security weaknesses and assess your compliance with industry standards like vendor security best practices, CIS Benchmarks,  COBIT, ISO, NIST SP800-53, HIPAA, FFIEC, and NERC-CIP.</p>
+            </Fragment>
+        </Content>
+    </div>
+  </section>
+
+    <!-- Cloud Security Assessment & Container Security Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Cloud Security Assessment</h2>
+                    <p class="text-lg">
+                        Make sure your cloud assets and resources are secure with our cloud security assessment services. We’ll identify and address potential security threats, such as misconfigurations, unauthorized access, and non-standard deployments. Our automated security monitoring is based on industry standards and regulations, protecting against issues like leaky storage buckets, unrestricted security groups, and crypto-mining attacks across major cloud providers like AWS, Azure, and Google.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Container Security</h2>
+                    <p class="text-lg">
+                        With PurpleBox Vulnerability Management Services, get a complete, comprehensive view of security for your containerized environments. Scan your container images, container hosts, and containers during runtime. Integrate with your DevOps and CI/CD processes to easily identify risks and catch drift from your approved images, all in real-time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- "Benefits of Vulnerability Management" Section -->
+  <Features
+    columns={2}
+    title="Benefits of Vulnerability Management"
+    items={benefitsOfVM}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-16 h-16 mx-auto mb-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Why PurpleBox Security? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Security?</h2>
+            <p class="text-lg text-center">
+                PurpleBox Security specializes in security assessments and penetration testing services. We place a high value on testing important devices and components. Our comprehensive reports are produced by experienced, skilled testers so that the actionable information contained within them is easily understood. Combining our Red Team (Offensive) capabilities with our Blue Team (Defensive) experience, we provide a unique approach to solving enterprise security problems.
+            </p>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <p class="text-2xl font-bold mb-4">"It was the willingness for their team to understand our environment... the level of detail was very, very comforting and helped make the process flow."</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400">— Leading HealthTech Company</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} title="Frequently Asked Questions about Vulnerability Management" />
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

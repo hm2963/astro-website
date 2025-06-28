@@ -1,0 +1,211 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQ from '~/components/widgets/FAQ.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_security_endpoint-security/endpoint-hero.png';
+import xdrEdrImage from '~/assets/images/prplbx_images/page_security_endpoint-security/xdr-edr.png';
+import maintainItSecurityIcon from '~/assets/images/prplbx_images/page_security_endpoint-security/maintainitsecurity.svg';
+import addExpertiseIcon from '~/assets/images/prplbx_images/page_security_endpoint-security/addexpertise.svg';
+import maintainTheStrongestIcon from '~/assets/images/prplbx_images/page_security_endpoint-security/maintainthestrongest.svg';
+import beginWithTheMostIcon from '~/assets/images/prplbx_images/page_security_endpoint-security/beginwiththemost.svg';
+import startOperatingIcon from '~/assets/images/prplbx_images/page_security_endpoint-security/startoperating.svg';
+import answerThreatIcon from '~/assets/images/prplbx_images/page_security_endpoint-security/answerthreat.svg';
+import investigateTheInfoIcon from '~/assets/images/prplbx_images/page_security_endpoint-security/investigatetheinfo.svg';
+import boostTheRoiIcon from '~/assets/images/prplbx_images/page_security_endpoint-security/boosttheroi.svg';
+import getInfoEvenWhenIcon from '~/assets/images/prplbx_images/page_security_endpoint-security/getinfoevenwhen.svg';
+
+const metadata = {
+  title: 'Endpoint Security: Prevent Ransomware Attacks - PurpleBox',
+  description: 'Protect your business from ransomware attacks with EDR solutions. Get full post-cleanup information to identify endpoint threats',
+};
+
+const benefits = [
+  {
+    title: 'Begin with the most effective protection',
+    icon: beginWithTheMostIcon.src,
+    description: 'Experience greater security, 24/7 access to detailed threat intelligence, and automated threat intelligence research, giving you more time to focus on business operations.',
+  },
+  {
+    title: 'Start operating right away',
+    icon: startOperatingIcon.src,
+    description: 'Choose from a vast library of pre-written SQL queries to ask a wide range of IT and security inquiries. Customize or create new queries based on your needs.',
+  },
+  {
+    title: 'Answer threat hunting questions',
+    icon: answerThreatIcon.src,
+    description: 'Get quick, detailed answers to business-critical questions when executing day-to-day IT operations and threat hunting duties.',
+  },
+  {
+    title: 'Investigate information and act quickly',
+    icon: investigateTheInfoIcon.src,
+    description: 'Pivot and deep dive to acquire rich details live. Get immediate access to a comprehensive, detailed report of any potential threats.',
+  },
+  {
+    title: 'Boost the ROI of security investments',
+    icon: boostTheRoiIcon.src,
+    description: 'Correlate data across endpoint, network, and cloud security tools to deliver excellent holistic security and avoid missing any important alerts in the clutter.',
+  },
+  {
+    title: 'Get information at all times',
+    icon: getInfoEvenWhenIcon.src,
+    description: 'Store and access critical information from your endpoints, servers, firewall, and email, even when devices are offline.',
+  },
+];
+
+const faqs = [
+    {
+        question: 'What is the difference between EDR and XDR?',
+        answer: 'EDR (Endpoint Detection and Response) focuses on detecting and responding to threats on individual endpoints, such as laptops and servers. XDR (Extended Detection and Response) takes a broader approach by integrating data from multiple security layers, including endpoints, networks, and cloud services, to provide a more comprehensive view of threats.',
+    },
+    {
+        question: 'How does Managed Threat Response work?',
+        answer: 'Managed Threat Response (MTR) is a service that provides 24/7 threat hunting, detection, and response by a team of security experts. The MTR team uses a combination of automated tools and human analysis to identify and neutralize threats before they can cause damage.',
+    },
+    {
+        question: 'What are the benefits of using an EDR solution?',
+        answer: 'EDR solutions can help you to detect and respond to threats more quickly, reduce the risk of a data breach, and improve your overall security posture. EDR can also help you to meet compliance requirements and reduce the cost of a data breach.',
+    },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Endpoint Security</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Block Ransomware Attacks Before They Happen</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Endpoint Security Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        Ransomware attacks can cause massive disruptions to a business’s productivity, resulting in loss of critical files and demands for payment. To prevent such threats and improve your IT security posture, implement EDR solutions. EDR blocks ransomware attacks before they can hurt your organization, and any encrypted files are rolled back to a secure state. This allows your workforce to continue working uninterrupted with minimal disruption to your business.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">
+        After cleanup, you’ll receive full post-cleanup information, providing a comprehensive timeline of the attack and helping you identify the entry point and what was affected. With EDR, you can protect your business from ransomware attacks and ensure your critical files are secure.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is Endpoint Security? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">What is Endpoint Security?</h2>
+            <p class="text-lg text-center">
+                Endpoint security combines preventative protection with a new breed of continuous detection and response capabilities. Using cloud-based analytics, it eliminates bloated agents from consuming valuable CPU resources so employees can get their work done and businesses remain protected.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Endpoint protection systems are designed to quickly detect, analyze, block, and contain attacks in progress. To do this, they need to collaborate with each other, and with other security technologies, to give administrators visibility into advanced threats to speed detection and remediation response times.
+            </p>
+        </div>
+    </section>
+
+    <!-- Types of Endpoint Security Services Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Types of Endpoint Security Services</h2>
+            <h4 class="text-2xl font-bold mb-4">Endpoint Detection and Response (EDR)</h4>
+            <p class="text-lg text-gray-600 dark:text-slate-400">Endpoint detection and response (EDR) tools are designed to increase and improve detection, investigation, and response capabilities for endpoint security.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">EDR provides information about what has occurred in the past and what is currently occurring on the endpoints. Threats can be tracked to detect active attackers and IT operations can be leveraged to maintain strong and effective IT security hygiene. When a problem is discovered remotely, i̇t enables a corresponding rapi̇d response to limit the damage.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">EDR prevents breaches from occurring by starting with the strongest protection possible. When hunting down threats and strengthening your IT security operations posture, EDR gives you valuable tools to ask detailed questions and improve your security standing.</p>
+
+            <h4 class="text-2xl font-bold mb-4 mt-8">Extended Detection and Response (XDR)</h4>
+            <p class="text-lg text-gray-600 dark:text-slate-400">XDR integrates firewall, email, network, email, cloud, mobile and other data sources in addition to endpoints and servers. It provides a comprehensive picture of your company’s cybersecurity posture, with the option to drill down into granular detail if necessary.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">Using XDR, you can swiftly identify, isolate, and eliminate a threat by comparing attack indicators from numerous data sources. XDR allows you to locate unmanaged, guest, and IoT devices throughout your organization’s network. It also enables you to identify any office network problems, as well as the applications that are causing them.</p>
+
+            <h4 class="text-2xl font-bold mb-4 mt-8">Managed Threat Response</h4>
+            <p class="text-lg text-gray-600 dark:text-slate-400">Managed Threat Response (MTR) facilitates threat hunting through the use of proactive 24/7 tracking by our threat analysts, making the potential impact and context of threats to your business visible to you at any time.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">MTR Initiates actions to remotely disrupt, contain, and neutralize threats on your behalf to stop even the most sophisticated threats. It empowers continuous Improvement by addressing the root cause of recurring incidents to stop them from occurring again, rather than simply one-time fixes.</p>
+        </div>
+    </section>
+
+    <!-- XDR vs EDR Image Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <img src={xdrEdrImage.src} alt="XDR vs EDR" class="w-full h-auto" />
+        </div>
+    </section>
+
+    <!-- Maintain IT Security by Threat Hunting Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Maintain IT Security by Threat Hunting</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <img src={maintainItSecurityIcon.src} alt="Maintain IT Security by Threat Hunting" class="w-24 h-24 mx-auto mb-4" />
+                    <h3 class="text-xl font-bold mb-2">Maintain IT Security by Threat Hunting</h3>
+                    <p>Keep up with IT security efforts. cleanliness, and track out malicious threats. Answer business-critical IT operations and threat hunting questions.</p>
+                </div>
+                <div class="text-center">
+                    <img src={addExpertiseIcon.src} alt="Add Expertise Not Employees" class="w-24 h-24 mx-auto mb-4" />
+                    <h3 class="text-xl font-bold mb-2">Add Expertise Not Employees</h3>
+                    <p>Suspicious activity investigations can be difficult and time-consuming. We have the expertise to assist you to answer questions about security.</p>
+                </div>
+                <div class="text-center">
+                    <img src={maintainTheStrongestIcon.src} alt="Maintain the Strongest Protection" class="w-24 h-24 mx-auto mb-4" />
+                    <h3 class="text-xl font-bold mb-2">Maintain the Strongest Protection</h3>
+                    <p>Gain access to threat intelligence and stop data breaches before they start by consolidating EDR with the best security practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Top 6 Reasons Why You Need EDR Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Top 6 Reasons Why You Need EDR</h2>
+      <ol class="list-decimal list-inside space-y-4">
+        <li><strong>Data collection:</strong> EDR gathers telemetry data from endpoints, including information about processes, network connections, and user activity.</li>
+        <li><strong>Threat detection:</strong> EDR uses a variety of techniques to detect threats, including signature-based detection, behavioral analysis, and machine learning.</li>
+        <li><strong>Investigation:</strong> EDR provides tools to investigate threats, including timelines of activity, process trees, and file and network information.</li>
+        <li><strong>Response:</strong> EDR enables you to respond to threats by isolating endpoints, terminating processes, and deleting files.</li>
+        <li><strong>Remediation:</strong> EDR helps you to remediate threats by providing guidance on how to remove malware and restore systems to a known good state.</li>
+        <li><strong>Reporting:</strong> EDR provides reports on threats, incidents, and endpoint activity to help you to track your security posture and meet compliance requirements.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Benefits of EDR Section -->
+  <Features
+    columns={2}
+    title="Benefits of EDR"
+    items={benefits}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-16 h-16 mx-auto mb-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Why PurpleBox Security? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Security?</h2>
+            <p class="text-lg text-center">
+                PurpleBox Security specializes in security assessments and penetration testing services. We place a high value on testing important devices and components. Our comprehensive reports are produced by experienced, skilled testers so that the actionable information contained within them is easily understood. Combining our Red Team (Offensive) capabilities with our Blue Team (Defensive) experience, we provide a unique approach to solving enterprise security problems.
+            </p>
+        </div>
+    </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

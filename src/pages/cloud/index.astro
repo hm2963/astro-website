@@ -1,0 +1,185 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_cloud/GroupPurpleBox-Cloud-Services.svg';
+import strategicIcon from '~/assets/images/prplbx_images/page_cloud/DALL·E-2024-03-19-11.09.31.png';
+import resultOrientedIcon from '~/assets/images/prplbx_images/page_cloud/DALL·E-2024-03-19-11.10.27.png';
+import certifiedExpertiseIcon from '~/assets/images/prplbx_images/page_cloud/DALL·E-2024-03-19-11.12.56.png';
+import innovativeIcon from '~/assets/images/prplbx_images/page_cloud/Purple-Photoroom.png-Photoroom.png';
+import cloudMigrationImage from '~/assets/images/prplbx_images/page_cloud/Group-427319260Cloud-Services.svg';
+import cloudArchitectureImage from '~/assets/images/prplbx_images/page_cloud/CloudArchitecture-PurpleBox.svg';
+import devopsImage from '~/assets/images/prplbx_images/page_cloud/Group-427319261DevOps-PurpleBox.svg';
+import dataAnalyticsImage from '~/assets/images/prplbx_images/page_cloud/Group-427319262Data-PurpleBox.svg';
+
+const metadata = {
+  title: 'Cloud Services - PurpleBox',
+  description: 'Transform your business with our Cloud Services. Benefit from our DevOps, AI, and ML expertise for improved efficiency and innovation.',
+};
+
+const approachItems = [
+  {
+    title: 'Strategic',
+    icon: strategicIcon.src,
+    description: '<ul><li>Threat & Risk Assessment</li><li>Compliance Reviews</li><li>Security Architecture Review & Design</li><li>Cloud Technologies Architecture</li></ul>',
+  },
+  {
+    title: 'Result Oriented',
+    icon: resultOrientedIcon.src,
+    description: '<ul><li>Data Protection & Compliance</li><li>Business Enablement</li><li>Assessment & Remediation</li><li>Implementation & Operation</li></ul>',
+  },
+  {
+    title: 'Certified Expertise',
+    icon: certifiedExpertiseIcon.src,
+    description: '<ul><li>Strategic & C-level</li><li>Experienced & Certified</li><li>On-Shore & Off-Shore Mixed</li><li>Strategic & Open-Minded</li></ul>',
+  },
+  {
+    title: 'Innovative',
+    icon: innovativeIcon.src,
+    description: '<ul><li>One Size Does Not Fit All Policy</li><li>Customization & Flexibility</li><li>Unique and Relevant Strategy</li><li>Environment of Trust</li></ul>',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Cloud Services</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Elevating Digital Horizons with Tailored Cloud Services</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Cloud Services Hero" class="w-full h-auto max-w-lg md:max-w-md mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        At <strong>PurpleBox Cloud Services</strong>, we specialize in guiding organizations through their <strong>digital transformation</strong> journey, offering tailored cloud migration, architecture optimization, and comprehensive cybersecurity solutions. Our <strong>expert team</strong> ensures seamless cloud integration and infrastructure optimization, bolstering security, risk management, and compliance to safeguard your digital assets.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">
+        Leveraging advanced <strong>DevOps practices, data analytics, AI, and ML</strong>, our Cloud Services enhance operational efficiency and innovation. Our services span from CI/CD pipeline development to cutting-edge business intelligence solutions, facilitating data-driven decision-making and technological agility.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">
+        Our approach to application development and modernization, coupled with a focus on operational reliability and performance, ensures your business stays ahead in the digital era. Through <strong>strategic planning and continuous support</strong>, we empower your organization to achieve sustainable growth and resilience.
+      </p>
+    </div>
+  </section>
+
+  <!-- "Our Approach" Section -->
+  <Features
+    columns={2}
+    title="Cloud Services: Our Approach"
+    items={approachItems}
+    classes={{
+      container: 'max-w-5xl',
+      panel: 'text-center',
+      icon: 'w-24 h-24 mx-auto mb-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+  <!-- Cloud Migration Section -->
+  <Content
+    image={{ src: cloudMigrationImage, alt: 'Cloud Migration' }}
+    classes={{ container: 'max-w-6xl' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold mb-4"><a href="/cloud/migration/">Cloud Migration</a></h2>
+      <ul class="list-disc list-inside">
+        <li>Cloud foundations</li>
+        <li>Lift & Shift Migration</li>
+        <li>Integration Services</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Cloud Architecture and Optimization Section -->
+  <Content
+    isReversed
+    image={{ src: cloudArchitectureImage, alt: 'Cloud Architecture and Optimization' }}
+    classes={{ container: 'max-w-6xl' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold mb-4"><a href="/cloud/architecture/">Cloud Architecture and Optimization</a></h2>
+      <ul class="list-disc list-inside">
+        <li>Well-Architected Review</li>
+        <li>Infrastructure as Code (IaC)</li>
+        <li>Infrastructure & Cost Optimization</li>
+        <li><a href="/security/cloud-security/">Security</a></li>
+        <li><a href="/security/risk/">Risk & Compliance</a></li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- DevOps Section -->
+  <Content
+    image={{ src: devopsImage, alt: 'DevOps' }}
+    classes={{ container: 'max-w-6xl' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold mb-4"><a href="/cloud/devops/">DevOps</a></h2>
+      <ul class="list-disc list-inside">
+        <li>Enablement</li>
+        <li>Tooling</li>
+        <li>CI/CD Pipeline Development</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Data, Analytics, AI & ML Section -->
+  <Content
+    isReversed
+    image={{ src: dataAnalyticsImage, alt: 'Data, Analytics, AI & ML' }}
+    classes={{ container: 'max-w-6xl' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold mb-4"><a href="/cloud/analytics/">Data, Analytics, AI & ML</a></h2>
+      <ul class="list-disc list-inside">
+        <li>Business Intelligence Solutions</li>
+        <li>Data Operations & Governance</li>
+        <li>Data Lakes & Warehousing</li>
+        <li>Data Science – Artificial Intelligence & Machine Learning</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Application Development & Modernization and Operations, Reliability & Performance Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-2xl font-bold mb-4"><a href="/cloud/application-development-modernization/">Application Development & Modernization</a></h2>
+        <ul class="list-disc list-inside text-gray-600 dark:text-slate-400">
+          <li>Cloud-Native Development</li>
+          <li>Application Modernization Services</li>
+          <li>Full-Stack Development</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold mb-4"><a href="/cloud/ops/">Operations, Reliability & Performance</a></h2>
+        <ul class="list-disc list-inside text-gray-600 dark:text-slate-400">
+          <li>Site Reliability Engineering (SRE)</li>
+          <li>Monitoring & Operational Excellence</li>
+          <li>Performance Engineering & Cost Optimization</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

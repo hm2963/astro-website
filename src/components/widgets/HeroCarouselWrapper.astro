@@ -1,0 +1,25 @@
+---
+// src/components/widgets/HeroCarouselWrapper.astro
+import HeroCarousel from './HeroCarousel.astro';
+import type { Slide } from './HeroCarousel.astro';
+
+export interface Props {
+  slides: Slide[];
+}
+
+const { slides } = Astro.props;
+// Renamed for clarity in this scope, to distinguish from the one retrieved in script
+const serverGeneratedCarouselId = `hero-carousel-${Math.random().toString(36).slice(2)}`; 
+---
+
+<div class="hero-carousel-wrapper-root" data-carousel-id={serverGeneratedCarouselId}>
+  <HeroCarousel {slides} carouselId={serverGeneratedCarouselId} />
+</div>
+
+<!--
+  The Swiper initialization script has been removed from this Astro component.
+  It is assumed that if client-side interactivity is needed (e.g., for a React-hydrated carousel),
+  the React component (HeroCarouselWrapper.tsx) will handle the Swiper initialization.
+  If this component is used purely as an Astro component without client-side JS hydration for Swiper,
+  the script would need to be reinstated or an alternative Astro-native Swiper integration used.
+-->

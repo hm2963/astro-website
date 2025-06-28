@@ -4,7 +4,14 @@ import { twMerge } from 'tailwind-merge';
 import Button from './Button.astro';
 import { Icon } from 'astro-icon/components';
 
-const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
+const {
+  items = [],
+  columns,
+  defaultIcon = '',
+  classes = {},
+  itemTextColor = '',
+  overrideIconClass = '',
+} = Astro.props;
 
 const {
   container: containerClass = '',
@@ -13,53 +20,117 @@ const {
   description: descriptionClass = '',
   icon: defaultIconClass = 'text-primary',
   action: actionClass = '',
-} = classes;
+} = classes as Record<string, string>; // Cast to ensure string values for twMerge
 ---
 
 {
   items && items.length > 0 && (
-    <div
-      class={twMerge(
-        `grid mx-auto gap-8 md:gap-y-12 ${
-          columns === 4
-            ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
-            : columns === 3
-              ? 'lg:grid-cols-3 sm:grid-cols-2'
-              : columns === 2
-                ? 'sm:grid-cols-2 '
-                : ''
-        }`,
-        containerClass
-      )}
-    >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-          <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
-            <div class="flex justify-center">
-              {(icon || defaultIcon) && (
-                <Icon
-                  name={icon || defaultIcon}
-                  class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
-                />
-              )}
-            </div>
-            <div class="mt-0.5">
-              {title && <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</h3>}
-              {description && (
-                <p
-                  class={twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)}
-                  set:html={description}
-                />
-              )}
-              {callToAction && (
-                <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
-                  <Button variant="link" {...callToAction} />
+    <!-- Conditional rendering for accordion (columns === 1) vs grid -->
+    {columns === 1 ? (
+      <div class={twMerge('divide-y divide-slate-200 dark:divide-slate-700', containerClass)}>
+        {items.map(({ title, description, icon: itemIcon, callToAction, classes: itemClasses = {} }) => {
+          const iconToUse = itemIcon || defaultIcon;
+          const isPath = iconToUse && (iconToUse.includes('/') || iconToUse.startsWith('/@fs/'));
+
+          return (
+            <details class={twMerge('group py-4 marker:content-[""]', panelClass, itemClasses?.panel)}>
+              <summary class="flex w-full cursor-pointer select-none items-center justify-between text-left text-base font-medium leading-7 text-gray-900 dark:text-white group-open:text-primary-600 dark:group-open:text-primary-500 hover:text-primary-600 dark:hover:text-primary-500">
+                <span class={twMerge('text-base font-medium', titleClass, itemClasses?.title)}>{title}</span>
+                {iconToUse && (
+                  isPath ? (
+                    <img
+                      src={iconToUse}
+                      alt="toggle icon"
+                      class={twMerge('w-6 h-6 ml-4 rtl:ml-0 rtl:mr-4 transform transition-transform duration-200 group-open:rotate-180', defaultIconClass, itemClasses?.icon)}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <Icon
+                      name={iconToUse}
+                      class={twMerge('w-6 h-6 ml-4 rtl:ml-0 rtl:mr-4 transform transition-transform duration-200 group-open:rotate-180', defaultIconClass, itemClasses?.icon)}
+                    />
+                  )
+                )}
+              </summary>
+              <div class={twMerge('pt-4 text-muted', descriptionClass, itemClasses?.description)}>
+                {description && <p set:html={description} />}
+                {callToAction && (
+                  <div class={twMerge('mt-3', actionClass, itemClasses?.action)}>
+                    <Button variant="link" {...callToAction} />
+                  </div>
+                )}
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    ) : (
+      <div
+        class={twMerge(
+          `grid mx-auto gap-8 md:gap-y-12 ${
+            columns === 4
+              ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+              : columns === 3
+                ? 'lg:grid-cols-3 sm:grid-cols-2'
+                : columns === 2 // Default to 2 columns if not 1, 3 or 4
+                  ? 'sm:grid-cols-2 '
+                  : 'sm:grid-cols-2' // Fallback for any other number
+          }`,
+          containerClass
+        )}
+      >
+        {items.map(({ title, description, icon: itemIcon, img, callToAction, classes: itemClasses = {} }) => {
+          const iconToUse = itemIcon || defaultIcon;
+          const isPath = iconToUse && (iconToUse.includes('/') || iconToUse.startsWith('/@fs/'));
+
+          return (
+            <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+              <div class={twMerge('text-center', panelClass, itemClasses?.panel)}>
+                {img ? (
+                  <div class="flex justify-center">
+                    <img
+                      src={img.src}
+                      alt={title || 'icon'}
+                      class={overrideIconClass || twMerge('w-full h-auto rounded-lg shadow-lg mb-4', (itemClasses as any)?.img)}
+                      loading="lazy"
+                    />
+                  </div>
+                ) : iconToUse && (
+                  <div class="flex justify-center">
+                    {isPath ? (
+                      <img
+                        src={iconToUse}
+                        alt={title || 'icon'}
+                        class={overrideIconClass || twMerge('w-16 h-16 mb-4', defaultIconClass, itemClasses?.icon)}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <Icon
+                        name={iconToUse}
+                        class={overrideIconClass || twMerge('w-16 h-16 mb-4', defaultIconClass, itemClasses?.icon)}
+                      />
+                    )}
+                  </div>
+                )}
+                <div>
+                  {title && <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title, itemTextColor)}>{title}</h3>}
+                  {description && (
+                    <p
+                      class={twMerge(`${title ? 'mt-3' : ''}`, descriptionClass, itemClasses?.description, itemTextColor)}
+                      set:html={description}
+                    />
+                  )}
+                  {callToAction && (
+                    <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.action)}>
+                      <Button variant="link" {...callToAction} />
+                    </div>
+                  )}
                 </div>
-              )}
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
-    </div>
+          );
+        })}
+      </div>
+    )}
   )
 }

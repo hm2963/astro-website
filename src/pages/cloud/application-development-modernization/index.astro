@@ -1,0 +1,235 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Accordion from '~/components/widgets/Accordion.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_cloud_application-development-modernization/Group-427319258AppDevBig.svg';
+
+const metadata = {
+  title: 'Application Development & Modernization - PurpleBox',
+  description: 'Transform and scale with Application Development & Modernization. Enhance efficiency, reduce costs, and expedite market delivery.',
+};
+
+const services = [
+    {
+        title: 'Cloud-Native Development',
+        content: 'Starting from scratch with just an idea? Need assistance with a new initiative? PurpleBox Application Development & Modernization Services offers comprehensive software development services from start to finish. We handle everything from UI/UX design, database and backend architectures to QA, DevOps, performance tuning, cost controls, and integration with third-party APIs.<br/><br/>Automated build and deployment pipelines are crucial for modern applications. These pipelines encompass stages for automated testing, artifact versioning, manual approvals, and even business logic for deploying across various environments. This streamlined process significantly reduces the feedback loop for your development team, saving time, energy, and resources. Setting up fully automated pipelines is essential for managing modern applications, and Caylent ensures you’re equipped for success, tailored to meet your specific business needs, and to drive efficiency.<br/><br/>Continuous integration and continuous delivery (CI/CD) automate the software release process, from building to deployment. We can work with your existing tools or recommend options that suit your needs.<br/><br/>Our goal is to ensure that every code change you make is functional and secure, without introducing any issues. With continuous and automated code merging and deployment, your application stays production-ready without any delays or risky manual tasks.',
+    },
+    {
+        title: 'Application Modernization Services',
+        content: '<h2><b>You crucial applications, reloaded with PurpleBox Cloud Services</b></h2><p>Refresh your architecture to capitalize on cloud-native opportunities, such as enhanced efficiency, greater scalability, and reduced costs. Caylent offers expertise in analyzing your application and identifying the optimal replatforming strategy. Whether it involves migrating intricate .NET Framework code from Windows servers to .NET Core on Linux servers to cut licensing expenses or containerizing to transition from traditional VMs to a container-based architecture for cost savings and improved scalability, Caylent guides you through the complexities to craft the right plan for your application modernization journey.</p><p>Updating your aging code addresses performance and reliability concerns. Whether it’s breaking down your monolithic application into microservices, transitioning to a serverless architecture, or refactoring with modern front-end frameworks, PurpleBox offers assistance to facilitate the process.</p><p>Harness containerization services such as Amazon Elastic Kubernetes Service (EKS), Amazon Elastic Container Service (ECS), and AWS Fargate to replatform your application and leverage cloud-native technologies.</p>',
+    },
+    {
+        title: 'Full-Stack Development',
+        content: '<p>Harness our extensive experience in developing mobile, backend, and web applications to architect and construct an end-to-end application that is highly performant, secure, and scalable.</p><p>For mobile development, PurpleBox offers expertise in both native and cross-platform applications.</p><p>In backend development, we have deep understanding across multiple languages and frameworks (including NodeJS, TypeScript, Python, .NET, Java, and Golang), and modern web development services using technologies (such as React, Angular, and Vue).</p><p>All of these services are complemented with automation and testing to ensure high-quality deliverables.</p><p>Craft modern, engaging, intuitive, and user-friendly applications tailored to meet the needs of your users.</p><h2><b>UX/UI Design</b></h2><p>PurpleBox offers UX/UI design services encompassing persona mapping, user journeys, application workflows, and mood boards. These services enable you to design your application from a user’s perspective.&nbsp;</p><p>Additionally, PurpleBox provides design workshops, style guides, wireframes, and high-fidelity mockups to assist you in creating a cohesive and visually appealing user experience.</p>',
+    },
+];
+
+const howDoWeDoIt = [
+    {
+        title: 'Strategic Software Consulting',
+        content: 'Obtain expert guidance and insights to strategically plan and execute your software projects, ensuring alignment with your business goals and objectives.',
+    },
+    {
+        title: 'UX & UI Design',
+        content: 'Create captivating and intuitive user experiences through meticulous UX/UI design services. From persona mapping to high-fidelity mockups, we ensure your application resonates with your users.',
+    },
+    {
+        title: 'Greenfield Application Development',
+        content: 'Embark on new software projects with confidence, leveraging our expertise in greenfield development. We’ll help you build innovative solutions from the ground up, free from legacy constraints.',
+    },
+    {
+        title: 'Mobile Application Development',
+        content: 'Engage users on the go with cutting-edge mobile applications. Our team specializes in both native and cross-platform development, ensuring your app reaches your audience on their preferred devices.',
+    },
+    {
+        title: 'Enterprise Application Development',
+        content: 'Streamline your business processes and enhance productivity with custom enterprise applications tailored to your specific needs. From backend systems to frontend interfaces, we deliver robust solutions to drive your business forward.',
+    },
+    {
+        title: 'Go Serverless with Containers',
+        content: 'Leverage containerization services like Amazon Elastic Kubernetes Service (EKS), Amazon Elastic Container Service (ECS), and AWS Fargate to replatform your application and benefit from cloud-native technologies',
+    },
+];
+
+const benefits = [
+  {
+    title: 'Improved Performance',
+    icon: 'fa:star-o',
+    description: 'Leverage purpose-built, managed AWS services that automatically scale on demand and deliver resilient performance despite unexpected failures.',
+  },
+  {
+    title: 'Reduced Cost',
+    icon: 'fa:star-o',
+    description: 'Reduce operational costs and simplify maintenance requirements with modern architectures and managed services in a pay-as-you-go model.',
+  },
+  {
+    title: 'Speed to Market',
+    icon: 'fa:star-o',
+    description: 'Gain a competitive advantage by speeding up delivery cycles and automating deployments. Deliver reliable products and user experiences faster by offloading operational overhead to AWS.',
+  },
+  {
+    title: 'Future-Proofing',
+    icon: 'fa:star-o',
+    description: 'Benefit from modern architectures and AWS services with improved security, agility, reliability, and best practices.',
+  },
+];
+
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Application Development & Modernization</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Unlock the full potential of your applications through transformative application development and modernization solutions.</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Application Development Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center">
+        <b>With PurpleBox Application Development & Modernization Services, your applications launch and scale successfully</b>
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center mt-4">
+        Today’s software is cloud-first, effortlessly serving millions worldwide and managing huge data loads instantly. PurpleBox elevates your development team, seamlessly integrating cutting-edge tech skills, supercharging app performance, and fast-tracking your path to market. Discover how we transform challenges into triumphs.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center mt-4">
+        <b>Upgrade your legacy applications to unlock the full potential of the cloud.</b>
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center mt-4">
+        For your apps to really thrive in the cloud, you need to do more than just move them; you need to improve their core code and design. This is the key to unlocking the full power of cloud computing, making your software faster, more reliable, and ready to meet the demands of tomorrow.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center mt-4">
+        By using managed AWS services, where AWS takes care of scaling, security, and updates, you can shed the burden of routine tasks. This frees up your tech team to concentrate on what truly matters: innovating your product and driving business success. Embrace the freedom to focus on your vision, while AWS handles the technical heavy lifting.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is App Dev & Mod? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">What is Application Development & Modernization?</h2>
+            <p class="text-lg text-center">
+                Application Development & Modernization refers to the strategic process of designing, building, and evolving software applications to meet current and future business needs. This involves the creation of new applications that are cloud-native, designed to operate in modern, dynamic environments like the cloud, enabling global accessibility, high scalability, and the ability to handle vast amounts of data with minimal latency.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Modernization, on the other hand, is the process of transforming existing legacy applications to take advantage of cloud technologies, improved scalability, and efficiency. Modernization aims to refresh and enhance the existing application ecosystem, making it more resilient, <a href="/security/" class="text-blue-400 hover:underline">secure</a>, and capable of leveraging the benefits of cloud computing.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Create superior applications, enhance user experience, and expedite time-to-market</h2>
+            <p class="text-lg text-gray-600 dark:text-slate-400 text-center mb-4">
+                Build superior products, enhance user experience, accelerate time-to-market, and reduce costs by leveraging cloud-native services with PurpleBox Application Development & Modernization. Let AWS handle scaling, maintenance, and patching to free up your valuable technical talent to focus on higher-value product and business outcomes.
+            </p>
+            <ul class="list-disc list-inside text-lg text-gray-600 dark:text-slate-400 mx-auto max-w-2xl">
+                <li><b>Better Products:</b> Develop superior products through faster feedback loops, ensuring features consistently meet users’ needs.</li>
+                <li><b>Modern UI:</b> Design modern and intuitive user interfaces to enhance user experience and engagement.</li>
+                <li><b>Agility:</b> Utilize purpose-built AWS services (or your selected Cloud Provider) to focus on building applications and business logic, while the cloud manages underlying infrastructure.</li>
+                <li><b>Optimized Costs:</b> Reduce operational overhead and simplify maintenance with modern architectures and managed services in a pay-as-you-go model.</li>
+                <li><b>Technical Talent:</b> Attract and retain top technical talent by providing an environment for innovation with modern technology, driving business growth forward.</li>
+            </ul>
+            <div class="mt-12">
+                <h2 class="text-3xl font-bold text-center mb-8">PurpleBox Application Development & Modernization Services</h2>
+                <Accordion items={services} />
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">How Do We Do It?</h2>
+            <Accordion items={howDoWeDoIt} class:list={["text-white"]} />
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Front-End Team Skills</h3>
+                    <ul class="list-disc list-inside">
+                        <li><a href="https://www.javascript.com/" class="hover:underline">Javascript</a></li>
+                        <li><a href="https://www.typescriptlang.org/" class="hover:underline">Typescript</a></li>
+                        <li>React</li>
+                        <li>HTML</li>
+                        <li>Tailwind</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Back-End Team Skills</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Node</li>
+                        <li>PHP</li>
+                        <li>Laravel</li>
+                        <li>SQL, NoSQL, Postgres</li>
+                        <li>AWS CDK</li>
+                        <li>Docker</li>
+                        <li>Container Orchestration
+                            <ul class="list-disc list-inside ml-4">
+                                <li>Kubernetes</li>
+                                <li>AWS EKS</li>
+                                <li>AWS ECS</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Native & Mobile</h3>
+                    <ul class="list-disc list-inside">
+                        <li>React Native</li>
+                        <li>Expo</li>
+                        <li>C#</li>
+                        <li>.NET</li>
+                        <li>Swift / Objective-C (iOS)</li>
+                        <li>Java / Kotlin (Android)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Benefits Section -->
+  <Features
+    columns={2}
+    title="Benefits of PurpleBox Application Development & Modernization"
+    items={benefits}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-16 h-16 mx-auto mb-4 text-purple-600',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Why PurpleBox Cloud Services? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Cloud Services?</h2>
+            <p class="text-lg text-center">
+                At PurpleBox Cloud Services, we excel in offering holistic cloud solutions that cater to the diverse needs of modern businesses. By integrating cutting-edge cloud technologies with our extensive expertise, we enable businesses to navigate the complexities of cloud adoption seamlessly. Our solutions are designed to be as dynamic as the businesses we serve, ensuring scalability, flexibility, and unparalleled performance.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Our approach is customer-centric, prioritizing your business objectives to deliver tailored cloud strategies that align with your goals. Whether it’s cloud migration, management, or optimization, our team of certified cloud professionals employs best practices and innovative methodologies to ensure your journey to the cloud is smooth, secure, and efficient.
+            </p>
+        </div>
+    </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

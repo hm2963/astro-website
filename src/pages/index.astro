@@ -2,7 +2,18 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import heroSlideImage from '~/assets/images/prplbx_images/page_home/animation-11-1-1.svg';
-import HeroCarousel from '~/components/widgets/HeroCarousel.astro';
+import iconPenTest from '~/assets/images/prplbx_images/page_home/svgexport-4.svg';
+import iconVulnMgmt from '~/assets/images/prplbx_images/page_home/svgexport-7.svg'; // Used for Vuln Mgmt and WAF
+import iconCloudSec from '~/assets/images/prplbx_images/page_home/svgexport-8.svg';
+import iconEndpointSec from '~/assets/images/prplbx_images/page_home/svgexport-6.svg';
+import iconRiskComp from '~/assets/images/prplbx_images/page_home/svgexport-5.svg';
+import advCloudSolImage from '~/assets/images/prplbx_images/page_home/Group-427319260Cloud-Services.svg';
+import iconWePlan from '~/assets/images/prplbx_images/page_home/svgexport-9.svg';
+import iconWeBuild from '~/assets/images/prplbx_images/page_home/svgexport-10.svg';
+import iconWeRunIt from '~/assets/images/prplbx_images/page_home/svgexport-11.svg';
+import partnerLogos from '~/assets/images/prplbx_images/page_home/logos.png';
+import partnerAws from '~/assets/images/prplbx_images/page_home/well-architected-advanced-1.png';
+import HeroCarouselWrapper from '~/components/widgets/HeroCarouselWrapper.tsx';
 // import Note from '~/components/widgets/Note.astro'; // Not used yet
 import Features from '~/components/widgets/Features.astro';
 // import Features2 from '~/components/widgets/Features2.astro'; // Not used yet
@@ -11,7 +22,7 @@ import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 // import Stats from '~/components/widgets/Stats.astro'; // Not used yet
-// import CallToAction from '~/components/widgets/CallToAction.astro'; // Not used yet
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Cybersecurity and Cloud Solutions Unique to Your Needs - PurpleBox',
@@ -22,15 +33,17 @@ const metadata = {
 
 <Layout metadata={metadata}>
   {/* Hero Carousel Widget ******************* */}
-  <HeroCarousel
-    slides={[
+  <section class="bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)]">
+    <HeroCarouselWrapper
+      client:visible
+      slides={[
       {
         title: 'Manage Risk for',
         titleHighlight: 'Your Business',
         subtitle: 'SECURITY - CLOUD - DEVOPS',
         buttonText: 'SECURITY SERVICES',
         buttonHref: '/security/',
-        imageSrc: heroSlideImage,
+        imageSrc: heroSlideImage.src,
         imageAlt: 'Manage Risk for Your Business',
       },
       {
@@ -39,73 +52,98 @@ const metadata = {
         subtitle: 'SECURITY - CLOUD - DEVOPS',
         buttonText: 'CLOUD SERVICES',
         buttonHref: '/cloud/',
-        imageSrc: heroSlideImage,
+        imageSrc: heroSlideImage.src,
         imageAlt: 'Cloud Security That Drives Business Growth',
       },
-    ]}
-  />
+      ]}
+    />
+  </section>
 
   {/* Features Widget: Why PurpleBox Security? */}
-  <Features
-    id="why-purplebox"
-    tagline="Why PurpleBox Security?"
-    title="Cybersecurity and Cloud Solutions Tailored to Your Needs"
-    subtitle="PurpleBox helps you empower your team with integrated cybersecurity solutions, seamlessly working together to detect, protect against, respond to, and recover from cyberattacks."
-    items={[
-      {
-        title: 'Penetration Testing',
-        description: 'Recognize the Risks and Consequences of System Vulnerabilities',
-        icon: 'tabler:shield-check', 
-      },
-      {
-        title: 'Vulnerability Management',
-        description: 'Detect and defend against threats in real time, anywhere and everywhere',
-        icon: 'tabler:shield-search', 
-      },
-      {
-        title: 'Cloud Security',
-        description: 'Elevate security in the cloud and raise your security posture',
-        icon: 'tabler:cloud-lock', 
-      },
-      {
-        title: 'Web App Firewall',
-        description: 'Protect web apps from attacks without changes to your infrastructure',
-        icon: 'tabler:shield-lock', 
-      },
-      {
-        title: 'Endpoint Security',
-        description: 'Block ransomware attacks effectively before they happen',
-        icon: 'tabler:device-laptop', 
-      },
-      {
-        title: 'Risk and Compliance',
-        description: 'Ensure your InfoSec program is aligned with regulations and compliance mandates',
-        icon: 'tabler:file-check', 
-      },
-    ]}
-  />
+  <section id="why-purplebox" class="py-16 md:py-20">
+    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+      <p class="text-base text-[#858585] font-semibold tracking-wide uppercase">Why PurpleBox Security?</p>
+      <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto dark:text-white">
+        Cybersecurity and Cloud Solutions Tailored to Your Needs
+      </h2>
+    </div>
+    <Features
+      columns={3}
+      items={[
+        {
+          title: 'Penetration Testing',
+          description: 'Recognize the Risks and Consequences of System Vulnerabilities',
+          icon: iconPenTest.src,
+        },
+        {
+          title: 'Vulnerability Management',
+          description: 'Detect and defend against threats in real time, anywhere and everywhere',
+          icon: iconVulnMgmt.src,
+        },
+        {
+          title: 'Cloud Security',
+          description: 'Elevate security in the cloud and raise your security posture',
+          icon: iconCloudSec.src,
+        },
+        {
+          title: 'Web App Firewall',
+          description: 'Protect web apps from attacks without changes to your infrastructure',
+          icon: iconVulnMgmt.src, // Re-using the same icon as Vuln Mgmt based on old site
+        },
+        {
+          title: 'Endpoint Security',
+          description: 'Block ransomware attacks effectively before they happen',
+          icon: iconEndpointSec.src,
+        },
+        {
+          title: 'Risk and Compliance',
+          description: 'Ensure your InfoSec program is aligned with regulations and compliance mandates',
+          icon: iconRiskComp.src,
+        },
+      ]}
+      classes={{
+        container: 'max-w-6xl',
+        panel: 'flex-row items-start text-left',
+        icon: 'w-16 h-auto mr-4', // Larger icon, no circle
+        title: 'text-lg font-bold',
+      }}
+    />
+    <div class="max-w-2xl mx-auto mt-12 text-center">
+      <p class="text-base text-gray-700 md:text-lg dark:text-slate-400">
+        PurpleBox helps you empower your team with integrated cybersecurity solutions, seamlessly working together to detect, protect against, respond to, and recover from cyberattacks.
+      </p>
+    </div>
+  </section>
 
   {/* Advanced Cloud Solutions Section */}
   <section class="py-10 md:py-16 bg-slate-50 dark:bg-slate-800">
     <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-        <h2 class="max-w-lg mb-6 font-sans text-2xl font-semibold leading-none tracking-tight text-gray-700 sm:text-3xl md:mx-auto dark:text-slate-300 uppercase">
+        <h2 class="max-w-lg mb-6 font-sans text-base font-semibold tracking-wide text-gray-600 sm:text-lg md:mx-auto dark:text-slate-300 uppercase">
           Advanced Cloud Solutions for your Business
         </h2>
       </div>
 
-      <Content
-        isReversed={false} 
-        image={{
-          src: '~/assets/images/prplbx_images/page_home/Group-427319260Cloud-Services.svg',
-          alt: 'Advanced Cloud Solutions',
-        }}
-      >
-        <Fragment slot="content">
-          <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">
+      <div class="md:flex md:gap-16 items-start">
+        {/* Left Column: Image and Title */}
+        <div class="md:w-5/12 lg:w-1/2 text-center md:text-left">
+          <img
+            src={advCloudSolImage.src}
+            alt="Advanced Cloud Solutions"
+            class="mx-auto md:mx-0 mb-6 w-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xs xl:max-w-sm"
+            width={advCloudSolImage.width}
+            height={advCloudSolImage.height}
+            loading="lazy"
+          />
+          <h3 class="text-lg font-semibold tracking-tight dark:text-white sm:text-xl mb-8 md:mb-0">
             Advancing Digital Evolution: Tailored Cloud Solutions for Future-Ready Businesses
           </h3>
+        </div>
+
+        {/* Right Column: Accordion */}
+        <div class="md:w-7/12 lg:w-1/2">
           <FAQs
+            columns={1}
             items={[
               {
                 title: 'Cloud Migration',
@@ -132,25 +170,24 @@ const metadata = {
                 description: 'Elevating your Cloud with Operations, Reliability & Performance: Where Expertise Meets Innovation. <a href="/cloud/ops/" class="text-primary-600 dark:text-primary-400 hover:underline">Learn more...</a>',
               },
             ]}
-            classes={{ 
-              container: 'w-full',
-              list: '', 
-              item: '',   
-              question: '', 
-              answer: 'prose prose-sm sm:prose dark:prose-invert max-w-none',
+            classes={{
+              container: 'w-full', // Will be overridden by ItemGrid for accordion
+              // list: '', // Not directly used by ItemGrid if it becomes details/summary
+              // item: '',   // Not directly used by ItemGrid if it becomes details/summary
+              // question: '', // Will be part of summary styling
+              answer: 'prose prose-sm sm:prose dark:prose-invert max-w-none pb-4', // For content within <details>
             }}
           />
-        </Fragment>
-        {/* No slot="bg" for this Content widget as the parent section handles background */}
-      </Content>
+        </div>
+      </div>
     </div>
   </section>
 
   {/* Manage Risk Section */}
-  <section class="py-16 md:py-20 bg-gray-800 dark:bg-gray-900 text-white">
+  <section class="pt-16 md:pt-20 pb-8 md:pb-12 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
     <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-auto">
+      <div class="max-w-4xl mb-8 md:mx-auto sm:text-center lg:max-w-5xl">
+        <h2 class="mb-6 font-sans text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-auto">
           Manage Risk for Your Business and Grow in the Cloud
         </h2>
       </div>
@@ -160,28 +197,25 @@ const metadata = {
           {
             title: 'We Plan',
             description: 'We form a strategy to overcome your business pain points and optimize your strengths',
-            icon: 'tabler:map-pin', 
+            icon: iconWePlan.src,
           },
           {
             title: 'We Build',
             description: 'We work with our team of experts to build, test and integrate the right solution based on your business needs',
-            icon: 'tabler:tools', 
+            icon: iconWeBuild.src,
           },
           {
             title: 'We Run It',
             description: 'We give transition support through strategic guidance and provide post delivery support',
-            icon: 'tabler:player-play', 
+            icon: iconWeRunIt.src,
           },
         ]}
-        classes={{ 
-          container: 'max-w-6xl mx-auto md:px-4',
-          title: 'text-center text-3xl md:text-4xl font-bold mb-4 text-white', 
-          subtitle: 'text-center text-xl text-gray-300 mb-12', 
-          grid: 'grid md:grid-cols-3 gap-8',
-          column: 'text-center', 
-          icon: 'w-16 h-16 mx-auto mb-4 text-primary-500', 
-          itemTitle: 'text-xl font-bold mb-2 text-white', 
-          description: 'text-gray-300', 
+        classes={{
+          container: 'max-w-6xl',
+          panel: 'flex-col items-center text-center', // This should now work correctly
+          icon: 'w-56 h-auto mb-6', // Increased size
+          title: 'text-xl font-bold mb-2 text-white',
+          description: 'text-sm text-white',
         }}
       />
     </div>
@@ -222,20 +256,20 @@ const metadata = {
   <section class="py-16 md:py-20 bg-slate-50 dark:bg-slate-800">
     <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-        <h2 class="max-w-lg mb-6 font-sans text-2xl font-semibold leading-none tracking-tight text-gray-700 sm:text-3xl md:mx-auto dark:text-slate-300 uppercase">
+        <h2 class="max-w-lg mb-6 font-sans text-base font-semibold tracking-wide text-gray-600 sm:text-lg md:mx-auto dark:text-slate-300 uppercase">
           Trusted Partners
         </h2>
       </div>
       <div class="flex flex-col items-center">
-        <img 
-          src="/assets/images/prplbx_images/page_home/logos.png" 
-          alt="Trusted Partner Logos" 
+        <img
+          src={partnerLogos.src}
+          alt="Trusted Partner Logos"
           class="mb-8 max-w-full h-auto md:max-w-3xl" 
           loading="lazy"
         />
-        <img 
-          src="/assets/images/prplbx_images/page_home/well-architected-advanced-1.png" 
-          alt="AWS Well-Architected Partner Advanced Tier Services" 
+        <img
+          src={partnerAws.src}
+          alt="AWS Well-Architected Partner Advanced Tier Services"
           class="max-w-xs h-auto" 
           loading="lazy"
         />
@@ -253,47 +287,7 @@ const metadata = {
   />
 
   {/* Overcome Security Challenges Section */}
-  <section class="py-16 md:py-24 text-white bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] overflow-hidden">
-    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div class="grid lg:grid-cols-3 items-center gap-8">
-        {/* Left Image */}
-        <div class="hidden lg:block">
-          <img 
-            src="/assets/images/prplbx_images/page_home/footer-left.webp" 
-            alt="Decorative graphic" 
-            class="w-full h-auto"
-            loading="lazy"
-          />
-        </div>
-        
-        {/* Center Content */}
-        <div class="text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Overcome Your Security Challenges
-          </h2>
-          <p class="text-lg md:text-xl mb-8 text-slate-300">
-            We offer 360° Security protection for your business with our trusted experts in cybersecurity.
-          </p>
-          <a
-            href="/get-in-touch/" 
-            class="btn btn-primary bg-white text-purple-700 hover:bg-gray-200 px-8 py-3 text-lg font-semibold rounded-md"
-          >
-            TALK TO AN EXPERT
-          </a>
-        </div>
-
-        {/* Right Image */}
-        <div class="hidden lg:block">
-          <img 
-            src="/assets/images/prplbx_images/page_home/footer-right.webp" 
-            alt="Decorative graphic" 
-            class="w-full h-auto" 
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+  <CallToAction />
 
   {/* Additional sections will be added here based on old_page_home.html and screenshots */}
 </Layout>

@@ -1,0 +1,203 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Accordion from '~/components/widgets/Accordion.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_cloud_analytics/Group-427319262Data-PurpleBox-1.svg';
+
+const metadata = {
+  title: 'Data, Analytics, AI & ML - PurpleBox',
+  description: "Unlock your business potential with PurpleBox's expert Data, Analytics, AI & ML services. Tailored consulting to maximize your data value.",
+};
+
+const faqs = [
+    {
+        title: 'Gain a Comprehensive View of Data',
+        content: 'Ensure data integrity and break down silos to gain a holistic perspective of each business domain.',
+    },
+    {
+        title: 'Escape Legacy Database Constraints',
+        content: 'Cut costs by migrating to flexible AWS database solutions with pay-as-you-go pricing models.',
+    },
+    {
+        title: 'Accelerate Self-Service Analytics',
+        content: 'Stay ahead of the competition with AWS’s suite of powerful self-service analytics tools for quick insights.',
+    },
+    {
+        title: 'Monetize your Data',
+        content: 'Enhance existing data with third-party sources, utilize machine learning and real-time data to innovate products/services, and create new revenue streams.',
+    },
+];
+
+const benefits = [
+  {
+    title: 'Should I Build or Buy?',
+    icon: 'fa:star-o',
+    description: 'We help you decide whether to build or buy data solutions based on your business needs.',
+  },
+  {
+    title: 'Experts Advice',
+    icon: 'fa:star-o',
+    description: 'Work with a team of trained professionals to tackle data challenges affordably.',
+  },
+  {
+    title: 'Visualize',
+    icon: 'fa:star-o',
+    description: 'Enhance analytics with custom dashboards and BI tools like Tableau, Amazon QuickSight, and Power BI.',
+  },
+  {
+    title: 'Data-Driven Decision-Making',
+    icon: 'fa:star-o',
+    description: 'Identify anomalies, offer customer recommendations, and guide actions using data.',
+  },
+];
+
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Data, Analytics, AI & ML</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Empowering Transformation Through Data: Innovate, Optimize, and Excel with PurpleBox’s Expert Analytics and AI Solutions.</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Data Analytics Hero" class="w-full h-auto max-w-md mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center">
+        Choosing PurpleBox for your data, analytics, AI, and ML needs means partnering with a team deeply committed to unlocking the transformative power of data in your business. Our expertise spans the latest in cloud technologies and machine learning advancements, tailored to propel businesses into a new era of operational efficiency and innovation. Our AWS-certified professionals are at the forefront of navigating the complexities of data modernization, ensuring your journey from data to insight is seamless, scalable, and secure.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center mt-4">
+        At PurpleBox, we understand that every business is unique, with its own challenges and opportunities. That’s why our approach is<strong> highly personalized</strong>, focusing on your specific goals to design and implement solutions that are not just effective but transformative. Our comprehensive suite of services—from data lakes and warehousing to AI-driven analytics—empowers organizations to make <strong>smarter decisions, faster</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is Data, Analytics, AI & ML? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">What is Data, Analytics, AI & ML?</h2>
+            <p class="text-lg text-center">
+                Businesses often find themselves swimming in data but struggling to extract valuable insights. A tailored data modernization and analytics strategy, drawing from successful patterns, can address key concerns hindering business outcomes. PurpleBox specializes in leveraging <a href="https://partners.amazonaws.com/partners/001E000001HKFNvIAP/" class="text-blue-400 hover:underline">AWS’s</a> (and other cloud providers) range of purpose-built databases, storage, integration, analytics, and AI/ML services.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Whether you’re setting up a data lake, transitioning from commercial databases, enhancing business intelligence, or optimizing data flow between systems, PurpleBox can help you unlock your data’s full potential swiftly.
+            </p>
+            <div class="mt-12">
+                <Accordion items={faqs} />
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="py-8">
+                <h2 class="text-2xl font-bold mb-4">Business Intelligence Solutions</h2>
+                <p>Empower your organization to share insights and drive better decisions with PurpleBox as your Business Intelligence (BI) partner. We will build your analytics platform, offering a flexible architecture, capable of scaling from a few users to tens of thousands, and from single tools to multiple interfaces.</p>
+                <p class="mt-4">Experiment with self-service, real-time analytics, and data-driven decision-making with operational analytics and business intelligence solutions built on AWS and other Cloud Providers.</p>
+                <p class="mt-4">Utilizing robust analytics tools like <a href="https://aws.amazon.com/pm/quicksight/?gclid=CjwKCAjw48-vBhBbEiwAzqrZVK5jffULkrdMJd_WTfbfOne6p89wK2ssZ9kpBqWy23iowbVrkTbT2RoCUY4QAvD_BwE&trk=4b63ce16-547d-47f3-8767-99c56998f891&sc_channel=ps&ef_id=CjwKCAjw48-vBhBbEiwAzqrZVK5jffULkrdMJd_WTfbfOne6p89wK2ssZ9kpBqWy23iowbVrkTbT2RoCUY4QAvD_BwE:G:s&s_kwcid=AL!4422!3!651510248532!e!!g!!quicksight!19836376513!152718795728" class="text-blue-600 hover:underline">Quicksight</a>, Redshift, Glue DataBrew, SageMaker Data Wrangler, and Athena on AWS, we provide insights into your business performance, emerging trends, and potential risks.</p>
+                <p class="mt-4">Our expert team crafts custom dashboards and visualizations, enabling stakeholders to explore and interact with data effortlessly, facilitating informed decision-making.</p>
+                <p class="mt-4 font-bold">Key benefits include:</p>
+                <ol class="list-decimal list-inside mt-2">
+                    <li>Cloud deployment: flexible, fast, scalable, cost-effective, pay-as-you go unbeatable pricing.</li>
+                    <li>Real-time business intelligence: access up-to-the-minute insights to make informed decisions promptly.</li>
+                    <li>Increased user autonomy: empower users with the autonomy to explore and analyze data independently.</li>
+                    <li>Simplified, personalized, and dynamic information consumption: customize and personalize information consumption to suit individual preferences, ensuring dynamic and simplified data access and analysis.</li>
+                </ol>
+            </div>
+
+            <div class="py-8">
+                <h2 class="text-2xl font-bold mb-4">Data Operations & Governance</h2>
+                <p>Data-centric organizations prioritize data well-being and invest in automated data governance. PurpleBox accelerates this process, delivering results in weeks rather than months or years.</p>
+                <p class="mt-4">We collaborate with you to set data quality standards, implement data cataloging, and enhance data organization and secure access.</p>
+                <p class="mt-4">This provides greater data visibility and ensures appropriate usage. Furthermore, our solutions aid compliance with regulations like GDPR, HIPAA, and PCI DSS.</p>
+                <p class="mt-4">A modernized data architecture, strategy, and tools enable faster and more cost-effective data management.</p>
+                <p class="mt-4">Whether you’re setting up a data lake, lakehouse, data warehouse, or data mart, or modernizing an outdated ETL pipeline, our engineering experts are here to assist you.</p>
+                <p class="mt-4">Empower your business with modern analytics and valuable insights driving growth and success.</p>
+                <p class="mt-4">We design data lakes, lake houses, and big data pipelines to seamlessly ingest and process high-volume, high-velocity, and high-variety data.</p>
+                <p class="mt-4">Leveraging cutting-edge AWS tools like S3, Glue, Kinesis, EMR, and Redshift, we build robust, scalable data solutions optimized for performance, security, and cost-efficiency.</p>
+            </div>
+
+            <div class="py-8">
+                <h2 class="text-2xl font-bold mb-4">Data Science - Artificial Intelligence (AI) & Machine Learning (MLOps)</h2>
+                <p>Utilize AI to automate processes, predict outcomes, and revolutionize business models.</p>
+                <p class="mt-4">AI represents a transformative shift in software development, enabling machines to learn, abstract, and apply knowledge. With the AWS cloud’s capability to train large neural networks and user-friendly tools like SageMaker, organizations of all sizes can leverage machine learning (ML) without significant upfront investments.</p>
+                <p class="mt-4">PurpleBox AI experts help you make informed decisions and gain a competitive advantage by applying cutting-edge ML techniques to your data.</p>
+                <p class="mt-4">Leveraging AWS, we deliver scalable and efficient AI solutions, accelerating your time to market and and setting your teams up for success.</p>
+                <p class="mt-4 font-bold">Key benefits include:</p>
+                <ol class="list-decimal list-inside mt-2">
+                    <li>Competitive edge: Quickly create and operationalize ML models using AWS purpose-built AI services and tools like SageMaker, giving you a competitive advantage without the need for extensive development efforts.</li>
+                    <li>Valuable insights: ML algorithms analyze your data to provide valuable insights and predictions, empowering data-driven decision-making with precision and confidence.</li>
+                    <li>Purpose-built tooling: AWS offers a range of ML and data services tailored to various industries and use cases, including video/image processing, language processing, customer experience, business insights, DevOps, industrial AI, and healthcare AI, along with comprehensive MLOps toolkits.</li>
+                    <li>Seamless integration: AWS ML and MLOps services seamlessly integrate with other AWS and third-party services, allowing easy incorporation of ML into existing workflows and applications. You can also Bring Your Own Model to AWS, leveraging the extensive ecosystem of tools and techniques.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+  <!-- How Do We Do It? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">How Do We Do It?</h2>
+            <p class="text-lg text-center">
+                Our expert team collaborates with customers to perform feature engineering and selection, extracting the most relevant data features for ML model building. We utilize popular tools like SageMaker, Tensorflow, and Keras for building, training, testing, and deploying ML models.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Customers also have the option to Bring Your Own Model to AWS, and PurpleBox assists in tuning, operationalizing, and scaling those models on AWS infrastructure.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Additionally, we implement AWS managed ML services such as Textract, Comprehend, Personalize, Kendra, etc., purpose-built for diverse use cases and industries, enabling customers to quickly leverage machine learning capabilities.
+            </p>
+            <p class="text-lg text-center mt-4">
+                PurpleBox offers a unique advantage in helping customers plan and implement their MLOps strategy by combining expertise in DevOps, data engineering, machine learning, application development, and production operations.
+            </p>
+        </div>
+    </section>
+
+  <!-- Benefits Section -->
+  <Features
+    columns={2}
+    title="Benefits of PurpleBox Data, Analytics, AI & ML"
+    items={benefits}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-16 h-16 mx-auto mb-4 text-purple-600',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Why PurpleBox Cloud Services? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Cloud Services?</h2>
+            <p class="text-lg text-center">
+                At PurpleBox Cloud Services, we excel in offering holistic cloud solutions that cater to the diverse needs of modern businesses. By integrating cutting-edge cloud technologies with our extensive expertise, we enable businesses to navigate the complexities of cloud adoption seamlessly. Our solutions are designed to be as dynamic as the businesses we serve, ensuring scalability, flexibility, and unparalleled performance.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Our approach is customer-centric, prioritizing your business objectives to deliver tailored cloud strategies that align with your goals. Whether it’s cloud migration, management, or optimization, our team of certified cloud professionals employs best practices and innovative methodologies to ensure your journey to the cloud is smooth, secure, and efficient.
+            </p>
+        </div>
+    </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

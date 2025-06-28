@@ -1,0 +1,254 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQ from '~/components/widgets/FAQ.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_security_devsecops/devops-hero.png';
+import educateIcon from '~/assets/images/prplbx_images/page_security_devsecops/educate.svg';
+import evaluateIcon from '~/assets/images/prplbx_images/page_security_devsecops/evaluate.svg';
+import migrateIcon from '~/assets/images/prplbx_images/page_security_devsecops/migrate.svg';
+import modernizeIcon from '~/assets/images/prplbx_images/page_security_devsecops/modernize.svg';
+import transformIcon from '~/assets/images/prplbx_images/page_security_devsecops/transform.svg';
+import manageIcon from '~/assets/images/prplbx_images/page_security_devsecops/manage.svg';
+import cloudCenterOfExcellenceImage from '~/assets/images/prplbx_images/page_security_devsecops/cloudcenterofexcellence-image.png';
+import devopsProcessImage from '~/assets/images/prplbx_images/page_security_devsecops/devopsprocess-image.png';
+import applicationDevelopmentImage from '~/assets/images/prplbx_images/page_security_devsecops/applicationdevelopment-image.png';
+import managedCloudImage from '~/assets/images/prplbx_images/page_security_devsecops/managedcloud-image.png';
+import cloudSecurityImage from '~/assets/images/prplbx_images/page_security_devsecops/digital-work-space-min.webp';
+import appSecImage from '~/assets/images/prplbx_images/page_security_devsecops/AppSec.png';
+
+const metadata = {
+  title: 'What is DevSecOps? - PurpleBox',
+  description: "DevSecOps is increasingly important, can be difficult to implement, but has an incredible impact. PurpleBox's team of experts can help you...",
+};
+
+const approach = [
+  {
+    title: 'Educate',
+    icon: educateIcon.src,
+    description: 'Explore the journey to the cloud and expand your knowledge on the cloud power.<ul><li>Training</li><li>Best Practice Workshops</li><li>Executive Briefings</li><li>Security-related Researches</li></ul>',
+  },
+  {
+    title: 'Evaluate',
+    icon: evaluateIcon.src,
+    description: 'Upgrade outdated software, save money, and improve customer experience.<ul><li><a href="https://www.logicworks.com/blog/2019/10/what-is-an-aws-well-architected-review/">AWS Well-Architected Reviews</a></li><li>Cost Optimization Analysis</li><li>Application Assessment</li><li>Usability Testing</li></ul>',
+  },
+  {
+    title: 'Migrate',
+    icon: migrateIcon.src,
+    description: 'Unlock the full cloud potential by embracing a cloud-first mindset.<ul><li>Cloud Migration</li><li>Enterprise Migration</li><li>Application Migration</li><li>Data Migration</li></ul>',
+  },
+  {
+    title: 'Modernize',
+    icon: modernizeIcon.src,
+    description: 'Take your software to the next level using cloud-native technology.<ul><li>Application Modernization</li><li>Cloud-Native Application Development</li><li>Containers, Serverless Computing, Event-driven architecture</li><li>Modern DevOps</li></ul>',
+  },
+  {
+    title: 'Transform',
+    icon: transformIcon.src,
+    description: 'Embrace new technology that will keep you ahead of your competitors.<ul><li>Artificial Intelligence</li><li>Data Analytics</li><li>IoT</li><li>Machine Learning</li></ul>',
+  },
+  {
+    title: 'Manage',
+    icon: manageIcon.src,
+    description: 'Maintain your software with best practices in mind.<ul><li>Managed Services</li><li>Security</li><li>Compliance</li><li>Process optimization</li></ul>',
+  },
+];
+
+const faqs = [
+    {
+        question: 'What is the difference between DevOps and DevSecOps?',
+        answer: 'DevOps is a culture and practice that aims to shorten the software development life cycle by automating and integrating the work of development and operations teams. DevSecOps builds on this by integrating security into every stage of the development process, making security a shared responsibility.',
+    },
+    {
+        question: 'What are the benefits of DevSecOps?',
+        answer: 'DevSecOps can help organizations to release more secure software, faster. By integrating security into the development process, DevSecOps can help to identify and fix security vulnerabilities earlier, when they are easier and less expensive to fix. DevSecOps can also help to improve collaboration between development, security, and operations teams.',
+    },
+    {
+        question: 'How can PurpleBox help me with DevSecOps?',
+        answer: 'PurpleBox can help you to assess your current DevSecOps maturity, develop a roadmap for improvement, and implement the tools and processes you need to succeed. We can also provide training and support to help you to get the most out of your DevSecOps investment.',
+    },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">DevSecOps</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Start Digital Transformation for Your Business with DevSecOps</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="DevSecOps Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        PurpleBox partners with leading global corporations to create innovative digital transformation solutions that drive faster revenue growth, increase efficiency, and deliver unparalleled customer experiences. Our <strong>digital transformation</strong> roadmap propels your business to become more agile and competitive, with intelligent automation and data-driven customer insights on demand.
+      </p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">
+        Our team delivers outcomes that meet your immediate business needs and ensure long-term scale and continuous growth. With optimized resource management and automated workflows, we <strong>boost productivity and mitigate hazardous situations</strong>. Our customized DevSecOps solutions guarantee an exceptional customer experience, leading to sustainable customer loyalty and a positive brand image.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is DevSecOps? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">What is DevSecOps?</h2>
+            <p class="text-lg text-center">
+                Development, security, and operations (DevSecOps) is the approach and practice of integrating security testing at every step of the software development process. Viewed as a shared responsibility, it encourages collaboration between developers, security specialists, and operations to build secure software.
+            </p>
+        </div>
+    </section>
+
+  <!-- Our DevSecOps Approach Section -->
+  <Features
+    columns={2}
+    title="Our DevSecOps Approach"
+    items={approach}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-16 h-16 mx-auto mb-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Our DevSecOps Services Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Our DevSecOps Services</h2>
+            <p class="text-lg text-gray-600 dark:text-slate-400 text-center mb-12">
+                Take advantage of security automation to help secure your sensitive data and maintain constant compliance. Gain the control and confidence you need to securely run your business using the most flexible and secure cloud computing environment available. Experience automated manual security tasks, reducing human error, allowing you to shift your focus to scaling and innovating your business.
+            </p>
+
+            <Content
+                image={{ src: cloudCenterOfExcellenceImage, alt: 'Cloud Center of Excellence' }}
+            >
+                <Fragment slot="content">
+                <h2 class="text-2xl font-bold mb-4">Cloud Center of Excellence</h2>
+                <ul class="list-disc list-inside">
+                    <li><a href="https://www.prplbx.com/resources/blog/cloud-migration-guide/">Cloud migration strategy</a> and adoption</li>
+                    <li>Cloud migration factory setup</li>
+                    <li>Technical and management level training</li>
+                    <li>Policy, procedure and controls as code</li>
+                    <li>Cloud cost management and optimization</li>
+                    <li>New technologies (serverless, containerization)</li>
+                </ul>
+                </Fragment>
+            </Content>
+
+            <Content
+                isReversed
+                image={{ src: devopsProcessImage, alt: 'DevOps Process Automation' }}
+            >
+                <Fragment slot="content">
+                <h2 class="text-2xl font-bold mb-4">DevOps Process Automation</h2>
+                <ul class="list-disc list-inside">
+                    <li>DevOps strategy and roadmap</li>
+                    <li>Agile process and project management</li>
+                    <li>DevOps toolchain design and build</li>
+                    <li>DevOps maturity assessment</li>
+                    <li>Digital operating models</li>
+                    <li>CI/CD pipelines & automated deployments</li>
+                </ul>
+                </Fragment>
+            </Content>
+
+            <Content
+                image={{ src: applicationDevelopmentImage, alt: 'Application Development' }}
+            >
+                <Fragment slot="content">
+                <h2 class="text-2xl font-bold mb-4">Application Development</h2>
+                <ul class="list-disc list-inside">
+                    <li>Application development (Web, mobile, api, integrations)</li>
+                    <li>Design, build and support cloud-native applications</li>
+                    <li>Cloud based scalable and resilient architecture</li>
+                    <li>Event-driven, serverless, containers architectures</li>
+                    <li>Data Analytics, ML/AI, solutions to solve real-world problems</li>
+                    <li>Fraud detection, forecasting, machine vision, and pattern detection</li>
+                </ul>
+                </Fragment>
+            </Content>
+
+            <Content
+                isReversed
+                image={{ src: managedCloudImage, alt: 'Managed Cloud' }}
+            >
+                <Fragment slot="content">
+                <h2 class="text-2xl font-bold mb-4">Managed Cloud</h2>
+                <ul class="list-disc list-inside">
+                    <li>Build and maintain automation solutions</li>
+                    <li>Deploy and manage infrastructure as Code</li>
+                    <li>Monitor and maintain Security</li>
+                    <li>Manage, Test, Execute Disaster Recovery</li>
+                    <li>Performance Scaling and Cost Control</li>
+                    <li>Application and Infrastructure Management</li>
+                </ul>
+                </Fragment>
+            </Content>
+
+            <Content
+                image={{ src: cloudSecurityImage, alt: 'Cloud Security and Compliance' }}
+            >
+                <Fragment slot="content">
+                <h2 class="text-2xl font-bold mb-4">Cloud Security and Compliance</h2>
+                <ul class="list-disc list-inside">
+                    <li>Cloud Security Assessment</li>
+                    <li>Securing Delivery Pipelines</li>
+                    <li>DevSecOps Maturity Assessment</li>
+                    <li>Container Security Strategy</li>
+                    <li>DevSecOps Consulting</li>
+                </ul>
+                </Fragment>
+            </Content>
+
+            <Content
+                isReversed
+                image={{ src: appSecImage, alt: 'Cloud Application Security' }}
+            >
+                <Fragment slot="content">
+                <h2 class="text-2xl font-bold mb-4">Cloud Application Security</h2>
+                <ul class="list-disc list-inside">
+                    <li>Cloud Application Security Assessment</li>
+                    <li>Securing Application Development Pipelines</li>
+                    <li>Cloud Application Security Maturity Assessment</li>
+                    <li>API and Web Application Security</li>
+                    <li>Application Security Strategy for Cloud-Native Environments</li>
+                    <li>Cloud Application Security Consulting</li>
+                </ul>
+                </Fragment>
+            </Content>
+        </div>
+    </section>
+
+    <!-- Why PurpleBox Security? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Security?</h2>
+            <p class="text-lg text-center">
+                PurpleBox Security specializes in security assessments and penetration testing services. We place a high value on testing important devices and components. Our comprehensive reports are produced by experienced, skilled testers so that the actionable information contained within them is easily understood. Combining our Red Team (Offensive) capabilities with our Blue Team (Defensive) experience, we provide a unique approach to solving enterprise security problems.
+            </p>
+        </div>
+    </section>
+
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

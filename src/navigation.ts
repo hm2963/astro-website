@@ -4,6 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Security Services',
+      href: getPermalink('/security'),
       links: [
         {
           text: 'Penetration Testing Services',
@@ -37,6 +38,7 @@ export const headerData = {
     },
     {
       text: 'Cloud Services',
+      href: getPermalink('/cloud'),
       links: [
         {
           text: 'Cloud Migration',
@@ -122,14 +124,21 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [{ text: 'Privacy Policy', href: getPermalink('/privacy-policy') }], // Corrected path
+  secondaryLinks: [], // This will be handled differently in the new layout
   socialLinks: [
-    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://twitter.com/prplbx' }, // Updated with actual link
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/prplbx/' }, // Updated with actual link
-    // { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') }, // RSS might not be needed based on old site
-    // { ariaLabel: 'Github', icon: 'tabler:brand-github', href: '#' }, // Assuming no public GitHub for this site
+    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://twitter.com/prplbx' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/prplbx/' },
   ],
+  contactInfo: {
+    address: 'PurpleBox, Inc. Atlanta, GA',
+    email: 'contact@prplbx.com',
+    phone: '770-852-0562',
+  },
   footNote: `
     © ${new Date().getFullYear()} PurpleBox, Inc. All rights reserved.
   `,
+  privacyLink: {
+    text: 'Privacy Policy',
+    href: getPermalink('/privacy-policy'),
+  },
 };

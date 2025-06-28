@@ -1,58 +1,56 @@
 ---
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import type { CallToAction, Widget } from '~/types';
-import Headline from '~/components/ui/Headline.astro';
-import Button from '~/components/ui/Button.astro';
-
-interface Props extends Widget {
-  title?: string;
-  subtitle?: string;
-  tagline?: string;
-  callToAction?: CallToAction;
-  actions?: string | CallToAction[];
-}
+import type { CallToAction as Props } from '~/types';
+import footerLeftImage from '~/assets/images/prplbx_images/page_home/footer-left.webp';
+import footerRightImage from '~/assets/images/prplbx_images/page_home/footer-right.webp';
 
 const {
-  title = await Astro.slots.render('title'),
-  subtitle = await Astro.slots.render('subtitle'),
-  tagline = await Astro.slots.render('tagline'),
-  actions = await Astro.slots.render('actions'),
-
-  id,
-  isDark = false,
-  classes = {},
-  bg = await Astro.slots.render('bg'),
+  title = 'Overcome Your Security Challenges',
+  subtitle = 'We offer 360° Security protection for your business with our trusted experts in cybersecurity.',
+  callToAction = {
+    text: 'TALK TO AN EXPERT',
+    href: '/get-in-touch/',
+    type: 'button',
+  },
+  imageLeft = footerLeftImage,
+  imageRight = footerRightImage,
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div
-    class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
-  >
-    <Headline
-      title={title}
-      subtitle={subtitle}
-      tagline={tagline}
-      classes={{
-        container: 'mb-0 md:mb-0',
-        title: 'text-4xl md:text-4xl font-bold tracking-tighter mb-4 font-heading',
-        subtitle: 'text-xl text-muted dark:text-slate-400',
-      }}
-    />
-    {
-      actions && (
-        <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 mt-6">
-          {Array.isArray(actions) ? (
-            actions.map((action) => (
-              <div class="flex w-full sm:w-auto">
-                <Button {...(action || {})} class="w-full sm:mb-0" />
-              </div>
-            ))
-          ) : (
-            <Fragment set:html={actions} />
-          )}
-        </div>
-      )
-    }
+<section class="text-white bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] overflow-hidden h-[513px] flex items-center">
+  <div class="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-4 lg:gap-6">
+    <!-- Left Image -->
+    <div class="hidden lg:flex justify-end">
+      <img
+        src={imageLeft.src}
+        alt="Decorative graphic left"
+        class="w-full h-auto max-w-2xl"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Center Content -->
+    <div class="text-center px-4 lg:px-0 max-w-lg mx-auto">
+      {title && <h2 class="text-3xl md:text-4xl font-bold mb-2">{title}</h2>}
+      {subtitle && <p class="text-lg md:text-xl mb-6 text-slate-300">{subtitle}</p>}
+      {callToAction && (
+        <a
+          href={callToAction.href}
+          class="btn btn-primary bg-white text-purple-700 hover:bg-gray-200 px-6 py-2.5 text-base font-semibold rounded-md focus:outline-none focus:ring-0"
+          role={callToAction.type === 'button' ? 'button' : undefined}
+        >
+          {callToAction.text}
+        </a>
+      )}
+    </div>
+
+    <!-- Right Image -->
+    <div class="hidden lg:flex justify-start">
+      <img
+        src={imageRight.src}
+        alt="Decorative graphic right"
+        class="w-full h-auto max-w-2xl"
+        loading="lazy"
+      />
+    </div>
   </div>
-</WidgetWrapper>
+</section>

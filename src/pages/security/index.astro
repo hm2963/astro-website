@@ -1,0 +1,193 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+// Image Imports
+import heroImage from '~/assets/images/prplbx_images/page_security/security-hero.png';
+import approachStrategicIcon from '~/assets/images/prplbx_images/page_security/svgexport-3-1.svg';
+import approachResultOrientedIcon from '~/assets/images/prplbx_images/page_security/svgexport-4-1.svg';
+import approachCertifiedExpertiseIcon from '~/assets/images/prplbx_images/page_security/svgexport-5-1.svg';
+import approachInnovativeIcon from '~/assets/images/prplbx_images/page_security/svgexport-6-2.svg';
+import securityStrategyImage from '~/assets/images/prplbx_images/page_security/securitystrategy-image.png';
+import securityAssessmentImage from '~/assets/images/prplbx_images/page_security/securityassesment-image.png';
+import securityDesignImage from '~/assets/images/prplbx_images/page_security/securitydesign-image.png';
+import securitySolutionImage from '~/assets/images/prplbx_images/page_security/securitysolution-image.png';
+
+const metadata = {
+  title: 'Cybersecurity Services - PurpleBox',
+  description: 'We provide penetration tests and tailored cybersecurity services and solutions to improve organizations security.',
+};
+
+const approachItems = [
+  {
+    title: 'Strategic',
+    icon: approachStrategicIcon.src,
+    description: '<ul><li>Threat & Risk Assessment</li><li>Compliance Reviews</li><li>Security Architecture Review & Design</li><li>Cloud Technologies Architecture</li></ul>',
+  },
+  {
+    title: 'Result Oriented',
+    icon: approachResultOrientedIcon.src,
+    description: '<ul><li>Data Protection & Compliance</li><li>Business Enablement</li><li>Assessment & Remediation</li><li>Implementation & Operation</li></ul>',
+  },
+  {
+    title: 'Certified Expertise',
+    icon: approachCertifiedExpertiseIcon.src,
+    description: '<ul><li>Strategic & C-level</li><li>Experienced & Certified</li><li>On-Shore & Off-Shore Mixed</li><li>Strategic & Open-Minded</li></ul>',
+  },
+  {
+    title: 'Innovative',
+    icon: approachInnovativeIcon.src,
+    description: '<ul><li>One Size Does Not Fit All Policy</li><li>Customization & Flexibility</li><li>Unique and Relevant Strategy</li><li>Environment of Trust</li></ul>',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Cybersecurity Services</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Reduce Risk & Protect your Business</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="Cybersecurity Services Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400">
+        We help organizations make informed decisions about cybersecurity. Our experienced cybersecurity services team provides tailored solutions to address specific gaps and challenges, giving you real-world insight into security operations. With our risk management services, you can enhance your offensive security program. As a result, you’ll free up resources for higher value activities that matter most to your business. We cover a broad range of cybersecurity services including, <a href="/security/vm" class="text-primary hover:underline">Vulnerability Management</a>, <a href="/security/pentest" class="text-primary hover:underline">Penetration Testing</a>, <a href="/security/risk" class="text-primary hover:underline">Risk & Compliance</a>, <a href="/security/endpoint-security" class="text-primary hover:underline">Endpoint Security</a>, <a href="/security/waf" class="text-primary hover:underline">Web Application Firewall</a>, <a href="/security/cloud-security" class="text-primary hover:underline">Cloud Security</a>, and more. We extend your security operations to bridge people, processes, and technology for continuous support.
+      </p>
+    </div>
+  </section>
+
+  <!-- "Our Approach" Section -->
+  <Features
+    columns={2}
+    title="Our Approach"
+    items={approachItems}
+    classes={{
+      container: 'max-w-5xl',
+      panel: 'flex-row items-start text-left',
+      icon: 'w-12 h-12 mr-4',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+  <!-- Security Strategy Section -->
+  <Content
+    image={{ src: securityStrategyImage, alt: 'Security Strategy' }}
+    classes={{ container: 'max-w-6xl' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold mb-4">Security Strategy</h2>
+      <ul class="list-disc list-inside">
+        <li>Virtual Chief Information Security Officer (vCISO) services</li>
+        <li>Strategic security planning</li>
+        <li>Security risks, trends, and emerging technologies advisory</li>
+        <li>Security Project Management Office (PMO)</li>
+        <li>Recruiting and in-house team building</li>
+        <li>Security tool and vendor selection</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Security Assessment and Penetration Testing Section -->
+  <Content
+    isReversed
+    image={{ src: securityAssessmentImage, alt: 'Security Assessment' }}
+    classes={{ container: 'max-w-6xl' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold mb-4">Security Assessment and Penetration Testing</h2>
+      <ul class="list-disc list-inside">
+        <li>Risk assessment</li>
+        <li>Vulnerability assessment</li>
+        <li>Penetration testing / Ethical hacking</li>
+        <li>Web / Mobile application security testing</li>
+        <li>API security testing</li>
+        <li>Cloud security risk assessment (AWS, Azure, GCP)</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Security Design and Architecture Section -->
+  <Content
+    image={{ src: securityDesignImage, alt: 'Security Design' }}
+    classes={{ container: 'max-w-6xl' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold mb-4">Security Design and Architecture</h2>
+      <ul class="list-disc list-inside">
+        <li>Cloud security (AWS, Azure, GCP)</li>
+        <li>Network security architecture</li>
+        <li>Application security</li>
+        <li>Security in DevOps (DevSecOps)</li>
+        <li>End-Point security</li>
+        <li>Data backup and disaster recovery</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Security Solutions Implementation and Integration Section -->
+  <Content
+    isReversed
+    image={{ src: securitySolutionImage, alt: 'Security Solutions' }}
+    classes={{ container: 'max-w-6xl' }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold mb-4">Security Solutions Implementation and Integration</h2>
+      <ul class="list-disc list-inside">
+        <li>Secure network architecture and firewall</li>
+        <li>Cloud security automation / Infrastructure as code</li>
+        <li>Web application firewall (WAF)</li>
+        <li>Security logging, monitoring, and incident response</li>
+        <li>Security Operations Center (SOC)</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Managed Security Services / Risk and Compliance Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Managed Security Services</h2>
+        <ul class="list-disc list-inside text-gray-600 dark:text-slate-400">
+          <li>Vulnerability and patch management</li>
+          <li>Continuous application security testing</li>
+          <li>QA and security testing in DevOps</li>
+          <li>Managed Detection and Response (MDR/XDR)</li>
+          <li>Managed SOC</li>
+          <li>Security Awareness Training</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Security Risk and Compliance</h2>
+        <ul class="list-disc list-inside text-gray-600 dark:text-slate-400">
+          <li>Risk and compliance audit</li>
+          <li>Governance, risk, and compliance (GRC) tools implementation</li>
+          <li>GRC program development</li>
+          <li>Policy, procedure, and controls documentation</li>
+          <li>Compliance audit remediation</li>
+          <li>ISO27000, PCI, HIPAA/HITRUST, SOC2, FISMA, NIST, GDPR, CCPA</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>

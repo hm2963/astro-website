@@ -1,0 +1,145 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+// Image Imports - I'll create a new folder for devops images
+import heroImage from '~/assets/images/prplbx_images/page_cloud_devops/Group-427319261DevOps-PurpleBox-1.svg';
+
+
+const metadata = {
+  title: 'DevOps - PurpleBox',
+  description: 'Unlock the full potential of your IT with PurpleBox DevOps - your gateway to faster, more efficient software development and operations.',
+};
+
+const benefits = [
+  {
+    title: 'Fast Delivery',
+    icon: 'fa:star-o',
+    description: 'Accelerate your release schedule to swiftly deliver new features and address bugs. Stay responsive to customer needs and scale to meet demand effectively.',
+  },
+  {
+    title: 'A Better Collaborative Space',
+    icon: 'fa:star-o',
+    description: 'Experience enhanced teamwork with our agile delivery framework. Our developers and operations teams collaborate closely, sharing responsibilities and workflows to ensure flexibility and timely delivery aligned with your goals.',
+  },
+  {
+    title: 'Reliable infrastructure',
+    icon: 'fa:star-o',
+    description: 'Guarantee the reliability, security, and quality of your code updates and AWS infrastructure changes. This ensures faster delivery without risking service disruptions or downtime.',
+  },
+  {
+    title: 'Efficient Scale',
+    icon: 'fa:star-o',
+    description: 'Operate and manage your AWS infrastructure while minimizing manual intervention. Keep your systems running efficiently and reduce the risks that come with unexpected traffic or outages.',
+  },
+];
+
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">DevOps</h1>
+          <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
+          <p class="text-lg md:text-xl mb-8">Your gateway to faster, more efficient software development and operations.</p>
+          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+            GET STARTED NOW
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <img src={heroImage.src} alt="DevOps Hero" class="w-full h-auto max-w-lg mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <p class="text-lg text-gray-600 dark:text-slate-400 text-center">
+        PurpleBox DevOps consulting services provide you with a team of skilled cloud architects and engineers. We have a track record of success in numerous projects, helping you design, build, and manage your cloud environment efficiently.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is DevOps? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">What is DevOps?</h2>
+            <p class="text-lg text-center">
+                DevOps, short for Development and Operations, is all about making software development smoother and faster. It helps teams respond to changes quicker, release new updates more frequently, and make their systems more robust.
+            </p>
+            <p class="text-lg text-center mt-4">
+                At the heart of DevOps is a cultural shift in IT, aiming for faster delivery of IT services. It embraces agile and lean principles, emphasizing teamwork and collaboration between development and operations teams. With DevOps, technology plays a key role, especially through automation tools that make the most of flexible and dynamic infrastructure throughout its life cycle.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h3 class="text-2xl font-bold mb-4">Agility and Innovation Unleashed</h3>
+            <p class="text-lg text-gray-600 dark:text-slate-400">Integrating DevOps tools and adopting best practices not only boosts performance and efficiency but also accelerates your software development life cycle (SDLC), enabling rapid responses to evolving market demands. Embracing technologies like <a href="https://docs.aws.amazon.com/whitepapers/latest/introduction-devops-aws/infrastructure-as-code.html" class="text-primary hover:underline">Infrastructure-as-Code</a> is pivotal for ensuring the durability, repeatability, and future-readiness of your infrastructure.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">Furthermore, these advantages are accompanied by a substantial reduction in total cost of ownership (TCO). Enhancements to your infrastructure empower you to seamlessly incorporate cost-saving services, creating a cycle of increased efficiency, superior performance, and reduced billing.</p>
+
+            <h2 class="text-3xl font-bold text-center my-12">DevOps Enablement</h2>
+            <h3 class="text-2xl font-bold mb-4">Unlock Your Potential with PurpleBox DevOps Support</h3>
+            <p class="text-lg text-gray-600 dark:text-slate-400">We provide a wide array of services to assist service providers in transforming their operations. Our consulting services offer expert guidance and training, ensuring that your IT infrastructure is optimized using a collaborative approach across departments, aligning execution with business goals.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">We also design DevOps environments to ensure that hardware, software, and networking needs are met for efficient cloud-based development.</p>
+            
+            <h3 class="text-2xl font-bold mt-8 mb-4">Transition Smoothly with DevOps Organization Setup</h3>
+            <p class="text-lg text-gray-600 dark:text-slate-400">Our DevOps Organization Setup service helps service providers smoothly transition to a new operating model. We provide training to develop the skills of your team members, ensuring they can effectively adopt DevOps practices and improve processes. We foster collaboration among cross-functional teams, boosting productivity and innovation.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">Our DevOps engineers work closely with your team to embrace a collaborative and efficient DevOps culture. By implementing industry standards and best practices, we empower your development and operations teams to boost their speed and quality of innovation.</p>
+
+            <h2 class="text-3xl font-bold text-center my-12">DevOps Tools</h2>
+            <p class="text-lg text-gray-600 dark:text-slate-400">Tooling is essential in DevOps, as it involves using different software tools to automate tasks and simplify workflows. DevOps tools facilitate efficient communication and knowledge-sharing among all stakeholders, including development, operations, security, and business teams. This collaborative approach ensures smooth product delivery processes.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">These tools enable organizations to unify development, operations, and security efforts, following industry best practices and fostering innovation across the product development lifecycle.</p>
+            
+            <h3 class="text-2xl font-bold mt-8 mb-4">DevOps Tools Selection</h3>
+            <p class="text-lg text-gray-600 dark:text-slate-400">When selecting a DevOps toolchain, organizations should prioritize tools that enhance collaboration, minimize interruptions, automate tasks, and improve observability and monitoring for faster software delivery.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">There are two main types of DevOps toolchains: all-in-one and open. An all-in-one solution offers a complete package but may lack integration with other tools. On the other hand, an open toolchain allows customization with various tools to meet specific team needs.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">PurpleBox advocates for the open toolchain approach, as it allows teams to tailor their toolkit with the best tools available, leading to greater efficiency and faster time to market.</p>
+
+            <h2 class="text-3xl font-bold text-center my-12">CI/CD Pipeline Development</h2>
+            <p class="text-lg text-gray-600 dark:text-slate-400">Continuous integration and continuous delivery (CI/CD) automate the software release process, from building to deployment. We can work with your existing tools or recommend options that suit your needs.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">Our goal is to ensure that every code change you make is functional and secure, without introducing any issues.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">With continuous and automated code merging and deployment, your application stays production-ready without any delays or risky manual tasks.</p>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">Implement CI/CD pipelines to automate code integration, testing, and deployment across multiple environments. This speeds up feature development and releases while enhancing the reliability of your code.</p>
+        </div>
+    </section>
+
+  <!-- Benefits Section -->
+  <Features
+    columns={2}
+    title="Benefits of PurpleBox DevOps"
+    items={benefits}
+    classes={{
+      container: 'max-w-6xl',
+      panel: 'text-center',
+      icon: 'w-16 h-16 mx-auto mb-4 text-purple-600',
+      title: 'text-xl font-bold mb-2',
+      description: 'mt-2 text-sm',
+    }}
+  />
+
+    <!-- Why PurpleBox Cloud Services? Section -->
+    <section class="py-16 md:py-20 bg-[radial-gradient(circle_at_left_top,rgb(50,17,121)_9%,rgb(22,14,43)_72%)] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Why PurpleBox Cloud Services?</h2>
+            <p class="text-lg text-center">
+                At PurpleBox Cloud Services, we excel in offering holistic cloud solutions that cater to the diverse needs of modern businesses. By integrating cutting-edge cloud technologies with our extensive expertise, we enable businesses to navigate the complexities of cloud adoption seamlessly. Our solutions are designed to be as dynamic as the businesses we serve, ensuring scalability, flexibility, and unparalleled performance.
+            </p>
+            <p class="text-lg text-center mt-4">
+                Our approach is customer-centric, prioritizing your business objectives to deliver tailored cloud strategies that align with your goals. Whether it’s cloud migration, management, or optimization, our team of certified cloud professionals employs best practices and innovative methodologies to ensure your journey to the cloud is smooth, secure, and efficient.
+            </p>
+        </div>
+    </section>
+
+  <!-- Final Call to Action -->
+  <CallToAction />
+</Layout>
