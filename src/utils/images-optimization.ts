@@ -327,12 +327,25 @@ export async function getImagesOptimized(
   let breakpoints = getBreakpoints({ width: width, breakpoints: widths, layout: layout });
   breakpoints = [...new Set(breakpoints)].sort((a, b) => a - b);
 
-  const srcset = (await transform(image, breakpoints, Number(width) || undefined, Number(height) || undefined, format))
-    .map(({ src, width }) => `${src} ${width}w`)
-    .join(', ');
+  const transformedImages = await transform(
+    image,
+    breakpoints,
+    Number(width) || undefined,
+    Number(height) || undefined,
+    format
+  );
+
+  if (transformedImages.length === 0) {
+    return {
+      src: '',
+      attributes: { ...rest },
+    };
+  }
+
+  const srcset = transformedImages.map(({ src, width }) => `${src} ${width}w`).join(', ');
 
   return {
-    src: typeof image === 'string' ? image : image.src,
+    src: transformedImages.find((img) => img.width === width)?.src || transformedImages[0]?.src,
     attributes: {
       width: width,
       height: height,

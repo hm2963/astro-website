@@ -4,6 +4,7 @@ import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Accordion from '~/components/widgets/Accordion.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 // Image Imports
 import heroImage from '~/assets/images/prplbx_images/page_cloud_application-development-modernization/Group-427319258AppDevBig.svg';
@@ -89,7 +90,7 @@ const benefits = [
           <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Application Development & Modernization</h1>
           <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
           <p class="text-lg md:text-xl mb-8">Unlock the full potential of your applications through transformative application development and modernization solutions.</p>
-          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+          <a href="/get-in-touch" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
             GET STARTED NOW
           </a>
         </div>
@@ -129,7 +130,7 @@ const benefits = [
                 Application Development & Modernization refers to the strategic process of designing, building, and evolving software applications to meet current and future business needs. This involves the creation of new applications that are cloud-native, designed to operate in modern, dynamic environments like the cloud, enabling global accessibility, high scalability, and the ability to handle vast amounts of data with minimal latency.
             </p>
             <p class="text-lg text-center mt-4">
-                Modernization, on the other hand, is the process of transforming existing legacy applications to take advantage of cloud technologies, improved scalability, and efficiency. Modernization aims to refresh and enhance the existing application ecosystem, making it more resilient, <a href="/security/" class="text-blue-400 hover:underline">secure</a>, and capable of leveraging the benefits of cloud computing.
+                Modernization, on the other hand, is the process of transforming existing legacy applications to take advantage of cloud technologies, improved scalability, and efficiency. Modernization aims to refresh and enhance the existing application ecosystem, making it more resilient, <a href="/security" class="text-blue-400 hover:underline">secure</a>, and capable of leveraging the benefits of cloud computing.
             </p>
         </div>
     </section>
@@ -230,6 +231,15 @@ const benefits = [
         </div>
     </section>
 
+  {/* Blog Latest Posts Section */}
+  <BlogLatestPosts
+    title=""
+    information=""
+    linkText="Our blog"
+    linkUrl="/blog"
+    count={3}
+  />
+  
   <!-- Final Call to Action -->
   <CallToAction />
 </Layout>

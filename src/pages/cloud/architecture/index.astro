@@ -4,6 +4,7 @@ import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQ from '~/components/widgets/FAQ.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 // Image Imports
 import heroImage from '~/assets/images/prplbx_images/page_cloud_architecture/CloudArchitecture-PurpleBox-1.svg';
@@ -71,7 +72,7 @@ const faqs = [
           <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Cloud Architecture and Optimization</h1>
           <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
           <p class="text-lg md:text-xl mb-8">Optimize Your Digital Horizon: Advanced Cloud Architecture and Optimization Solutions Customized for Peak Performance and Reduced Costs</p>
-          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+          <a href="/get-in-touch" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
             GET STARTED NOW
           </a>
         </div>
@@ -146,7 +147,7 @@ const faqs = [
       <h2 class="text-3xl font-bold text-center mb-12">Infrastructure as Code (IaC)</h2>
       <h3 class="text-2xl font-bold mb-4">DevOps Fundamental: Treating Infrastructure as Code</h3>
       <p class="text-lg text-gray-600 dark:text-slate-400">Just as application code follows specific syntax and format, infrastructure provisioning should adhere to defined standards. In essence, infrastructure is managed as code, stored in a version control system which tracks changes and updates over time.</p>
-      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">By practicing Infrastructure as Code (IaC), configurations are defined declaratively, allowing for consistency and repeatability. This approach ensures that infrastructure provisioning, orchestration, and deployment processes align with the principles of <a href="/cloud/devops/" class="text-primary hover:underline">DevOps</a>, enabling teams to efficiently manage and scale their infrastructure while maintaining reliability and traceability.</p>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">By practicing Infrastructure as Code (IaC), configurations are defined declaratively, allowing for consistency and repeatability. This approach ensures that infrastructure provisioning, orchestration, and deployment processes align with the principles of <a href="/cloud/devops" class="text-primary hover:underline">DevOps</a>, enabling teams to efficiently manage and scale their infrastructure while maintaining reliability and traceability.</p>
       
       <h3 class="text-2xl font-bold mb-4 mt-8">Terraform: streamlining Cloud Infrastructure Management</h3>
       <p class="text-lg text-gray-600 dark:text-slate-400">HashiCorp Terraform is an infrastructure-as-code tool that simplifies managing cloud and on-prem resources through human-readable configuration files. These files, which can be versioned, reused, and shared, support a consistent workflow for provisioning and managing infrastructure across its lifecycle. Terraform handles both basic resources like compute, storage, and networking, and complex ones such as DNS and SaaS features.</p>
@@ -225,6 +226,15 @@ const faqs = [
     </div>
   </section>
 
+  {/* Blog Latest Posts Section */}
+  <BlogLatestPosts
+    title=""
+    information=""
+    linkText="Our blog"
+    linkUrl="/blog"
+    count={3}
+  />
+  
   <!-- Final Call to Action -->
   <CallToAction />
 </Layout>

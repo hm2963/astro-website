@@ -1,0 +1,54 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import heroImage from '~/assets/images/prplbx_images/page_home/animation-11-1-1.svg';
+
+const metadata = {
+  title: 'Contact Us - PurpleBox',
+  description: 'Get in touch with us! PurpleBox experts customize security solutions for businesses of all sizes.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="py-16 md:py-20">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left Column: Title, Subtitle, and Form -->
+        <div class="text-center md:text-left">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Contact Us
+          </h1>
+          <p class="text-lg text-gray-700 dark:text-slate-400 mb-8">
+            Get in touch with us! PurpleBox experts customize security solutions for businesses of all sizes. We will follow up with you after receiving your request. In the meantime, don’t forget to check out our <a href="/blog" class="text-primary-600 dark:text-primary-400 hover:underline font-semibold">blog</a>!
+          </p>
+          
+          <!-- HubSpot Form Container -->
+          <div id="hubspot-form-container" class="mt-8">
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+            <script>
+              hbspt.forms.create({
+                region: "na1",
+                portalId: "2042385",
+                formId: "ad572fb2-ff27-4cd4-adb0-fb32ac2709f9",
+                target: '#hubspot-form-container'
+              });
+            </script>
+          </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="relative flex justify-center md:justify-end mt-10 md:mt-0">
+          <img
+            src={heroImage.src}
+            alt="Contact Us Illustration"
+            width="450"
+            height="450"
+            class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

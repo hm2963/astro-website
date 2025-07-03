@@ -1,0 +1,186 @@
+---
+title: "What is Qualys Cloud Perimeter Scan? How Does it Work?"
+publishDate: 2024-12-04
+draft: false
+excerpt: "Qualys Cloud Platform is a cloud-based security solution that strengthens organizations’ cybersecurity. As a powerful and integrated security platform..."
+image: "~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/Securing-Cloud-Assets-with-Qualys-Scan.svg"
+category: "AI"
+tags: ["cybersecurity", "generative-ai"]
+author: "Admin"
+metadata:
+  description: ""
+---
+import Image from '~/components/common/Image.astro';
+import PostFAQ from '~/components/blog/PostFAQ.astro';
+import totalCloudImage from '~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/TotalCloud-2.png';
+import qualysCloudPlatformImage from '~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/QualysCloud-Platform-1.png';
+import qualysCloudImage6 from '~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/QualysCloud_6_PurpleBox_.png';
+import qualysCloudImage9 from '~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/QualysCloud_9_PurpleBox.png';
+import qualysCloudImage1 from '~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/QualysCloud_1_PurpleBox.png';
+import qualysCloudImage2 from '~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/QualysCloud_2_PurpleBox.png';
+import qualysCloudImage3 from '~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/QualysCloud_3_PurpleBox.png.png';
+import qualysCloudImage4 from '~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/QualysCloud_4_PurpleBox.jpg';
+import qualysCloudImage5 from '~/assets/images/prplbx_images/blog_12_what-is-qualys-cloud-perimeter-scan-how-does-it-work/QualysCloud_5_PurpleBox.jpg';
+
+Qualys Cloud Perimeter Scan provides a straightforward yet powerful way to identify vulnerabilities and protect your cloud infrastructure. By continuously scanning publicly exposed assets, this tool helps organizations stay ahead of potential threats. In this blog post, we’ll break down what Qualys Cloud Perimeter Scan does, how it works, and why it’s a valuable addition to your cybersecurity strategy.
+
+<Image src={totalCloudImage} alt="TotalCloud" class="mx-auto" />
+
+#### **Qualys Cloud Platform**
+
+Qualys Cloud Platform is a cloud-based security solution that strengthens organizations’ cybersecurity. As a powerful and integrated security platform, it provides a proactive defense against cyber threats. By offering various security modules in a single interface, Qualys enables organizations to continuously monitor and protect their systems, networks, and data. The Qualys Cloud Platform and its integrated apps help businesses simplify security operations and lower the cost of compliance by delivering critical security intelligence on demand and automating the full spectrum of auditing, compliance, and protection for IT systems and web applications.
+
+<Image src={qualysCloudPlatformImage} alt="Qualys Cloud Platform" class="mx-auto" />
+
+#### **Key Features of Qualys Cloud Platform:**
+
+* **Asset Management**: Discovers and tracks all assets (servers, network devices, applications, etc.) within an organization.
+* **Vulnerability Management**: Identifies security vulnerabilities and provides remediation guidance.
+* **Compliance Management**: Supports regulatory compliance and provides reporting.
+* **Security Posture Management**: Continuously scans networks and applications to identify potential risks.
+* **Container Security**: Protects containerized applications and environments by detecting vulnerabilities and ensuring compliance within containerized deployments.
+* **Cloud Security**: Safeguards cloud infrastructure and services by providing visibility and control over security configurations, risks, and compliance in cloud environments.
+
+Qualys Cloud Platform enhances an organization’s cybersecurity strategy with extensive security scanning, continuous monitoring, and robust protection, addressing both traditional and modern security challenges.
+
+#### **A Quick Introduction to Cloud Perimeter Scan**
+
+Securing cloud environments is now a top priority for organizations. As businesses increasingly adopt cloud technologies, ensuring the integrity and safety of digital assets is critical. One effective way to enhance cloud security is through cloud perimeter scanning.
+
+Qualys Cloud Perimeter Scan is a sophisticated scanning method designed to help organizations identify and address vulnerabilities in their cloud environments. This service provides a proactive approach to cybersecurity by continuously monitoring and analyzing the external attack surface of cloud assets.
+
+**Before discussing Qualys Cloud Perimeter Scan, let’s take a brief look at the TotalCloud module that provides us with Cloud Perimeter Scan.**
+
+#### **What is** **TotalCloud?**
+
+Qualys TotalCloud provides cloud-native infrastructure and application security with zero-touch assessment. It continuously evaluates your cloud security posture, prioritizes high-risk areas, and secures cloud-native workloads.
+
+**Key Capabilities:**
+
+* Centralizes cloud security management.
+* Enables efficient risk management.
+* Offers a variety of vulnerability scanning solutions, including Cloud Perimeter Scan, Qualys Agent deployment, and agentless assessments like API-based and snapshot-based scans.
+
+Once connectors are configured, FlexScan collects cloud resource data, creates an inventory, and performs specialized scans.
+
+#### **What is Qualys Cloud Perimeter Scan?**
+
+Cloud perimeter scans are DNS or IP-based scans launched using the public DNS or Public IP of the target instances. If both a public DNS and a public IP address are available for your entities, a scan is started on the public DNS.
+
+Cloud perimeter scans use Qualys External Scanners (Internet Remote Scanners), located at the Qualys Cloud Platform.
+
+The TotalCloud application Connectors provides an automated way to launch the cloud perimeter scans on the publicly exposed cloud assets based on the configuration defined in the Connector.
+
+**Prerequisites**
+
+The Connectors application provides an automated way to launch cloud perimeter scans on your publicly exposed cloud assets based on the configuration defined in a Connector.
+
+* You must define a global perimeter scan configuration that connectors use to run the perimeter scan.
+* You can enable a cloud perimeter scan while creating a connector and define a custom configuration for scheduling the perimeter scan only for the connector you are creating.
+
+<Image src={qualysCloudImage6} alt="Qualys Cloud Image 6" class="mx-auto" />
+
+Similarly, you can enable a cloud perimeter scan for the AWS organization connector and define a custom scan configuration for scheduling the perimeter scan. During the cloud perimeter scan, the custom scan configuration is applied to all the member connectors.
+
+Read more about how you can provide global configurations: [Global Scan Configurations](https://docs.qualys.com/en/conn/latest/scans/global_scan_configuration.htm).
+
+If you do not define the custom scan configuration, the global scan configuration is used for launching the perimeter scans.
+
+With perimeter scans integrated with the Connector application, you can scan publicly exposed EC2, or Azure instances discovered by the connectors using Qualys external scanners.
+
+While creating a connector, you can define the schedule to launch the perimeter scan automatically in the Cloud Perimeter Scan -Global Scan Configuration or customized scanning in the Scan Settings page.
+
+<Image src={qualysCloudImage9} alt="Qualys Cloud Image 9" class="mx-auto" />
+
+After enabling Cloud Perimeter Scan on Connectors, you can view the scan results from VMDR>Scans.
+
+<Image src={qualysCloudImage1} alt="Qualys Cloud Image 1" class="mx-auto" />
+
+#### **How to Configure Cloud Perimeter Scan**
+
+**Requirements for AWS EC2**
+
+* You must ensure that the following features are activated for your account: Cloud Perimeter Scanning, EC2 Scanning, and Scan by Hostname.
+* Your account needs to be assigned a Manager or Unit Manager role.
+* An EC2 connector is required. [Learn more about connectors.](https://docs.qualys.com/en/conn/latest/scans/running_flexscans.htm)
+* If you want to include public load balancers from the EC2 connector in your scan, you must configure the same EC2 connector in your CloudView account. To set up the connector, your account needs a CloudView subscription.
+  + Enable this checkbox to discover public-facing Elastic Load Balancers. This provides additional security to your environment by identifying possible exploitable resources.
+
+<Image src={qualysCloudImage2} alt="Qualys Cloud Image 2" class="mx-auto" />
+
+* If you wish to include micro, nano and small instance types in the scan, these instance types should be activated for your account.
+
+**Requirements for Azure VM (Virtual Machine)**
+
+* You must ensure that the following features are activated for your account: Cloud Perimeter Scanning, EC2 Scanning, and Scan by Hostname.
+* Your account must have a Manager or Unit Manager role.
+* Azure connector is required. [Learn more about connectors.](https://docs.qualys.com/en/conn/latest/scans/running_flexscans.htm)
+
+**Configure a Cloud Perimeter Scan on a Connector**
+
+To launch the cloud perimeter scan,
+
+While creating or editing a connector, on the Tags and Activation screen, select the Automatically activate all assets for VM Scanning application and the Enable Zero-touch Cloud Perimeter Scan checkbox.
+
+<Image src={qualysCloudImage3} alt="Qualys Cloud Image 3" class="mx-auto" />
+
+This enables the ‘Scan Settings’ step. You can notice on the left pane under the ‘Tags and Activation’ step you currently view.
+
+Click **Next** and proceed to the next step.
+
+On the Scan Settings screen, enable the **custom scan configuration** checkbox. Provide the following scan details.
+
+**Scan Prefix**Enter the **Scan Prefix** added to the scan title.
+
+**Option Profile**Select the **Option profile** for the Cloud Perimeter Scan.
+
+**Recurrence**The frequency at which the scan is performed, start date and time, and associated timezone.
+
+In the **Recurrence**field, select Weekly or Daily. The other fields for defining the scan schedule are available based on the value in the Recurrence field.
+
+Weekly recurrence  
+Daily recurrence
+
+**Scan Public Load Balancers**
+
+Enable this checkbox to discover public-facing Elastic Load Balancers. This provides additional security to your environment by identifying possible exploitable resources.
+
+Click **Save** to save the scan configuration.
+
+<Image src={qualysCloudImage4} alt="Qualys Cloud Image 4" class="mx-auto" />
+
+#### **Advantages of Cloud Perimeter Scan**
+
+·       Detects and analyzes vulnerabilities by targeting externally exposed assets (EC2 instances, load balancers, etc.).
+
+·       It performs automated scans on a regular basis, helping to quickly identify emerging vulnerabilities.
+
+·       Cloud Perimeter Scan is very simple to set up and use.
+
+·       You do not need a third-party script to detect instances with Public IP in your own accounts. Cloud Perimeter Scan fully automates this, both detecting and scanning instances with Public IP.
+
+#### **Problems we had while implementing CPS and the Solutions**
+
+**“No Active Host” Problem**
+
+Cloud Perimeter Scan is a scan that is being performed by external scanners. To determine if the host is “alive” or not, the scanner pings each target host using ICMP, TCP, and UDP probes. TCP and UDP probes are sent to the default ports for common services on each host, such as DNS, TELNET, SMTP, HTTP, and SNMP. If any of these probes don’t trigger any response from the host, the host is considered not alive.
+
+After running the scans, you might see “No Active Host” in the scan results, in our case, it was because the EC2 hosts are configured not to respond to the ping requests on the AWS side. This will result in unscheduled CPS scans. To workaround this issue, we configured the scan’s Option Profile as “Initial Options – w Scan Dead Host” so the scans keep running even when the external scanner gets “No Host Alive” results.
+
+<Image src={qualysCloudImage5} alt="Qualys Cloud Image 5" class="mx-auto" />
+
+**“Exceeding VMDR Licenses” Problem**
+
+After setting up the Cloud Perimeter Scan, we encountered a licensing issue. Qualys provided us with a VMDR license for all AWS EC2 instances detected by the connector, but the number of EC2 instances in our AWS account exceeded the VMDR licenses we had. For example, we had 500 VMDR licenses, but the connector detected 2,000 EC2 instances. Most of these instances were not external hosts; we only intended to scan the EC2 instances that were external hosts with public IPs.
+
+We searched for a way to filter the distribution of licenses, but unfortunately, we found no such option. As a result, we submitted a support ticket to the Qualys Support Team for assistance. They informed us that there is currently no filtering mechanism available as we requested. However, they offered to temporarily remove the license limit from our account while they work on a more permanent solution.
+
+#### **To Conclude**
+
+As cloud adoption continues to rise, so does the need for robust security measures to protect sensitive data and digital assets. Qualys Cloud Perimeter Scan stands out as a powerful solution for identifying vulnerabilities and securing the external perimeter of cloud environments. By providing continuous monitoring and actionable insights, this tool enables organizations to proactively address potential threats before they can be exploited.
+
+Incorporating Qualys Cloud Perimeter Scan into your cloud security strategy can significantly enhance your organization’s ability to detect and mitigate risks, ultimately safeguarding your digital infrastructure. As the threat landscape evolves, leveraging scanning options like Qualys Cloud Perimeter Scan is not just beneficial, but essential in maintaining a secure and resilient cloud environment.
+
+***About PurpleBox, Inc.***
+
+*PurpleBox offers a comprehensive suite of cloud services including [migration](https://www.prplbx.com/cloud/migration/), [architecture & optimization](https://www.prplbx.com/cloud/architecture/), [DevOps](https://www.prplbx.com/cloud/devops/), [application development](https://www.prplbx.com/cloud/application-development-modernization/), and [AI & ML](https://www.prplbx.com/cloud/application-development-modernization/). As an AWS Partner, PurpleBox assists clients with cloud transformation and migration, providing strategies for cloud architecture, security, compliance, and cost optimization.*

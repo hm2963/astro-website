@@ -1,0 +1,26 @@
+---
+import FAQ from '~/components/widgets/FAQ.astro';
+
+const faqs = [
+    {
+        question: 'How does generative AI improve cybersecurity compared to traditional methods?',
+        answer: 'Generative AI enables faster threat detection, more creative and comprehensive penetration testing, and adaptive incident response. It identifies patterns across large datasets far faster than humans, detecting vulnerabilities and anomalies that may otherwise be missed.',
+    },
+    {
+        question: 'What are the biggest risks of using generative AI in cybersecurity?',
+        answer: 'Key concerns include prompt injection attacks, data privacy issues, evolving regulatory compliance demands, and a lack of skilled professionals who understand both AI and security.',
+    },
+    {
+        question: 'How can my organization get started with AI in cybersecurity safely?',
+        answer: 'Begin by defining clear objectives, integrating AI tools within your existing security framework, and ensuring human oversight is maintained. Partnering with experienced firms like PurpleBox can help tailor AI-driven solutions to your specific risk profile and regulatory environment.',
+    },
+];
+---
+<FAQ faqs={faqs}>
+    <Fragment slot="title">
+        Modern Penetration Testing and Continuous Security
+    </Fragment>
+    <Fragment slot="subtitle">
+        Get clarity on the benefits, risks, and best practices for adopting AI-driven security solutions in today’s evolving threat landscape.
+    </Fragment>
+</FAQ>

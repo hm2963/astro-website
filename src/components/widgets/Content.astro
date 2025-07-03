@@ -72,7 +72,17 @@ const {
         {
           image && (
             <div class="relative m-auto">
-              {typeof image === 'string' ? (
+              {typeof image.src === 'object' && image.src.src ? (
+                <img
+                  src={image.src.src}
+                  alt={image.alt}
+                  class="mx-auto rounded-lg shadow-lg"
+                  loading="lazy"
+                  decoding="async"
+                  width={image.src.width}
+                  height={image.src.height}
+                />
+              ) : typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (
                 <Image

@@ -4,6 +4,7 @@ import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQ from '~/components/widgets/FAQ.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 // Image Imports
 import heroImage from '~/assets/images/prplbx_images/page_security_cloud-security/cloud-hero.png';
@@ -82,7 +83,7 @@ const faqs = [
           <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Cloud Security Managed Services</h1>
           <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
           <p class="text-lg md:text-xl mb-8">Elevate Security in the Cloud and Raise Your Security Posture</p>
-          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+          <a href="/get-in-touch" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
             GET STARTED NOW
           </a>
         </div>
@@ -160,7 +161,7 @@ const faqs = [
   <!-- Connect with Our Experts Section -->
   <section class="py-16 md:py-20 text-center">
     <h2 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Connect with Our Cloud Security Experts</h2>
-    <a href="/get-in-touch/" class="btn bg-[#341474] hover:bg-[#2a105c] text-white py-2 px-10 rounded-md text-lg uppercase">
+    <a href="/get-in-touch" class="btn bg-[#341474] hover:bg-[#2a105c] text-white py-2 px-10 rounded-md text-lg uppercase">
         GET IN TOUCH
     </a>
   </section>
@@ -217,9 +218,29 @@ const faqs = [
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <FAQ faqs={faqs} title="Cloud Security Managed Services At PurpleBox" />
+    {/* Blog Latest Posts Section */}
+    <BlogLatestPosts
+      title=""
+      information=""
+      linkText="Our blog"
+      linkUrl="/blog"
+      count={3}
+    />
 
   <!-- Final Call to Action -->
   <CallToAction />
+
+  <!-- FAQ Section -->
+  <FAQ faqs={faqs} title="Cloud Security Managed Services At PurpleBox">
+    <Fragment slot="subtitle">
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">
+        Expert-led solutions to assess, secure, and optimize your cloud environments across AWS, Azure, and GCP.
+      </p>
+      <div class="mt-8">
+        <a href="/get-in-touch" class="btn bg-[#341474] hover:bg-[#2a105c] text-white py-2 px-10 rounded-md text-lg uppercase">
+          GET IN TOUCH
+        </a>
+      </div>
+    </Fragment>
+  </FAQ>
 </Layout>

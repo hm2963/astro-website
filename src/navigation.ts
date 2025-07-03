@@ -84,7 +84,9 @@ export const headerData = {
       href: getPermalink('/quote-your-pentest'),
     },
   ],
-  actions: [{ text: 'Contact Us', href: getPermalink('/get-in-touch') }], // Assuming '/get-in-touch' is the contact page
+  actions: [
+    { text: 'Contact Us', href: getPermalink('/get-in-touch/'), variant: 'primary' }
+  ],
 };
 
 export const footerData = {
@@ -120,7 +122,7 @@ export const footerData = {
       title: 'Company',
       links: [
         { text: 'About Us', href: getPermalink('/company') }, // Assuming '/company' is the about us page
-        { text: 'Contact', href: getPermalink('/get-in-touch') }, // Assuming '/get-in-touch' is the contact page
+        { text: 'Contact', href: getPermalink('/get-in-touch/') }, // Assuming '/get-in-touch' is the contact page
       ],
     },
   ],
@@ -139,6 +141,6 @@ export const footerData = {
   `,
   privacyLink: {
     text: 'Privacy Policy',
-    href: getPermalink('/privacy-policy'),
+    href: getPermalink('/privacy-policy-2'),
   },
 };

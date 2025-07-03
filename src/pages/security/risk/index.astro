@@ -4,6 +4,7 @@ import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQ from '~/components/widgets/FAQ.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 // Image Imports
 import heroImage from '~/assets/images/prplbx_images/page_security_risk/risk-hero-new.png';
@@ -86,7 +87,7 @@ const faqs = [
           <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">Risk and Compliance Services</h1>
           <hr class="w-24 border-t-4 border-white mx-auto md:mx-0 mb-6">
           <p class="text-lg md:text-xl mb-8">Ensure Your Infosec Program is Aligned with Regulations and Compliance Mandates</p>
-          <a href="/get-in-touch/" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
+          <a href="/get-in-touch" class="btn btn-primary bg-[#584494] hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-md">
             GET STARTED NOW
           </a>
         </div>
@@ -246,9 +247,54 @@ const faqs = [
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <FAQ faqs={faqs} title="Purple Box Risk and Compliance Services" />
+    <!-- Download the brochure Section -->
+    <section id="download-brochure" class="py-16 md:py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">Download the brochure</h2>
+        <p class="text-lg text-gray-600 dark:text-slate-400 mb-8">
+          Download the brochure to learn more about our Risk & Compliance services.
+        </p>
+        <div id="hubspot-form-container" class="mt-8 max-w-xl mx-auto">
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              region: "na1",
+              portalId: "2042385",
+              formId: "b696baf8-c052-4087-93b8-794887959f49",
+              target: '#hubspot-form-container',
+              onFormSubmitted: function($form) {
+                window.location.href = "https://2042385.fs1.hubspotusercontent-na1.net/hubfs/2042385/PurpleBox-Risk-and-ComplianceServices.pdf";
+              }
+            });
+          </script>
+        </div>
+      </div>
+    </section>
+
+    {/* Blog Latest Posts Section */}
+    <BlogLatestPosts
+      title=""
+      information=""
+      linkText="Our blog"
+      linkUrl="/blog"
+      count={3}
+    />
 
   <!-- Final Call to Action -->
   <CallToAction />
+
+  <!-- FAQ Section -->
+  <FAQ faqs={faqs} title="Purple Box Risk and Compliance Services">
+    <Fragment slot="subtitle">
+      <p class="text-lg text-gray-600 dark:text-slate-400 mt-4">
+        Understanding Cybersecurity Vulnerabilities and Risk Assessment
+      </p>
+      <div class="mt-8">
+        <a href="/get-in-touch" class="btn bg-[#341474] hover:bg-[#2a105c] text-white py-2 px-10 rounded-md text-lg uppercase">
+          GET IN TOUCH
+        </a>
+      </div>
+    </Fragment>
+  </FAQ>
+  
 </Layout>
