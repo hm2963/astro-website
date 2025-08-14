@@ -69,11 +69,6 @@ npm run build
 
 ---
 
-## 📸 Screenshots
-*(Optional — Add screenshots or GIFs here to show UI elements and layouts)*
-
----
-
 ## 📌 Internship Context
 During my internship at PurpleBox, I:
 - Migrated an entire corporate website from WordPress to Astro
